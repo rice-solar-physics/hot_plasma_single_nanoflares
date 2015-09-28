@@ -1,0 +1,58 @@
+\documentclass[iop]{emulateapj}
+
+%Specify packages
+\usepackage{amsmath}
+\usepackage{subfigure}
+%use for editing/highlighting
+\usepackage{color,soul}
+
+%Define new commands as needed
+\newcommand{\ang}{\AA~}
+
+\begin{document}
+	%Frontmatter
+	\title{``Hot'' Non-flaring Plasma in Active Regions II. Impacts of Two-fluid Effects}
+	\author{W. T. Barnes}
+	\author{S. J. Bradshaw}
+	\affil{Department of Physics \& Astronomy, Rice University, Houston, TX 77251-1892}
+	\email{will.t.barnes@rice.edu}
+	\author{P. J. Cargill}
+	\affil{Space and Atmospheric Physics, The Blackett Laboratory, Imperial College, London SW7 2BW}
+	\affil{School of Mathematics and Statistics, University of St. Andrews, St. Andrews, Scotland KY16 9SS}
+	
+	%Abstract
+	\begin{abstract}
+		Faint, high-temperature emission in active region cores has long been predicted as a signature of nanoflare heating. However, the detection of such emission has proved difficult due to a combination of the efficiency of thermal conduction, non-equilibrium ionization, and inadequate instrument sensitivity. This second paper in our series on hot non-flaring plasma in active regions aims to show how the assumption of electron-ion equilibrium in hydrodynamic models leads to incorrect conclusions regarding the hot emission. We have used an efficient two-fluid hydrodynamic model to carry out a parameter exploration in preferentially heated species, nanoflare heating frequency, and event amplitude power-law index. By computing the emission measure distributions and calculating their ``hotward'' slopes, we have concluded that the assumption of electron-ion equilibrium leads to an understimate of the amount of hot plasma at intermediate and high heating frequencies. Additionally, in the single-fluid approximation, hot emission measure slopes show only a very weak dependence on heating frequency while in the electron-only heating scenario, the hotward slope varies more as the heating frequency increases. 
+	\end{abstract}
+	
+	%Body
+	\section{Introduction}
+	\par\hl{Need to reword this introduction; move from introduction of hot plasma as signature of nanoflares to observational evidence for nanoflares and why it is hard to come by; to models which show evidence of nanoflares; to what we will do in this paper}
+	%
+	\par \citet{cargill_implications_1994,cargill_nanoflare_2004} have predicted that emission measure distributions resulting from nanoflare models should be wide and have a faint, high-temperature ($>4\times10^6$ K) component and thus a steep hotward slope. Unfortunately, observing this high-temperature emission is difficult and in some cases impossible. The reason for this difficulty is twofold. First, thermal conduction is a very efficient cooling mechanism at high temperatures and large spatial temperature gradients. Thus, because the increase in density lags the increase in temperature due to heating and because $\mathrm{EM}\propto n^2$, by the time sufficient densities are acheived, the plasma has cooled down such that the fingerprints of nanoflare heating have been smoothed out. 
+	%
+	\par The second reason for this difficulty is non-equilibrium ionization. It is usually assumed that the observed line intensities, because of their known formation temperatures, are a direct indicator of the plasma temperature. However, if the heating timescale is shorter than the ionization timescale, the time it takes for the ion population to settle into the correct charge state, an equilibrium assumption can lead to a misdiagnosis of the plasma temperature. This makes signatures of hot, nanoflare-heated plasma especially difficult to detect if the high temperatures persist for less than the ionization timescale \citep{bradshaw_explosive_2006,bradshaw_what_2011,reale_nonequilibrium_2008}.
+	%
+	\par Despite these difficulties, various attempts have been made to observe this faint high-temperature emission. Using the broadband X-Ray Telescope (XRT) aboard the \textit{Hinode} spacecraft, \citet{schmelz_hinode_2009} and \citet{reale_evidence_2009} show a faint hot component in the reconstructed $\mathrm{DEM}$ curves. However, since the channels on such broadband instruments can often be polluted by low-temperature emission, the reliability of such measurements depends on the filtering technique used. Additionally, \citet{winebarger_defining_2012} showed that combinations of \textit{Hinode}/EIS and \textit{Hinode}/XRT measurements leave a ``blind spot'' in the $\mathrm{EM}-T$ space conincident with where evidence for nanoflare heating is likely to be found. Unambiguous observational evidence of nanoflare heating must come from pure spectroscopic measurements \citep[see][]{brosius_pervasive_2014}. Missions like the Marshall Grazing Incidence X-ray Spectrometer (MaGIXS) \citep{kobayashi_marshall_2011,winebarger_new_2014}, with a wavelength range of 6-24 \ang and a temperature range of $6.2<\log{T}<7.2$, aim to probe this previously poorly-resolved portion of the coronal spectrum in hopes of better quantifying the presence of faint, high-temperature plasma.
+	%
+	\par The Parker nanoflare concept has become one of the most favored and contentious coronal heating models \citep{cargill_implications_1994,cargill_nanoflare_2004,klimchuk_solving_2006}. While many theoretical efforts \citep[e.g.][]{bradshaw_diagnosing_2012,reep_diagnosing_2013} have shown the feasability of nanoflares, the idea has long suffered from a lack observational evidence, though recent high-resolution and high-cadence observations \citep{brosius_pervasive_2014,testa_observing_2013,testa_evidence_2014} have provided encouraging results. The term \textit{nanoflare} has now become synonomous with impulsive heating in the energy range $10^{24}-10^{27}$ ergs, with no specific assumption as to what underlying physical mechanism is responsible for this heating. Thus, in this work, the term nanoflare will refer to bursty energy release on a timescale of approximately 100 s or less.
+	%
+	\par\hl{Need paragraph here saying something about two-fluid approach: why is it important in nanoflare heating scenarios?}
+	%
+	\par\hl{Wouldn't be a bad idea to include summary of measured ``hotward'' emission slope values as is done in Bradshaw et al. (2013) for cool slopes}
+	%
+	\par In this paper, the second in our series on hot emission in active region cores, we will use an efficient two-fluid hydrodynamic model to explore the effect of electron and ion heating on nanoflare-heated loops. In particular, we will look at how the hot emission is affected by heating preferentially one species or the other as well as how this hot emission can vary with heating frequency, loop length, and event amplitude power-law index. We will make comparisons to results from single-fluid models in an effort to diagnose how the assumption of electron-ion equilibrium can affect conclusions about this hot emission, the so-called ``smoking gun'' of nanoflare heating.
+	%%
+	\section{Numerical Model}
+	%
+	\par 
+	%%
+	\section{Parameter Space}
+	\section{Results}
+	\section{Discussion}
+	\section{Conclusion}
+	
+	%Bibliography
+	\bibliography{references}
+	\bibliographystyle{apj}
+\end{document}
