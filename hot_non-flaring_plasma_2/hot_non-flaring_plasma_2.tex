@@ -45,7 +45,24 @@
 	%%
 	\section{Numerical Model}
 	%
-	\par 
+	\par 1D hydrodynamic models are excellent tools for computing field-aligned quantities in coronal loops. However, because of the small grid sizes needed to resolve the transition region and consequently small timesteps needed to resolve thermal conduction, the use of such models in large parameter sweeps is made impractical by long runtimes \citep{bradshaw_influence_2013}. Thus, in our numerical study, we will use a modified form of the popular 0D enthalpy-based thermal evolution of loops (EBTEL) model \citep{klimchuk_highly_2008,cargill_enthalpy-based_2012,cargill_enthalpy-based_2012-1,cargill_modelling_2015} which computes time-dependent spatially-averaged loop quantities and has been successfully benchmarked against the 1D HYDRAD code \citep{bradshaw_influence_2013}.
+	%
+	\par We have modified the usual EBTEL equations \citep[see][]{cargill_enthalpy-based_2012} to treat the evolution of the electron and ion populations separately while maintaining the assumption of quasi-neutrality, $n_e=n_i=n$. This amounts to computing spatial averages of the two-fluid hydrodynamic equations over both the transition region and corona. We will reserve a full discussion of this modified EBTEL model for a future paper. The modified two-fluid EBTEL equations are,
+	\begin{align}
+		\frac{d}{dt}\bar{p}_e &= \frac{\gamma - 1}{L}[\psi_{TR} + \psi_C -(\mathcal{R}_{TR} + \mathcal{R}_C)] + \nonumber \\ \quad&k_B\bar{n}\nu_{ei}(\bar{T}_i-\bar{T}_e) + (\gamma-1)\bar{E}_{H,e},\label{eq:press_e} \\[0.5em]
+		%
+		\frac{d}{dt}\bar{p}_i &= -\frac{\gamma - 1}{L}(\psi_{TR} + \psi_C) + k_B\bar{n}\nu_{ei}(\bar{T}_e-\bar{T}_i) + \nonumber \\ \quad&(\gamma-1)\bar{E}_{H,i},\label{eq:press_i} \\[0.5em]
+		%
+		\frac{d \bar{n}}{dt} &= \frac{c_2(\gamma-1)}{c_3\gamma Lk_B\bar{T}_e}(\psi_{TR} - F_{e,0}-\mathcal{R}_{TR}), 	\label{eq:density}
+	\end{align}
+	where 
+	\begin{align}
+		\psi_{TR} &= \frac{1}{1 + \xi}(F_{0,e} + \mathcal{R}_{TR} - \xi F_{0,i}), \label{eq:psi_tr}\\[0.5em]
+		\psi_C = &= \bar{v}p_e^{(a)} - (p_ev)_0. \label{eq:psi_C}
+	\end{align}
+	Additionally, Eqs. \ref{eq:press_e}, \ref{eq:press_i}, and \ref{eq:density} are closed by the equations of state $p_e=k_BnT_e$ and $p_i=k_BnT_i$.
+	%
+	\par $\bar{p}_e,\bar{p}_i$ and $\bar{T}_e,\bar{T}_i$ are the spatially-averaged coronal electron and ion pressures and temperatures, respectively and $\bar{n}$ is the spatially-averaged coronal number density. $\mathcal{R}_C=\bar{n}^2\Lambda(T)$ is the volumetric coronal radiative loss rate, where $\Lambda(\bar{T})$ is the radiative loss function, and $\mathcal{R}_{TR}=c_1\mathcal{R}_C$ is the radiative loss rate in the transition region where the calculation of $c_1$ is described in \citet{cargill_enthalpy-based_2012}. Additionally, $F_{e,0},F_{i,0}$ are the electron and ion conductive fluxes as computed at the base of the loop, respectively, and are calculating using the classical Spitzer formula with a flux limiter imposed to prevent runaway cooling. Finally, $c_2=\bar{T}/T_a=0.6$
 	%%
 	\section{Parameter Space}
 	\section{Results}
