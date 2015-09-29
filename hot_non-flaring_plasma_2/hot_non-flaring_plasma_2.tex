@@ -60,12 +60,41 @@
 		\psi_{TR} &= \frac{1}{1 + \xi}(F_{0,e} + \mathcal{R}_{TR} - \xi F_{0,i}), \label{eq:psi_tr}\\[0.5em]
 		\psi_C = &= \bar{v}p_e^{(a)} - (p_ev)_0. \label{eq:psi_C}
 	\end{align}
-	Additionally, Eqs. \ref{eq:press_e}, \ref{eq:press_i}, and \ref{eq:density} are closed by the equations of state $p_e=k_BnT_e$ and $p_i=k_BnT_i$.
+	Additionally, Eqs. \ref{eq:press_e}, \ref{eq:press_i}, and \ref{eq:density} are closed by the equations of state $p_e=k_BnT_e$ and $p_i=k_BnT_i$. 
 	%
-	\par $\bar{p}_e,\bar{p}_i$ and $\bar{T}_e,\bar{T}_i$ are the spatially-averaged coronal electron and ion pressures and temperatures, respectively and $\bar{n}$ is the spatially-averaged coronal number density. $\mathcal{R}_C=\bar{n}^2\Lambda(T)$ is the volumetric coronal radiative loss rate, where $\Lambda(\bar{T})$ is the radiative loss function, and $\mathcal{R}_{TR}=c_1\mathcal{R}_C$ is the radiative loss rate in the transition region where the calculation of $c_1$ is described in \citet{cargill_enthalpy-based_2012}. Additionally, $F_{e,0},F_{i,0}$ are the electron and ion conductive fluxes as computed at the base of the loop, respectively, and are calculating using the classical Spitzer formula with a flux limiter imposed to prevent runaway cooling. Finally, $c_2=\bar{T}/T_a=0.6$
+	\par The volumetric heating rates, $E_{H,e}$ and $E_{H,i}$, are the primary degrees of freedom in our model. In the case of electron (ion) heating, $E_{H,i}(E_{H,e})=0$. $\bar{p}_e,\bar{p}_i$ and $\bar{T}_e,\bar{T}_i$ are the spatially-averaged coronal electron and ion pressures and temperatures, respectively and $\bar{n}$ is the spatially-averaged coronal number density. $\mathcal{R}_C=\bar{n}^2\Lambda(T)$ is the volumetric coronal radiative loss rate, where $\Lambda(\bar{T})$ is the radiative loss function, and $\mathcal{R}_{TR}=c_1\mathcal{R}_C$ is the radiative loss rate in the transition region where the calculation of $c_1$ is described in \citet{cargill_enthalpy-based_2012}. Additionally, $F_{e,0},F_{i,0}$ are the electron and ion conductive fluxes as computed at the base of the loop, respectively, and are calculated using the classical Spitzer formula with a flux limiter imposed to prevent runaway cooling at low densities. The Coulomb collision frequency, $\nu_{ei}$, is given by,
+\begin{equation}
+	\nu_{ei} = \frac{16\sqrt{\pi}}{3}\frac{e^4}{m_em_i}\left(\frac{2k_B\bar{T}_e}{m_e}\right)^{-3/2}\bar{n}\ln{\Lambda},
+\end{equation}
+where $m_e,m_i$ are the electron and ion masses respectively and $\ln{\Lambda}$ is the Coulomb logarithm. Finally, $c_2=\bar{T}/T_a=0.6$, $c_3=T_0/T_a=0.9$, determined by static equilibrium, and $\xi=\bar{T}_e/\bar{T}_i$.
+%
+\par Note that in the limit that $\bar{T}_e=\bar{T}_i$ such that $\xi=1$, Eq. \ref{eq:density} reduces to the single-fluid density equation of \citet{cargill_enthalpy-based_2012}. Additionally, Eqs. \ref{eq:press_e} and \ref{eq:press_i} can be added together to recover the single-fluid pressure equation. As with the original EBTEL model, the modified two-fluid version has been successfully benchmarked against the HYDRAD hydrodynamic code. 
 	%%
 	\section{Parameter Space}
+	%
+	\par\hl{Talk about heating functions; varying heating frequency; energy budget; MC runs}
+	%
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.6\columnwidth]{figures/parameter_space.pdf}
+		\caption{Parameter space covered for each loop half-length $L$. $\alpha$ is the power-law index and $b$ indicates the scaling in the relationship $Q\propto T_N^b$, where $b=0$ corresponds to the case where $T_N$ and the event energy are independent.}
+		\label{fig:parameter_space}
+	\end{figure}
+	%
+	\begin{figure}
+		\centering
+		\includegraphics[width=\columnwidth]{figures/heating_functions.pdf}
+		\caption{All heating functions are for $L=40$ Mm. Starting counter-clockwise from the bottom left: uniform heating amplitudes for $T_N=1000$ s; uniform heating amplitudes for $T_N=5000$ s; power-law distributed heating amplitudes for $\alpha=-1.5$, $T_N=2000$ s; power-law distributed amplitudes for $\alpha=-1.5$ where the wait times depend on the event energies and the mean wait time for both $b$ values is $\langle T_N\rangle=2000$ s.}
+		\label{fig:heating_funcs}
+	\end{figure}
+	%
 	\section{Results}
+	%
+	\subsection{Electron Heating}
+	%
+	\subsection{Ion Heating}
+	%
+	\subsection{Single-fluid}
 	\section{Discussion}
 	\section{Conclusion}
 	
