@@ -1,15 +1,18 @@
-\documentclass[]{emulateapj}
+\documentclass[tighten,apj]{emulateapj}
 
 %Specify packages
 \usepackage{amsmath}
-\usepackage{subfigure}
+%\usepackage[caption=false]{subfig}
+\usepackage[tight]{subfigure}
 \usepackage[breaklinks,colorlinks,citecolor=blue]{hyperref}
 \usepackage[all]{hypcap}
 %use for editing/highlighting
 \usepackage{color,soul}
+\usepackage{lipsum}
 
 %Define new commands as needed
 \newcommand{\ang}{\AA~}
+\defcitealias{cargill_hot_2016}{Paper I}
 
 \begin{document}
 	%Frontmatter
@@ -21,12 +24,10 @@
 	\author{P. J. Cargill}
 	\affil{Space and Atmospheric Physics, The Blackett Laboratory, Imperial College, London SW7 2BW}
 	\affil{School of Mathematics and Statistics, University of St. Andrews, St. Andrews, Scotland KY16 9SS}
-	
 	%Abstract
 	\begin{abstract}
 		Faint, high-temperature emission in active region cores has long been predicted as a signature of nanoflare heating. However, the detection of such emission has proved difficult due to a combination of the efficiency of thermal conduction, non-equilibrium ionization, and inadequate instrument sensitivity. This second paper in our series on hot non-flaring plasma in active regions aims to show how the assumption of electron-ion equilibrium in hydrodynamic models leads to incorrect conclusions regarding the hot emission. We have used an efficient two-fluid hydrodynamic model to carry out a parameter exploration in preferentially heated species, nanoflare heating frequency, and event amplitude power-law index. By computing the emission measure distributions and calculating their ``hotward'' slopes, we have concluded that the assumption of electron-ion equilibrium leads to an understimate of the amount of hot plasma at intermediate and high heating frequencies. Additionally, we find that, while emission due to electron and ion heating differs greatly hotward of the peak, the respective coolward emission measure slopes are similar such that a distinction between the heating of one species over another based on this criteria alone is inadequate. 
 	\end{abstract}
-	
 	%Body
 	\section{Introduction}
 	\par\hl{Need to reword this introduction; move from introduction of hot plasma as signature of nanoflares to observational evidence for nanoflares and why it is hard to come by; to models which show evidence of nanoflares; to what we will do in this paper}
@@ -41,37 +42,29 @@
 	%
 	\par Unambiguous observational evidence of nanoflare heating must come from pure spectroscopic measurements \citep[see][]{brosius_pervasive_2014}. Additionally, new instruments with higher spatial and temporal resolution, such as \textit{IRIS} \citep{de_pontieu_interface_2014} and the \textit{Hi-C} sounding rocket \citep{cirtain_energy_2013} have provided encouraging results for impulsive heating \citep{testa_observing_2013,testa_evidence_2014}. Future missions like the Marshall Grazing Incidence X-ray Spectrometer (MaGIXS) \citep{kobayashi_marshall_2011,winebarger_new_2014}, with a wavelength range of 6-24 \ang and a temperature range of $6.2<\log{T}<7.2$, aim to probe this previously poorly-resolved portion of the coronal spectrum in hopes of better quantifying the presence of faint, high-temperature plasma.
 	%
-	\par\hl{Need paragraph here saying something about two-fluid approach: why is it important in nanoflare heating scenarios?}
+	\par Impulsive heating can also introduce electron-ion non-equilibrium. In a fully-ionized hydrogen plasma like the solar corona, interactions between electrons and ions occur through binary Coulomb collisions. For $n\sim10^8~\mathrm{cm}^{-3}$ and $T\sim10^7~\mathrm{K}$, parameters typical of nanoflare heating, the collisional timescale, $\tau_{ei}=1/\nu_{ei}$, where $\nu_{ei}$ is the Coulomb collision frequency (see \autoref{eq:col_freq}) can be estimated as $\tau_{ei}\sim\approx8000$ s. Thus, any heating that occurs on a timescale less than 8000 s, such as a nanoflare with a durration of $\le100$ s, will result in electron-ion non-equilibrium. 
+	%
+	\par The degree to which the ions or electrons are preferentially heated in the solar corona is unknown though it is often assumed that the electrons are the direct recipients of the prescribed heating function. However, it is also possible that the ions are preferentially heated; for instance, through ion-cyclotron wave resonances \citep{markovskii_intermittent_2004}. Ion cyclotron waves are excited by plasma instabilities in the lower corona. These waves then propagate upwards through the coronal plasma and wave particle interactions can occur for those ions whose gyrofrequencies have a resonance with the ion-cyclotron wave. Additionally, there is also evidence for ion heating via reconnection, both in laboratory plasmas and in particle-in-cell simulations \citep{ono_ion_1996,yoo_bulk_2014,drake_onset_2014}. Thus, ion heating in the solar corona should not be discounted as a possibility.
+	%
+	\par In our first paper, \citet[]{cargill_hot_2016}\citepalias[hereafter]{cargill_hot_2016}, we studied the effect of pulse duration, flux limiting, non-equilibrium ionization on hot emission from single nanoflares as well as nanoflare trains. In this second paper in our series on hot emission in active region cores, we will use an efficient two-fluid hydrodynamic model to explore the effect of electron and ion heating on nanoflare-heated loops. In particular, we will look at how the hot emission is affected by heating preferentially one species or the other as well as how this hot emission can vary with heating frequency and event amplitude power-law index. 
+	\par\autoref{sec:methods} discusses the numerical model we have used to conduct this study and the parameter space we have explored. \autoref{sec:results}, shows the resulting emission measure curves and slopes for the electron and ion heating cases as well as the equivalent single-fluid cases. In \autoref{sec:discussion}, we compare two-fluid and single-fluid cases for all heating functions and heating frequencies. Finally, \autoref{sec:conclusions} discusses the implications of two-fluid effects in the context of modelling impulsive heating and observing faint, hot emission, the so-called ``smoking gun'' of nanoflare heating.
 	%
 	\par\hl{Wouldn't be a bad idea to include summary of measured ``hotward'' emission slope values as is done in Bradshaw et al. (2013) for cool slopes}
-	%
-	\par In this paper, the second in our series on hot emission in active region cores, we will use an efficient two-fluid hydrodynamic model to explore the effect of electron and ion heating on nanoflare-heated loops. In particular, we will look at how the hot emission is affected by heating preferentially one species or the other as well as how this hot emission can vary with heating frequency, loop length, and event amplitude power-law index. We will make comparisons to results from single-fluid models in an effort to diagnose how the assumption of electron-ion equilibrium can affect conclusions about this hot emission, the so-called ``smoking gun'' of nanoflare heating.
 	%%
 	\section{Methodology}
+	\label{sec:methods}
 	%
 	\subsection{Numerical Model}
+	\label{subsec:numerics}
 	%
 	\par 1D hydrodynamic models are excellent tools for computing field-aligned quantities in coronal loops. However, because of the small grid sizes needed to resolve the transition region and consequently small timesteps needed to resolve thermal conduction, the use of such models in large parameter sweeps is made impractical by long runtimes \citep{bradshaw_influence_2013}. Thus, in our numerical study, we will use a modified form of the popular 0D enthalpy-based thermal evolution of loops (EBTEL) model \citep{klimchuk_highly_2008,cargill_enthalpy-based_2012,cargill_enthalpy-based_2012-1,cargill_modelling_2015} which computes time-dependent spatially-averaged loop quantities and has been successfully benchmarked against the 1D hydrodyhnamic HYDRAD code \citep{bradshaw_influence_2013}.
 	%
 	\par We have modified the usual EBTEL equations \citep[see][]{cargill_enthalpy-based_2012} to treat the evolution of the electron and ion populations separately while maintaining the assumption of quasi-neutrality, $n_e=n_i=n$. This amounts to computing spatial averages of the two-fluid hydrodynamic equations over both the transition region and corona. We will reserve a full discussion of this modified EBTEL model for a future paper. The relevant equations can be found in \autoref{appendix}.  
 	%%
 	\subsection{Parameter Space}
-	%
-	\par\hl{Talk about heating functions; varying heating frequency; energy budget; MC runs}
+	\label{subsec:params}
 	%
 	\par We define our heating function in terms of a series of discrete heating events plus a static background heating rate to ensure that the loop does not drop to unphysically low temperatures and densities between events. All events are modeled as triangular pulses of fixed duration $\tau_H=100$ s. Thus, for loop length $L$ and cross-sectional area $A$, the total energy per event is $Q_i=LAH_i\tau_H/2$, where $H_i$ is the heating rate amplitude for the $i$th event. Each run will consist of $N$ heating events, with peak amplitude $H_i$ and a steady background value of $H_b=3.4\times10^{-6}$ erg cm$^{-3}$ s$^{-1}$.
-	%
-	\par Observations have suggested that loops in active region cores are maintained at an equilibrium temperature of $T_{peak}\approx4$ MK \citep{warren_constraints_2011,warren_systematic_2012}. The corresponding heating rate can be estimated using coronal hydrostatics. Neglecting the radiative loss term and letting $dF_C/ds\approx\kappa_0T_{peak}^{7/2}/L^2$, $E_{H,eq}$ can be estimated as 
-	\begin{equation}
-		\label{eq:heating_rate_est}
-		E_{H,eq} \approx \frac{\kappa_0T_{peak}^{7/2}}{L^2},
-	\end{equation}
-	where $\kappa_0\approx10^{-6}$. $E_{H,eq}$ can be interpreted as a time-averaged volumetric heating rate. Thus, to maintain an emission measure peaked about $T_{peak}$, the individual heating rates are constrained by 
-	\begin{equation}
-		\label{eq:heating_rate_constraint}
-		E_{H,eq} = \frac{\tau_H}{2T}\sum_{i=1}^NH_i.
-	\end{equation}
-	Note that if $H_i=H_0$ for all $i$, the uniform heating amplitude $H_0$ is just $H_0=2TE_{H,eq}/N\tau_H$. Thus, for $L=40$ Mm, $A=10^{14}$ cm$^2$, the total amount of energy injected into the loop by one heating event for a loop heated by $N=20$ nanoflares in $T=80000$ s is $Q=LATE_{H,eq}/N\approx1.3\times10^{25}$ erg, roughly consistent with the energy budget of the Parker nanoflare model. 
 	%
 	\begin{figure}
 		\centering
@@ -80,9 +73,19 @@
 		\label{fig:parameter_space}
 	\end{figure}
 	%
-	\par Determining the heating frequency in active region cores will help to place constraints on the source(s) of heat in the corona. We define the heating frequency in terms of the waiting time, $T_N$, between successive heating events. Following \citet{cargill_active_2014}, the range of waiting times is $250\le T_N\le5000$ s in increments of 250 s, for a total of 20 different possible heating frequencies. Additionally, $T_N$ can be written as $T_N=(T-N\tau_H)/N$, where $T=80000$ s is the total simulation time. Note that because $T$ and $\tau_H$ are fixed, as $T_N$ increases, $N$ decreases. Correspondingly, $Q_i$, the energy injected per event, increases according to \autoref{eq:heating_rate_constraint} such that the total energy injected per run is constant, regardless of $T_N$.
+	\par Observations have suggested that loops in active region cores are maintained at an equilibrium temperature of $T_{peak}\approx4$ MK \citep{warren_constraints_2011,warren_systematic_2012}. The corresponding heating rate can be estimated using coronal hydrostatics. Neglecting the radiative loss term and letting $dF_C/ds\approx\kappa_0T_{peak}^{7/2}/L^2$, $E_{H,eq}$ can be estimated as 
+	\begin{equation}
+		\label{eq:heating_rate_est}
+		E_{H,eq} \approx \frac{\kappa_0T_{peak}^{7/2}}{L^2},
+	\end{equation}
+	where $\kappa_0\approx10^{-6}$. $E_{H,eq}$ can be interpreted as a time-averaged volumetric heating rate. Thus, to maintain an emission measure peaked about $T_{peak}$, for triangular pulses, the individual heating rates are constrained by 
+	\begin{equation}
+		\label{eq:heating_rate_constraint}
+		E_{H,eq} = \frac{1}{T}\sum_{i=1}^N\int_{t_i}^{t_i+\tau_H}\mathrm{d}t~h_i(t) = \frac{\tau_H}{2T}\sum_{i=1}^NH_i.
+	\end{equation}
+	Note that if $H_i=H_0$ for all $i$, the uniform heating amplitude $H_0$ is just $H_0=2TE_{H,eq}/N\tau_H$. Thus, for $L=40$ Mm, $A=10^{14}$ cm$^2$, the total amount of energy injected into the loop by one heating event for a loop heated by $N=20$ nanoflares in $T=80000$ s is $Q=LATE_{H,eq}/N\approx1.3\times10^{25}$ erg, consistent with the energy budget of the Parker nanoflare model. 
 	%
-	\par We compute the peak heating rate per event in two different cases: 1) uniform heating rate such that $H_i=H_0$ for all $i$ and 2) $H_i$ chosen from a power-law distribution with index $\alpha$ where $\alpha=-1.5,-2.0,-2.5$. For the second case, it should be noted that, when $T_N$ is large, $N\sim20$ events, meaning a single run does not accurately represent the distribution of index $\alpha$. Thus, a sufficiently large number of runs, $N_{MC}$, are computed for each $T_N$ to ensure that the total number of events is $N_{tot}=N\times N_{MC}\sim10^4$ such that the distribution is well-represented. \autoref{fig:parameter_space} shows the parameter space we will explore. For each point in $(\Sigma,\alpha,b)$ space, the response to $\sim N_{tot}$ events for each waiting time $T_N$ will be computed.
+	\par Determining the heating frequency in active region cores will help to place constraints on the source(s) of heat in the corona. We define the heating frequency in terms of the waiting time, $T_N$, between successive heating events. Following \citet{cargill_active_2014}, the range of waiting times is $250\le T_N\le5000$ s in increments of 250 s, for a total of 20 different possible heating frequencies. Additionally, $T_N$ can be written as $T_N=(T-N\tau_H)/N$, where $T=80000$ s is the total simulation time. Note that because $T$ and $\tau_H$ are fixed, as $T_N$ increases, $N$ decreases. Correspondingly, $Q_i$, the energy injected per event, increases according to \autoref{eq:heating_rate_constraint} such that the total energy injected per run is constant, regardless of $T_N$.
 	%
 	\begin{figure}
 		\centering
@@ -91,21 +94,51 @@
 		\label{fig:heating_funcs}
 	\end{figure}
 	%
+	\par We compute the peak heating rate per event in two different cases: 1) uniform heating rate such that $H_i=H_0$ for all $i$ and 2) $H_i$ chosen from a power-law distribution with index $\alpha$ where $\alpha=-1.5,-2.0,-2.5$. For the second case, it should be noted that, when $T_N$ is large, $N\sim20$ events, meaning a single run does not accurately represent the distribution of index $\alpha$. Thus, a sufficiently large number of runs, $N_{MC}$, are computed for each $T_N$ to ensure that the total number of events is $N_{tot}=N\times N_{MC}\sim10^4$ such that the distribution is well-represented. \autoref{fig:parameter_space} shows the parameter space we will explore. For each point in $(\Sigma,\alpha,b)$ space, the response to $\sim N_{tot}$ events for each waiting time $T_N$ will be computed.
+	%
 	\par According to the nanoflare heating model of \citep{parker_nanoflares_1988}, turbulent loop footpoint motions twist and stress the field, leading to a buildup and subsequent release of energy. Following \citet{cargill_active_2014}, we let $Q_i\propto T_{N,i}^b$, where $Q_i,T_{N,i}$ are the total energy and waiting time following the $i$th event, respectively, and $b=1,2$. The reasoning for such an expression is as follows. Bursty, nanoflare heating is thought to arise from the stressing and subsequent relaxation of the coronal field. If a sufficient amount of time has elapsed since the last energy release event, the field will have had enough time to ``wind up'' such that the subsequent energy release is large. Conversely, if only a small amount of time has elapsed since the last event, the field will have not had time to become as stressed, resulting in a lower energy event. Thus, this scaling provides a way to incorporate a more realistic heating function into a hydrodynamic model which cannot self-consistently determine the heat input based on the evolving magnetic field. \autoref{fig:heating_funcs} shows the various heating functions used for several example $T_N$ values.
 	\section{Results}
+	\label{sec:results}
 	%
 	\hl{Details about EM curves and how fits are done}
 	%
 	\subsection{Electron and Ion Heating}
+	\label{subsec:electron_ion_heating}
+	%
 	\hl{EM plot, derivs plot, slope plot for both species}
 	%
+	%\begin{figure*}
+	%	\centering
+	%	\begin{minipage}[t]{0.4\textwidth}
+	%		\subfigure[]{%
+	%		\includegraphics[width=\columnwidth]{figures/heating_functions.pdf}
+	%		\label{fig:test3}}
+	%	\end{minipage}
+	%	%
+	%	\begin{minipage}[t]{0.55\textwidth}
+	%		\subfigure[]{%
+	%		\includegraphics[width=\columnwidth]{figures/heating_functions.pdf}
+	%		\label{fig:test1}}
+	%		%
+	%		\subfigure[]{%
+	%		\includegraphics[width=\columnwidth]{figures/heating_functions.pdf}
+	%		\label{fig:test2}}
+	%	\end{minipage}
+	%	\caption{A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption }
+	%\end{figure*}
+	%
+	%
 	\subsection{Single-fluid}
+	\label{subsec:single_heating}
+	%
 	\hl{EM plot, derivs plot, slope plot}
 	%
 	\section{Discussion}
+	\label{sec:discussion}
 	\hl{place histograms here maybe...}
 	%
 	\section{Conclusion}
+	\label{sec:conclusions}
 	%
 	%
 	%begin appendix
@@ -131,6 +164,7 @@
 		\par The volumetric heating rates, $E_{H,e}$ and $E_{H,i}$, are the primary degrees of freedom in our model. In the case of electron (ion) heating, $E_{H,i}(E_{H,e})=0$. $\bar{p}_e,\bar{p}_i$ and $\bar{T}_e,\bar{T}_i$ are the spatially-averaged coronal electron and ion pressures and temperatures, respectively and $\bar{n}$ is the spatially-averaged coronal number density. $\mathcal{R}_C=\bar{n}^2\Lambda(T)$ is the volumetric coronal radiative loss rate, where $\Lambda(\bar{T})$ is the radiative loss function, and $\mathcal{R}_{TR}=c_1\mathcal{R}_C$ is the radiative loss rate in the transition region where the calculation of $c_1$ is described in \citet{cargill_enthalpy-based_2012}. Additionally, $F_{e,0},F_{i,0}$ are the electron and ion conductive fluxes as computed at the base of the loop, respectively, and are calculated using the classical Spitzer formula with a flux limiter imposed to prevent runaway cooling at low densities. The Coulomb collision frequency, $\nu_{ei}$, is given by,
 		\begin{equation}
 			\nu_{ei} = \frac{16\sqrt{\pi}}{3}\frac{e^4}{m_em_i}\left(\frac{2k_B\bar{T}_e}{m_e}\right)^{-3/2}\bar{n}\ln{\Lambda},
+			\label{eq:col_freq}
 		\end{equation}
 		where $m_e,m_i$ are the electron and ion masses respectively and $\ln{\Lambda}$ is the Coulomb logarithm. Finally, $c_2=\bar{T}/T_a=0.6$, $c_3=T_0/T_a=0.9$, determined by static equilibrium, and $\xi=\bar{T}_e/\bar{T}_i$.
 		%
