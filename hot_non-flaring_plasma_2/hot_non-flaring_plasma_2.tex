@@ -48,7 +48,7 @@
 	%
 	\par The degree to which the ions or electrons are preferentially heated in the solar corona is unknown though it is often assumed that the electrons are the direct recipients of the prescribed heating function. However, it is also possible that the ions are preferentially heated; for instance, through ion-cyclotron wave resonances \citep{markovskii_intermittent_2004}. Ion cyclotron waves are excited by plasma instabilities in the lower corona. These waves then propagate upwards through the coronal plasma and wave particle interactions can occur for those ions whose gyrofrequencies have a resonance with the ion-cyclotron wave. Additionally, there is also evidence for ion heating via reconnection, both in laboratory plasmas and in particle-in-cell simulations \citep{ono_ion_1996,yoo_bulk_2014,drake_onset_2014}. Thus, ion heating in the solar corona should not be discounted as a possibility.
 	%
-	\par In our first paper, \citet{cargill_hot_2016}\citepalias[hereafter]{cargill_hot_2016}, we studied the effect of pulse duration, flux limiting, non-equilibrium ionization on hot emission from single nanoflares as well as nanoflare trains. In this second paper in our series on hot emission in active region cores, we will use an efficient two-fluid hydrodynamic model to explore the effect of electron and ion heating on nanoflare-heated loops. In particular, we will look at how the hot emission is affected by heating preferentially one species or the other as well as how this hot emission can vary with heating frequency and event amplitude power-law index. 
+	\par In our first paper, \citet{cargill_hot_2016}\citepalias[hereafter]{cargill_hot_2016}, we studied the effect of pulse duration, flux limiting, and non-equilibrium ionization on hot emission from single nanoflares as well as nanoflare trains. In this second paper in our series on hot emission in active region cores, we will use an efficient two-fluid hydrodynamic model to explore the effect of electron and ion heating on nanoflare-heated loops. In particular, we will look at how the hot emission is affected by heating preferentially one species or the other as well as how this hot emission can vary with heating frequency and event amplitude power-law index. 
 	\par\autoref{sec:methods} discusses the numerical model we have used to conduct this study and the parameter space we have explored. \autoref{sec:results} shows the resulting emission measure curves and slopes for the electron and ion heating cases as well as the equivalent single-fluid cases. In \autoref{sec:discussion}, we compare two-fluid and single-fluid cases for all heating functions and heating frequencies. Finally, \autoref{sec:conclusions} discusses the implications of two-fluid effects in the context of modelling impulsive heating and observing faint, hot emission, the so-called ``smoking gun'' of nanoflare heating.
 	%
 	\par\hl{Wouldn't be a bad idea to include summary of measured ``hotward'' emission slope values as is done in Bradshaw et al. (2013) for cool slopes}
@@ -115,31 +115,70 @@
 	%
 	\hl{EM plot, derivs plot, slope plot for both species}
 	%
-	%\begin{figure*}
-	%	\centering
-	%	\begin{minipage}[t]{0.4\textwidth}
-	%		\subfigure[]{%
-	%		\includegraphics[width=\columnwidth]{figures/heating_functions.pdf}
-	%		\label{fig:test3}}
-	%	\end{minipage}
-	%	%
-	%	\begin{minipage}[t]{0.55\textwidth}
-	%		\subfigure[]{%
-	%		\includegraphics[width=\columnwidth]{figures/heating_functions.pdf}
-	%		\label{fig:test1}}
-	%		%
-	%		\subfigure[]{%
-	%		\includegraphics[width=\columnwidth]{figures/heating_functions.pdf}
-	%		\label{fig:test2}}
-	%	\end{minipage}
-	%	\caption{A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption }
-	%\end{figure*}
+	\begin{figure*}
+		\centering
+		\begin{minipage}[c]{0.48\textwidth}
+			\subfigure{%
+			\includegraphics[width=\columnwidth]{figures/{ebtel_L40.0_tpulse100.0_alpha2.5-b1.0_electron_heating_dem}.pdf}
+			\label{fig:el_em_curves}}
+		\end{minipage}
+		%
+		\begin{minipage}[c]{0.48\textwidth}
+			\subfigure{%
+			\includegraphics[width=\columnwidth]{figures/{ebtel_L40.0_tpulse100.0_alpha2.5-b1.0_electron_heating_hs_compare}.pdf}
+			\label{fig:el_em_slopes}}
+			\subfigure{%
+			\includegraphics[width=\columnwidth]{figures/{ebtel_L40.0_tpulse100.0_alpha2.5-b1.0_electron_heating_dem_derivs}.pdf}
+			\label{fig:el_em_derivs}}
+		\end{minipage}
+		\caption{A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption }
+		\label{fig:el_em}
+	\end{figure*}
 	%
+	\begin{figure*}
+		\centering
+		\begin{minipage}[c]{0.48\textwidth}
+			\subfigure{%
+			\includegraphics[width=\columnwidth]{figures/{ebtel_L40.0_tpulse100.0_alpha2.5-b1.0_ion_heating_dem}.pdf}
+			\label{fig:ion_em_curves}}
+		\end{minipage}
+		%
+		\begin{minipage}[c]{0.48\textwidth}
+			\subfigure{%
+			\includegraphics[width=\columnwidth]{figures/{ebtel_L40.0_tpulse100.0_alpha2.5-b1.0_ion_heating_hs_compare}.pdf}
+			\label{fig:ion_em_slopes}}
+			\subfigure{%
+			\includegraphics[width=\columnwidth]{figures/{ebtel_L40.0_tpulse100.0_alpha2.5-b1.0_ion_heating_dem_derivs}.pdf}
+			\label{fig:ion_em_derivs}}
+		\end{minipage}
+		\caption{A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption }
+		\label{fig:ion_em}
+	\end{figure*}
 	%
 	\subsection{Single-fluid}
 	\label{subsec:single_heating}
 	%
 	\hl{EM plot, derivs plot, slope plot}
+	%
+	\begin{figure*}
+		\centering
+		\begin{minipage}[c]{0.48\textwidth}
+			\subfigure{%
+			\includegraphics[width=\columnwidth]{figures/{ebtel_L40.0_tpulse100.0_alpha2.5-b1.0_single_heating_dem}.pdf}
+			\label{fig:single_em_curves}}
+		\end{minipage}
+		%
+		\begin{minipage}[c]{0.48\textwidth}
+			\subfigure{%
+			\includegraphics[width=\columnwidth]{figures/{ebtel_L40.0_tpulse100.0_alpha2.5-b1.0_single_heating_hs_compare}.pdf}
+			\label{fig:single_em_slopes}}
+			\subfigure{%
+			\includegraphics[width=\columnwidth]{figures/{ebtel_L40.0_tpulse100.0_alpha2.5-b1.0_single_heating_dem_derivs}.pdf}
+			\label{fig:single_em_derivs}}
+		\end{minipage}
+		\caption{A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption }
+		\label{fig:single_em}
+	\end{figure*}
 	%
 	\section{Discussion}
 	\label{sec:discussion}
@@ -180,7 +219,7 @@
 	%
 	%
 	%Bibliography
-	\bibliography{references}
+	\bibliography{astrophys-abbrev.bib,references.bib}
 	\bibliographystyle{apj}
 	\clearpage
 \end{document}
