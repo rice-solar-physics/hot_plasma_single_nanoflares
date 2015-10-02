@@ -34,13 +34,15 @@
 	\section{Introduction}
 	\label{sec:intro}
 	%
+	\par\hl{TODO:Include/weave in paragraph about emission measure scaling; have completely neglected thus far; maybe split between intro and methods}
+	%
 	\par The nanoflare heating model, first proposed by \citet{parker_nanoflares_1988}, has become one of the most favored and contentious coronal heating models \citep{cargill_implications_1994,cargill_nanoflare_2004,klimchuk_solving_2006}. While many theoretical efforts \citep[e.g.][]{bradshaw_diagnosing_2012,reep_diagnosing_2013} have shown the feasability of nanoflares, the idea has long suffered from a lack observational evidence. The term \textit{nanoflare} has now become synonomous with impulsive heating in the energy range $10^{24}-10^{27}$ ergs, with no specific assumption as to what underlying physical mechanism is responsible. However, while we ascribe no particular source (e.g. wave versus reconnection) to this bursty energy release, its origin is almost certainly magnetic.
 	%
 	\par \citet{cargill_implications_1994,cargill_nanoflare_2004} have predicted that emission measure distributions resulting from nanoflare models should be wide and have a faint, high-temperature ($>4\times10^6$ K) component and thus a steep hotward slope. Unfortunately, observing this high-temperature emission is difficult and in some cases impossible. The reason for this difficulty is twofold. First, thermal conduction is a very efficient cooling mechanism at high temperatures and large spatial temperature gradients. When a loop is heated impulsively, its temperature rises quickly while the increase in density lags behind. By the time the density has increased sufficiently to allow for an appreciable amount of emission (recalling $\mathrm{EM}\propto n^2$), thermal conduction has cooled the loop far below its initial hot temperature, making a direct detection of $>10$ MK plasma very difficult. 
 	%
 	\par The second reason for this difficulty is non-equilibrium ionization. It is usually assumed that the observed line intensities, because of their known formation temperatures, are a direct indicator of the plasma temperature. However, if the heating timescale is shorter than the ionization timescale, the time it takes for the ion population to settle into the correct charge state, an equilibrium assumption can lead to a misdiagnosis of the plasma temperature. This makes signatures of hot, nanoflare-heated plasma especially difficult to detect if the high temperatures persist for less than the ionization timescale \citep{bradshaw_explosive_2006,bradshaw_what_2011,reale_nonequilibrium_2008}.
 	%
-	\par Despite these difficulties, various attempts have been made to observe this faint high-temperature emission. Using the broadband X-Ray Telescope (XRT) aboard the \textit{Hinode} spacecraft, \citet{schmelz_hinode_2009} and \citet{reale_evidence_2009} show a faint hot component in the reconstructed $\mathrm{DEM}$ curves. However, since the channels on such broadband instruments can often be polluted by low-temperature emission, the reliability of such measurements depends on the filtering technique used. Additionally, \citet{winebarger_defining_2012} showed that combinations of \textit{Hinode}/EIS and \textit{Hinode}/XRT measurements leave a ``blind spot'' in the $\mathrm{EM}-T$ space conincident with where evidence for nanoflare heating is likely to be found. 
+	\par Despite these difficulties, various attempts have been made to observe this faint high-temperature emission. Using the broadband X-Ray Telescope (XRT) aboard the \textit{Hinode} spacecraft, \citet{schmelz_hinode_2009} and \citet{reale_evidence_2009} show a faint hot component in the reconstructed $\mathrm{DEM}$ curves. However, since the channels on such broadband instruments can often be polluted by low-temperature emission, the reliability of such measurements depends on the filtering technique used. Additionally, \citet{winebarger_defining_2012} showed that combinations of measurements from EIS \citep{culhane_euv_2007} and XRT \citep{golub_x-ray_2007} on board \textit{Hinode} \citep{kosugi_hinode_2007} leave a ``blind spot'' in the $\mathrm{EM}-T$ space conincident with where evidence for nanoflare heating is likely to be found. 
 	%
 	\par Unambiguous observational evidence of nanoflare heating must come from pure spectroscopic measurements \citep[see][]{brosius_pervasive_2014}. Additionally, new instruments with higher spatial and temporal resolution, such as \textit{IRIS} \citep{de_pontieu_interface_2014} and the \textit{Hi-C} sounding rocket \citep{cirtain_energy_2013} have provided encouraging results for impulsive heating \citep{testa_observing_2013,testa_evidence_2014}. Future missions like the Marshall Grazing Incidence X-ray Spectrometer (MaGIXS) \citep{kobayashi_marshall_2011,winebarger_new_2014}, with a wavelength range of 6-24 \ang and a temperature range of $6.2<\log{T}<7.2$, aim to probe this previously poorly-resolved portion of the coronal spectrum in hopes of better quantifying the presence of faint, high-temperature plasma.
 	%
@@ -103,12 +105,18 @@
 	\subsection{Emission Measure Distributions}
 	\label{subsec:em_dist}
 	%
-	\hl{Maybe keep this section about how EM is constructed; perhaps not necessary}
+	\par In our 0D model, the emission measure is calculated using the familiar expression $\mathrm{EM}(T)=n^2(2L)$, where $L$ is the loop half-length. We consider a temperature range of $4.0\le\log{T}\le8.5$ with bin sizes of $\Delta\log{T}=0.01$. At each iteration $i$, the coronal temperature range $[T_0,T_a]$ is calculated from $\bar{T}_e$ (see \autoref{appendix}). For each bin that falls within $[T_0,T_a]$, $\bar{n}_i^2L$ is added to that bin, where $\bar{n}_i$ is the spatially-averaged number density at the $i$th iteration. After all iterations have completed, the emission measure in each bin is averaged over the entire simulation period. We do not attempt to apply an advanced forward modeling treatment here and instead reserve such an approach for a future paper. Thus, effects due to insufficient instrument sensitivity or non-equilibrium ionization are not included.
 	%
 	\section{Results}
 	\label{sec:results}
 	%
-	\hl{Details about EM curves and how fits are done}
+	\par For each species, power-law and wait-time index, $(\alpha,b)$, and waiting time $T_N$, $N_{MC}$ emission measure curves are calculated. Because drawing event amplitudes from a power-law distribution introduces random fluctuations into our model, we must be sure to account for the full range of effects due to the distribution. This is especially true in the low-frequency regime, when $T_N\ge\tau_{cool}$, and there are fewer events per run. In this case, one or two especially strong heating events can lead to an extremely enhanced hotward emission measure; conversely, a run with only small events will lead to a diminished hotward slope. Thus, the mean $\mathrm{EM}(T)$ curve of each set of $N_{MC}$ runs can be said to reasonably represent the expected hot emission for a given $T_N$.
+	%
+	\par To characterize the emission measure, we compute the slopes on both the cool and hot sides of the peak. To be consistent with past observational and computational studies of cool emission \citep[see][and references therein]{bradshaw_diagnosing_2012}, we fit the cool slope on the interval $[6.0,6.6]$ in $\log{T}$. Contrastingly, past studies of hot emission are far less abundant; thus, the region where $\log{EM(T)}$ is known to be linear is far less constrained. In order to best describe the steepness of the emission measure hotward of the peak, we choose to fit $\mathrm{EM}(T)$ between the temperature at which the emission measure is $99\%$ of the peak value and $92\%$ of the peak value. We have no physical reason for choosing these particular bounds, but note that on this interval, the mean hotward emission is reasonably well described by a linear relationship. Fitting too close to the wide peak leads to misleadingly shallow slopes while fitting too close to the steep drop near $\log{T}\sim7.5$ results in steep slopes not particularly representative of the hotward emission.
+	%
+	\par\hl{TODO:paragraph about derivatives?}
+	%
+	\par \autoref{fig:el_em} and \autoref{fig:ion_em} show the results of our emission measure study for the cases of electron heating and ion heating with $\alpha=-2.5,b=1$ for a loop half-length of $40$ Mm. The panels on the left show the mean $\mathrm{EM}(T)$ for all $T_N$, where the average is taken over all $N_{MC}$ runs. The blue (red) lines indicate the cool (hot) linear fits, where the slopes of the lines are the averages taken over all $N_{MC}$ runs. The top right...\hl{TODO:more descriptions of figures}
 	%
 	\subsection{Electron and Ion Heating}
 	\label{subsec:electron_ion_heating}
@@ -117,13 +125,13 @@
 	%
 	\begin{figure*}
 		\centering
-		\begin{minipage}[c]{0.48\textwidth}
+		\begin{minipage}[c]{0.49\textwidth}
 			\subfigure{%
 			\includegraphics[width=\columnwidth]{figures/{ebtel_L40.0_tpulse100.0_alpha2.5-b1.0_electron_heating_dem}.pdf}
 			\label{fig:el_em_curves}}
 		\end{minipage}
 		%
-		\begin{minipage}[c]{0.48\textwidth}
+		\begin{minipage}[c]{0.49\textwidth}
 			\subfigure{%
 			\includegraphics[width=\columnwidth]{figures/{ebtel_L40.0_tpulse100.0_alpha2.5-b1.0_electron_heating_hs_compare}.pdf}
 			\label{fig:el_em_slopes}}
@@ -131,19 +139,19 @@
 			\includegraphics[width=\columnwidth]{figures/{ebtel_L40.0_tpulse100.0_alpha2.5-b1.0_electron_heating_dem_derivs}.pdf}
 			\label{fig:el_em_derivs}}
 		\end{minipage}
-		\caption{A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption }
+		\caption{\hl{TODO: need caption describing figure.}}
 		\label{fig:el_em}
 	\end{figure*}
 	%
 	\begin{figure*}
 		\centering
-		\begin{minipage}[c]{0.48\textwidth}
+		\begin{minipage}[c]{0.49\textwidth}
 			\subfigure{%
 			\includegraphics[width=\columnwidth]{figures/{ebtel_L40.0_tpulse100.0_alpha2.5-b1.0_ion_heating_dem}.pdf}
 			\label{fig:ion_em_curves}}
 		\end{minipage}
 		%
-		\begin{minipage}[c]{0.48\textwidth}
+		\begin{minipage}[c]{0.49\textwidth}
 			\subfigure{%
 			\includegraphics[width=\columnwidth]{figures/{ebtel_L40.0_tpulse100.0_alpha2.5-b1.0_ion_heating_hs_compare}.pdf}
 			\label{fig:ion_em_slopes}}
@@ -151,7 +159,7 @@
 			\includegraphics[width=\columnwidth]{figures/{ebtel_L40.0_tpulse100.0_alpha2.5-b1.0_ion_heating_dem_derivs}.pdf}
 			\label{fig:ion_em_derivs}}
 		\end{minipage}
-		\caption{A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption }
+		\caption{Same as \autoref{fig:el_em}, but for the case in which all of the heating is given to the ions.}
 		\label{fig:ion_em}
 	\end{figure*}
 	%
@@ -176,7 +184,7 @@
 			\includegraphics[width=\columnwidth]{figures/{ebtel_L40.0_tpulse100.0_alpha2.5-b1.0_single_heating_dem_derivs}.pdf}
 			\label{fig:single_em_derivs}}
 		\end{minipage}
-		\caption{A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption A caption }
+		\caption{Same as \autoref{fig:el_em}, but for the single-fluid case in which electron-ion equilibrium is assumed.}
 		\label{fig:single_em}
 	\end{figure*}
 	%
@@ -187,6 +195,7 @@
 	\section{Conclusion}
 	\label{sec:conclusions}
 	%
+	\section*{Acknowledgment}
 	%
 	%begin appendix
 	\appendix
