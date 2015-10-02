@@ -6,7 +6,6 @@
 \usepackage[tight]{subfigure}
 \usepackage[breaklinks,colorlinks,citecolor=blue]{hyperref}
 \usepackage[all]{hypcap}
-\usepackage{cleveref}
 %use for editing/highlighting
 \usepackage{color,soul}
 
@@ -189,12 +188,35 @@
 	\subsection{Full Parameter Space Comparison}
 	\label{subsec:all_params}
 	%
+	\begin{figure*}
+		\centering
+		\begin{minipage}[c]{0.49\textwidth}
+			\subfigure{%
+			\includegraphics[width=\columnwidth]{figures/{el_cool_alpha_histo}.pdf}
+			\label{fig:el_cool_alpha_histo}}
+			\subfigure{%
+			\includegraphics[width=\columnwidth]{figures/{el_hot_tn_histo}.pdf}
+			\label{fig:el_hot_tn_histo}}
+		\end{minipage}
+		\begin{minipage}[c]{0.49\textwidth}
+			\subfigure{%
+			\includegraphics[width=\columnwidth]{figures/{ion_cool_alpha_histo}.pdf}
+			\label{fig:ion_cool_alpha_histo}}
+			\subfigure{%
+			\includegraphics[width=\columnwidth]{figures/{single_hot_tn_histo}.pdf}
+			\label{fig:single_cool_tn_histo}}
+		\end{minipage}
+			\caption{\hl{TODO:need caption}}
+			\label{fig:histos}
+	\end{figure*}
+	%
 	\section{Discussion}
 	\label{sec:discussion}
-	\hl{place histograms here maybe...}
+	\hl{Discuss results in previous sections; what does it mean, why do we care}
 	%
 	\section{Conclusion}
 	\label{sec:conclusions}
+	\hl{concluding remarks}
 	%
 	\section*{Acknowledgment}
 	%
