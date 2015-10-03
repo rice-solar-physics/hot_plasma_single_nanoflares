@@ -6,6 +6,7 @@
 \usepackage[tight]{subfigure}
 \usepackage[breaklinks,colorlinks,citecolor=blue]{hyperref}
 \usepackage[all]{hypcap}
+\usepackage[utf8]{inputenc} %force unicode in bibtex
 %use for editing/highlighting
 \usepackage{color,soul}
 
@@ -14,6 +15,7 @@
 \newcommand{\ang}{\AA~}
 \defcitealias{cargill_hot_2016}{Paper I}
 \renewcommand{\sectionautorefname}{Section}
+\renewcommand{\subsectionautorefname}{Subsection}
 
 \begin{document}
 	%Frontmatter
@@ -109,12 +111,12 @@
 	\section{Results}
 	\label{sec:results}
 	%
-	\subsection{Electron and Ion Heating}
-	\label{subsec:electron_ion_heating}
-	%
 	\par For each species, power-law and wait-time index, $(\alpha,b)$, and waiting time $T_N$, $N_{MC}$ emission measure curves are calculated. Because drawing event amplitudes from a power-law distribution introduces random fluctuations into our model, we must be sure to account for the full range of effects due to the distribution. This is especially true in the low-frequency regime, when $T_N\ge\tau_{cool}$, and there are fewer events per run. In this case, one or two especially strong heating events can lead to an extremely enhanced hotward emission measure; conversely, a run with only small events will lead to a diminished hotward slope. Thus, the mean $\mathrm{EM}(T)$ curve of each set of $N_{MC}$ runs can be said to reasonably represent the expected hot emission for a given $T_N$.
 	%
-	\par To characterize the emission measure, we compute the slopes on both the cool and hot sides of the peak. To be consistent with past observational and computational studies of cool emission \citep[see][and references therein]{bradshaw_diagnosing_2012}, we fit the cool slope on the interval $[6.0,6.6]$ in $\log{T}$. Contrastingly, past studies of hot emission are less abundant; thus, the region where $\log{EM(T)}$ is known to be linear is far less constrained. In order to best describe the steepness of the emission measure hotward of the peak, we choose to fit $\mathrm{EM}(T)$ between the temperature at which the emission measure is $99\%$ of the peak value and $92\%$ of the peak value. We have no physical reason for choosing these particular bounds, but note that on this interval, the mean hotward emission is reasonably well described by a linear relationship. Fitting too close to the wide peak leads to misleadingly shallow slopes while fitting too close to the steep drop near $\log{T}\sim7.5$ results in steep slopes not particularly representative of the hotward emission. We perform the fit using the Levenberg-Marquardt algorithm for least-squares curve fitting as implemented in the SciPy scientific Python package \citep{van_der_walt_numpy_2011}.
+	\par To characterize the emission measure, we compute the slopes on both the cool and hot sides of the peak. To be consistent with past observational and computational studies of cool emission \citep[see][and references therein]{bradshaw_diagnosing_2012}, we fit the cool slope on the interval $6.0\le\log{T}\le6.6$ in . Contrastingly, past studies of hot emission are less abundant; thus, the region where $\log{EM(T)}$ is known to be linear is far less constrained. In order to best describe the steepness of the emission measure hotward of the peak, we choose to fit $\mathrm{EM}(T)$ between the temperature at which the emission measure is $99\%$ of the peak value and $92\%$ of the peak value. We have no physical reason for choosing these particular bounds, but note that on this interval, the mean hotward emission is reasonably well described by a linear relationship. Fitting too close to the wide peak leads to misleadingly shallow slopes while fitting too close to the steep drop near $\log{T}\sim7.5$ results in steep slopes not particularly representative of the hotward emission. We perform the fit using the Levenberg-Marquardt algorithm for least-squares curve fitting as implemented in the SciPy scientific Python package \citep{van_der_walt_numpy_2011}.
+	%
+	\subsection{Electron and Ion Heating}
+	\label{subsec:electron_ion_heating}
 	%
 	\begin{figure*}
 		\centering
@@ -132,7 +134,7 @@
 			\includegraphics[width=\columnwidth]{figures/{ebtel_L40.0_tpulse100.0_alpha2.5-b1.0_electron_heating_dem_derivs}.pdf}
 			\label{fig:el_em_derivs}}
 		\end{minipage}
-		\caption{\hl{TODO: need caption describing figure.}}
+		\caption{$\alpha=-2.5,~b=1,~L=40$ Mm, electron heating. \textbf{Left:} $\log{\mathrm{EM}(T)}$ as a function of $\log{T}$ for all values of $T_N$. There is an artificial spacing of $\Delta\log{\mathrm{EM}}=0.2$ between each curve for aesthetic purposes. The bold blue (red) lines on either side of the peak show the linear fit to the cool (hot) emission. \textbf{Top right:} Average slopes from linear fit to all $N_{MC}$ curves as a function of $T_N$. The error bars indicate one standard deviation from the distribution of $N_{MC}$ fits. In the case of hot slopes, the absolute value is shown. \textbf{Bottom right:} Derivative of $\log{\mathrm{EM}}$ with respect to $\log{T}$. The legend is the same as the left panel.}
 		\label{fig:el_em}
 	\end{figure*}
 	%
@@ -156,14 +158,24 @@
 		\label{fig:ion_em}
 	\end{figure*}
 	%
-	\par \autoref{fig:el_em} and \autoref{fig:ion_em} show the results of our emission measure study for the cases of electron heating and ion heating with $\alpha=-2.5,b=1$ for a loop half-length of $40$ Mm, consistent with \citetalias{cargill_hot_2016}. The panels on the left show the mean $\mathrm{EM}(T)$ for all $T_N$, where the average is taken over all $N_{MC}$ runs. There is an artifical spacing of $\Delta\log{\mathrm{EM}}=0.2$ between each curve so that they can be easily distinguished from each other. The blue (red) lines indicate the cool (hot) linear fits, where the slopes of the lines are the averages taken over all $N_{MC}$ runs. The top right panels show these average slope values as a function of $T_N$. The error bars indicate one standard deviation as calculated from the distribution of all $N_{MC}$ runs. In the case of the hot slopes, the absolute value of the slope is shown since all of the hotward slopes are less than zero. 
+	\par \autoref{fig:el_em} and \autoref{fig:ion_em} show the results of our emission measure study for the cases of electron heating and ion heating with $\alpha=-2.5,b=1$ for a loop half-length of $40$ Mm, consistent with \citetalias{cargill_hot_2016}. The panels on the left show the mean $\mathrm{EM}(T)$ for all $T_N$, where the average is taken over all $N_{MC}$ runs. There is an artifical spacing of $\Delta\log{\mathrm{EM}}=0.2$ between each curve so that they can be easily distinguished from each other. The blue (red) lines indicate the cool (hot) linear fits, where the slopes of the lines are the averages taken over all $N_{MC}$ runs. We note that $\mathrm{EM}(T)$, for all $T_N$, peaks at approximately 4 MK$\approx10^{6.6}$ K, consistent with the constraints laid out in \autoref{subsec:params}. The top right panels show these average slope values as a function of $T_N$. The error bars indicate one standard deviation as calculated from the distribution of all $N_{MC}$ runs. In the case of the hot slopes, the absolute value of the slope is shown since all of the hotward slopes are less than zero. 
 	%
 	\par Lastly, the bottom right panels show the first derivative as a function of temperature, $d\log{\mathrm{EM}}/d\log{T}$, computed using central differences. The color scheme and line styles correspond to the emission mesure curves in the left panel. As in \citetalias{cargill_hot_2016}, we compute the derivative in an effort to better assess at what temperatures the emission measure is not well described by a linear fit.
+	%
+	\par We first briefly consider the calculated cool emission measure slopes. Looking at the top right panels of \ref{fig:el_em} and \ref{fig:ion_em}, we note that in the cases of electron and ion heating, the cool emission measure slopes are consistent with both observational and modelling studies of cool emission in active region cores, having values that fall within the range $2\le a\le5$ \citep[and references therein]{bradshaw_diagnosing_2012}. Furthermore, the cool slopes computed using our new modified EBTEL model, with a heating function of the form $Q\propto T_N$, are consistent with those values reported in \citet{cargill_active_2014} and show a moderate dependence on the waiting time $T_N$.  
+	%
+	\par Additionally, looking at the bottom right panels of \autoref{fig:el_em} and \autoref{fig:ion_em}, we see that, within the range $6.0\le\log{T}\le6.6$, a linear approximation of $\mathrm{EM}$ on a log-log scale is reasonable, where $2\lesssim d\log{\mathrm{EM}/d\log{T}}\lesssim3$. Comparing the cases of electron and ion heating for both the cool slopes and $d\log{\mathrm{EM}/d\log{T}}$ on $6.0\le\log{T}\le6.6$, there are no substantial differences for all values of $T_N$ considered.
+	%
+	\par This is not the case for the hot emission measure. Looking first at the case of electron heating in \autoref{fig:el_em}, we note that there is a pronounced ``hot shoulder'' in the emission measure (left panel) just above $10^7$ K for $T_N\gtrsim2000$. This feature is even more evident when looking at the derivative of $\mathrm{EM}(T)$ in the bottom right panel of \autoref{fig:el_em}. The peak between $10^7$ and $10^{7.5}$ K shows how $\mathrm{EM}(T)$ flattens out around $10^7$ K, indicating an enhanced hot emission measure. Considering the large range of values of $d\log{\mathrm{EM}}/\log{T}$ on the interval over which the linear fit was performed, we acknowledge that a simple linear fit is not a good description of the hot emission measure in the case of electron heating.
+	%
+	\par Contrastingly, we have not calculated the hot emission measure slopes for the case of ion heating. Looking at the left panel of \autoref{fig:ion_em}, for $T_N\gtrsim1000$ s, the $\mathrm{EM}(T)$ peak is wide with a steep drop near $10^7$ K. There is no substantial emission measure component above $10^7$ K and, consequently, no hot shoulder as in the electron heating case. Applying the fitting procedure outlined above to the hot emission in the case of ion heating yields meaningful results for only a few low values of $T_N$. Thus, like the case electron heating, the resulting hot emission measure from ion heating is not well described by a linear relationship in $\log{EM},\log{T}$. The lower right panel of \autoref{fig:ion_em} further highlights this by showing that around $10^7$ K, $d\log{\mathrm{EM}}/d\log{T}\to-\infty$.
 	%
 	\subsection{Single-fluid}
 	\label{subsec:single_heating}
 	%
-	\hl{Briefly describe in words the main results of the plots; say what the data is}
+	\par \autoref{fig:single_em} shows the same results as \autoref{fig:el_em} and \autoref{fig:ion_em}, but for the single-fluid case in which electron-ion equilibrium is assumed at all times. To compute these $\mathrm{EM}(T)$ curves, we have used the original, single-fluid EBTEL model as described in \citet{klimchuk_highly_2008,cargill_enthalpy-based_2012}. The equivalent parameter space that was investigated with the modified two-fluid EBTEL model is explored with the single-fluid EBTEL code as well.
+	%
+	\par We compute the hot and cool emission measure slopes in the same manner as the electron and ion heating cases. We first note that the cool emission measure slopes are comparable to those in both the electron and ion heating cases. In particular, we find $2\lesssim a\lesssim5$ for all values of $T_N$ as expected. Again, we confirm the validity of our linear fit to the cool emission by computing the derivative $d\log{\mathrm{EM}}/d\log{T}$ in the lower right panel of \autoref{fig:single_em}. For $T_N\gtrsim2000$ s, the slope is bounded between 2 and 3 on the interval $6.0\le\log{T}\le6.6$. 
 	%
 	\begin{figure*}
 		\centering
@@ -185,8 +197,14 @@
 		\label{fig:single_em}
 	\end{figure*}
 	%
+	\par The hot emission measure in the single-fluid case differs significantly from the two-fluid case. In contrast to the electron heating case in \autoref{fig:el_em}, the $\mathrm{EM}$ curves in the left panel of Fig. \autoref{fig:single_em} show no hot shoulder. This is further confirmed by the lower right panel; the derivative, in contrast to the electron heating case, shows no peak near $10^7$ K. For low $T_N$, $d\log{\mathrm{EM}}/d\log{T}$ is monotonically decreasing for $\log{T}\gtrsim6.6$. For $T_N\ge3000$ s, $d\log{\mathrm{EM}}/d\log{T}$ is relatively flat for $\log{T}\ge7.0$, indicating that a linear fit is a good description for the hot emission in this region. This is confirmed by noting the agreement between the fit lines and the $\mathrm{EM}(T)$ curves in the left panel.
+	%
+	\par Comparing the top right panels of \autoref{fig:single_em} and \autoref{fig:el_em} further highlights the enhanced hot emission in the electron case. For high $T_N$, the hot emission slope in the electron case converges to a value just above 3; the single-fluid case, the hot slope converges to approximately 4.5. Thus, while a linear fit is not a good descriptor of the hot emission in the case of electron heating, the slope still captures the enhanced hot shoulder relative to the weaker hot emission of the single-fluid case. Additionally, comparing the single-fluid case to the ion heating case in \autoref{fig:ion_em}, it is obvious that the single-fluid case shows a great deal more hot emission as the $\mathrm{EM}(T)$ curves in the left panel of \autoref{fig:single_em} extend well above $10^7$ K while those in the left panel of \autoref{fig:ion_em} show a steep cutoff at temperatures just above the peak.
+	%
 	\subsection{Full Parameter Space Comparison}
 	\label{subsec:all_params}
+	%
+	\par\hl{Histograms of cool (top row) and hot (bottom row) slopes for the entire parameter space as outlined in \autoref{fig:parameter_space}. The histograms in the top row are grouped by type of heating function such that any one curve contains all values of $T_N$, but represents only one combination $\alpha,b$. Histograms in the bottom...}
 	%
 	\begin{figure*}
 		\centering
@@ -206,7 +224,7 @@
 			\includegraphics[width=\columnwidth]{figures/{single_hot_tn_histo}.pdf}
 			\label{fig:single_cool_tn_histo}}
 		\end{minipage}
-			\caption{\hl{TODO:need caption}}
+			\caption{Clockwise from top left: cool slopes grouped by heating function for the electron heating case; cool slopes grouped by heating function for the ion heating case; hot slopes grouped by $T_N$ value for the single-fluid case; hot slopes grouped by $T_N$ for the electron heating case.}
 			\label{fig:histos}
 	\end{figure*}
 	%
@@ -220,6 +238,7 @@
 	%
 	\section*{Acknowledgment}
 	%
+	All of the data analysis shown in this work was carried out using the IPython system for interactive scientific computing in Python as well as the NumPy and Scipy numerical and scientific Python libraries \citep{perez_ipython:_2007,van_der_walt_numpy_2011}. All plots were produced using the Matplotlib graphics environment \citep{hunter_matplotlib:_2007}.
 	%begin appendix
 	\appendix
 	\section{}
@@ -231,7 +250,7 @@
 			%
 			\frac{d}{dt}\bar{p}_i &= -\frac{\gamma - 1}{L}(\psi_{TR} + \psi_C) + k_B\bar{n}\nu_{ei}(\bar{T}_e-\bar{T}_i) + (\gamma-1)\bar{E}_{H,i},\label{eq:press_i} \\[0.5em]
 			%
-			\frac{d}{dt}\bar{n} &= \frac{c_2(\gamma-1)}{c_3\gamma Lk_B\bar{T}_e}(\psi_{TR} - F_{e,0}-\mathcal{R}_{TR}), 	\label{eq:density}
+			\frac{d}{dt}\bar{n} &= \frac{c_2(\gamma-1)}{c_3\gamma Lk_B\bar{T}_e}(\psi_{TR} - F_{0,e}-\mathcal{R}_{TR}), 	\label{eq:density}
 		\end{align}
 		where 
 		\begin{align}
@@ -240,7 +259,7 @@
 		\end{align}
 		Additionally, \autoref{eq:press_e}, \autoref{eq:press_i}, and \autoref{eq:density} are closed by the equations of state $p_e=k_BnT_e$ and $p_i=k_BnT_i$. 
 		%
-		\par The volumetric heating rates, $E_{H,e}$ and $E_{H,i}$, are the primary degrees of freedom in our model. In the case of electron (ion) heating, $E_{H,i}(E_{H,e})=0$. $\bar{p}_e,\bar{p}_i$ and $\bar{T}_e,\bar{T}_i$ are the spatially-averaged coronal electron and ion pressures and temperatures, respectively and $\bar{n}$ is the spatially-averaged coronal number density. $\mathcal{R}_C=\bar{n}^2\Lambda(T)$ is the volumetric coronal radiative loss rate, where $\Lambda(\bar{T})$ is the radiative loss function, and $\mathcal{R}_{TR}=c_1\mathcal{R}_C$ is the radiative loss rate in the transition region where the calculation of $c_1$ is described in \citet{cargill_enthalpy-based_2012}. Additionally, $F_{e,0},F_{i,0}$ are the electron and ion conductive fluxes as computed at the base of the loop, respectively, and are calculated using the classical Spitzer formula with a flux limiter imposed to prevent runaway cooling at low densities. The Coulomb collision frequency, $\nu_{ei}$, is given by,
+		\par The volumetric heating rates, $E_{H,e}$ and $E_{H,i}$, are the primary degrees of freedom in our model. In the case of electron (ion) heating, $E_{H,i}(E_{H,e})=0$. $\bar{p}_e,\bar{p}_i$ and $\bar{T}_e,\bar{T}_i$ are the spatially-averaged coronal electron and ion pressures and temperatures, respectively and $\bar{n}$ is the spatially-averaged coronal number density. $\mathcal{R}_C=\bar{n}^2\Lambda(T)$ is the volumetric coronal radiative loss rate, where $\Lambda(\bar{T})$ is the radiative loss function, and $\mathcal{R}_{TR}=c_1\mathcal{R}_C$ is the radiative loss rate in the transition region where the calculation of $c_1$ is described in \citet{cargill_enthalpy-based_2012}. Additionally, $F_{0,e},F_{0,i}$ are the electron and ion conductive fluxes as computed at the base of the loop, respectively, and are calculated using the classical Spitzer formula with a flux limiter imposed to prevent runaway cooling at low densities. The Coulomb collision frequency, $\nu_{ei}$, is given by,
 		\begin{equation}
 			\nu_{ei} = \frac{16\sqrt{\pi}}{3}\frac{e^4}{m_em_i}\left(\frac{2k_B\bar{T}_e}{m_e}\right)^{-3/2}\bar{n}\ln{\Lambda},
 			\label{eq:col_freq}
