@@ -81,11 +81,18 @@ De~Pontieu, B., Title, A.~M., Lemen, J.~R., {et~al.} 2014, Solar Physics, 289,
 Drake, J.~F., \& Swisdak, M. 2014, Physics of Plasmas (1994-present), 21,
   072903
 
+\bibitem[{Freedman \& Diaconis(1981)}]{freedman_histogram_1981}
+Freedman, D., \& Diaconis, P. 1981, Zeitschrift für Wahrscheinlichkeitstheorie
+  und Verwandte Gebiete, 57, 453
+
 \bibitem[{Golub {et~al.}(2007)Golub, Deluca, Austin, Bookbinder, Caldwell,
   Cheimets, Cirtain, Cosmo, Reid, Sette, Weber, Sakao, Kano, Shibasaki, Hara,
   Tsuneta, Kumagai, Tamura, Shimojo, McCracken, Carpenter, Haight, Siler,
   Wright, Tucker, Rutledge, Barbera, Peres, \& Varisco}]{golub_x-ray_2007}
 Golub, L., Deluca, E., Austin, G., {et~al.} 2007, Solar Physics, 243, 63
+
+\bibitem[{Hunter(2007)}]{hunter_matplotlib:_2007}
+Hunter, J.~D. 2007, Computing in Science \& Engineering, 9, 90
 
 \bibitem[{Klimchuk(2006)}]{klimchuk_solving_2006}
 Klimchuk, J.~A. 2006, Solar Physics, 234, 41
@@ -118,6 +125,9 @@ Ono, Y., Yamada, M., Akao, T., Tajima, T., \& Matsumoto, R. 1996, Physical
 
 \bibitem[{Parker(1988)}]{parker_nanoflares_1988}
 Parker, E.~N. 1988, The Astrophysical Journal, 330, 474
+
+\bibitem[{Pérez \& Granger(2007)}]{perez_ipython:_2007}
+Pérez, F., \& Granger, B.~E. 2007, Computing in Science \& Engineering, 9, 21
 
 \bibitem[{Reale \& Orlando(2008)}]{reale_nonequilibrium_2008}
 Reale, F., \& Orlando, S. 2008, The Astrophysical Journal, 684, 715
