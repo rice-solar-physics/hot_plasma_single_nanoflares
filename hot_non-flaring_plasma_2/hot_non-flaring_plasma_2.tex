@@ -1,4 +1,4 @@
-\documentclass[tighten,apj]{emulateapj}
+\documentclass[apj]{emulateapj}
 
 %Specify packages
 \usepackage{amsmath}
@@ -252,9 +252,9 @@
 	%
 	\par However, in the case of ion heating, in order for the emission measure to see the full range of temperatures resulting from the heating and conductive cooling by the ions, $\bar{T}_e=\bar{T}_i$ would have to hold for this entire phase. Instead, as the ions are impulsively heated, the electrons remain at a relatively low temperature, coupled only weakly to the ions because the loop has not yet begun to fill. As the loop fills, the electrons come into equilibrium with the ions, but because thermal conduction is such an efficient cooling mechanism in the corona, the ions have now cooled far below their temperature to which they were initially heated. The result is a severely truncated hot emission measure distribution as seen in \autoref{fig:ion_em}. Additionally, this affect is exacerbated at high $T_N$. At low $T_N$, the heating is essentially steady, meaning that the loop has no time to drain or cool between heating events. This keeps the density at a constant, near-equilibrium value which inhibits thermal conduction and keeps the electrons and ions in equilibrium. However, for larger values of $T_N$, the loop is allowed to drain significantly between each pulse. Thus, at the start of each heating event, the density is low, allowing the species to very quickly evolve out of equilibrium. 
 	%
-	\par\hl{section on item three; maybe appeal to Paper I with expected slope values from conductive cooling}
+	\par To address \autoref{itm:deriv} and \autoref{itm:histos}, we refer to our discussion in the introduction of \citetalias{cargill_hot_2016}. Using $\mathrm{EM}\sim n^2\tau_{cool}$ and assuming constant pressure (such that $n\propto T^{-1}$), in the free-streaming regime, $\mathrm{EM}\propto T^{-5/2}$, and in the regime described by classical Spitzer conduction, $\mathrm{EM}\propto T^{-11/2}$. Thus, at high temperatures where the free-streaming limit is imposed to prevent runaway cooling by thermal conduction, we expect a much more shallow emission measure slope than at slightly lower temperatures where Spitzer conduction dominates.
 	%
-	\par\hl{section on item four; potential pitfalls of using single-fluid model to study hot emission}
+	\par Significant emission in the free-streaming regime is produced in the case of electron heating as evidenced by the hot shoulder in the emission measure curves of \autoref{fig:el_em}. The derivative in the lower-left panel also clearly shows the slope varying between roughly 5.5 and 2.5 as denoted by the two lower black dotted lines. Fitting a single slope to this entire range, we would expect the resulting slope to be between 2.5 and 5.5 which is indeed the case as evidenced by the bottom-left panel of \autoref{fig:histos}. In the single-fluid case, the free-streaming limit is not reached because the heating is essentially equally partitioned between the electrons and ions, resulting in a steeper distribution described by a single power-law. In the case of ion heating, the emission measure never sees this temperature regime because the collisional coupling timescale is significantly longer than the heating timescale.
 	%
 	\section{Conclusions}
 	\label{sec:conclusions}
