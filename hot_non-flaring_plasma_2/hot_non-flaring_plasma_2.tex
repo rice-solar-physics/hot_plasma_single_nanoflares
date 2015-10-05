@@ -204,7 +204,7 @@
 	\subsection{Full Parameter Space Comparison}
 	\label{subsec:all_params}
 	%
-	\par\hl{Histograms of cool (top row) and hot (bottom row) slopes for the entire parameter space as outlined in \autoref{fig:parameter_space}. The histograms in the top row are grouped by type of heating function such that any one curve contains all values of $T_N$, but represents only one combination $\alpha,b$. Histograms in the bottom...}
+	\par To compare the effects of varying $\alpha$, $b$, and $T_N$ for each species (i.e. electron, ion, single-fluid), we construct histograms of hot and cool emission measure slopes for each parameter space point. Recall that in the case where the heating event amplitudes are non-uniform, we have $N_{MC}$ emission measure slopes so as to properly account for the statistical spread in hot emission measure slopes due to power-law distributions.
 	%
 	\begin{figure*}
 		\centering
@@ -224,9 +224,11 @@
 			\includegraphics[width=\columnwidth]{figures/{single_hot_tn_histo}.pdf}
 			\label{fig:single_cool_tn_histo}}
 		\end{minipage}
-			\caption{Clockwise from top left: cool slopes grouped by heating function for the electron heating case; cool slopes grouped by heating function for the ion heating case; hot slopes grouped by $T_N$ value for the single-fluid case; hot slopes grouped by $T_N$ for the electron heating case.}
+			\caption{Histograms of emission measure slopes from the entire parameter space as described in \autoref{fig:parameter_space}. Clockwise from top left: cool slopes grouped by heating function for the electron heating case; cool slopes grouped by heating function for the ion heating case; hot slopes grouped by $T_N$ value for the single-fluid case; hot slopes grouped by $T_N$ for the electron heating case. In the cases where the slopes are grouped by $T_N$, only $T_N=1000,2000,3000,4000,5000$ s are shown for aesthetic purposes.}
 			\label{fig:histos}
 	\end{figure*}
+	%
+	\par As seen in \autoref{fig:histos}, these histograms, two (i.e. hot and cool slopes) per species, are constructed in one of two ways: each distinct histogram (denoted by linestyle and/or color) is either representative of a distinct heating function (e.g. top row of \autoref{fig:histos}) or a distinct value of $T_N$ (e.g. bottom row of \autoref{fig:histos}). In the four panels of \autoref{fig:histos}, we choose to separate the cool emission measure slopes by type of heating function and the hot emission measure slopes by $T_N$. This means, for example, that the dot-dashed blue $\alpha=-1.5,b=2$ histogram in the upper left panel of \autoref{fig:histos} encapsulates cool emission measure slopes for $250\le T_N\le5000$ s while the solid blue $T_N=2000$ s histogram in the lower left panel includes emission measure slopes for all 10 types of heating functions (as listed in \autoref{fig:parameter_space} and the legend in the upper left panel of \autoref{fig:histos}). All histograms are normalized such that for each distribution $P(x)$, $\int_{-\infty}^{\infty}\mathrm{d}x~P(x)=1$.
 	%
 	\section{Discussion}
 	\label{sec:discussion}
