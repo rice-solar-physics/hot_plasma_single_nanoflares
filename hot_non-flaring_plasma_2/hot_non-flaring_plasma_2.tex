@@ -2,7 +2,8 @@
 
 %Specify packages
 \usepackage{amsmath}
-%\usepackage[caption=false]{subfig}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
 \usepackage[tight]{subfigure}
 \usepackage[breaklinks,colorlinks,citecolor=blue]{hyperref}
 \usepackage[all]{hypcap}
@@ -19,6 +20,10 @@
 \renewcommand{\subsectionautorefname}{Subsection}
 %Set options for list spacing
 \setenumerate{noitemsep}
+%Set tikz options
+\tikzstyle{box} = [rectangle, rounded corners, text centered, draw=black]
+\tikzstyle{ghost} = [rectangle, rounded corners, text centered, draw=white]
+\tikzstyle{arrow} = [thick, ->, >=stealth]
 
 \begin{document}
 	%Frontmatter
@@ -38,7 +43,7 @@
 	\section{Introduction}
 	\label{sec:intro}
 	%
-	\par The nanoflare heating model, first proposed by \citet{parker_nanoflares_1988}, has become one of the most favored and contentious coronal heating models \citep{cargill_implications_1994,cargill_nanoflare_2004,klimchuk_solving_2006}. While many theoretical efforts \citep[e.g.][]{bradshaw_diagnosing_2012,reep_diagnosing_2013,cargill_active_2014} have shown the feasability of nanoflares, the idea has long suffered from a lack observational evidence. The term \textit{nanoflare} has now become synonomous with impulsive heating in the energy range $10^{24}-10^{27}$ ergs, with no specific assumption as to what underlying physical mechanism is responsible. However, while we ascribe no particular source (e.g. waves versus reconnection) to this bursty energy release, its origin is almost certainly magnetic.
+	\par The nanoflare heating model, first proposed by \citet{parker_nanoflares_1988}, has become one of the most favored and contentious coronal heating models \citep{cargill_implications_1994,cargill_nanoflare_2004,klimchuk_solving_2006}. While many theoretical efforts \citep[e.g.][]{bradshaw_diagnosing_2012,reep_diagnosing_2013,cargill_active_2014} have shown the feasability of nanoflares, the idea has long suffered from a lack observational evidence. The term \textit{nanoflare} has now become synonomous with impulsive heating in the energy range $10^{24}-10^{27}$ erg, with no specific assumption as to what underlying physical mechanism is responsible. However, while we ascribe no particular source (e.g. waves versus reconnection) to this bursty energy release, its origin is almost certainly magnetic.
 	%
 	\par \citet{cargill_implications_1994,cargill_nanoflare_2004} have predicted that emission measure distributions resulting from nanoflare models should be wide and have a faint, high-temperature (8-10 MK) component and thus a steep hotward slope, the so-called ``smoking gun'' of nanoflare heating. Unfortunately, observing this high-temperature emission is difficult and in some cases impossible. The reason for this difficulty is twofold. First, thermal conduction is a very efficient cooling mechanism at high temperatures and large spatial temperature gradients. When a loop is heated impulsively, its temperature rises quickly while the increase in density lags behind. By the time the density has increased sufficiently to allow for an appreciable amount of emission (recalling $\mathrm{EM}\propto n^2$), thermal conduction has cooled the loop far below its initial hot temperature, making a direct detection of $\sim10$ MK plasma very difficult. 
 	%
@@ -63,18 +68,18 @@
 	\subsection{Numerical Model}
 	\label{subsec:numerics}
 	%
-	\par 1D hydrodynamic models are excellent tools for computing field-aligned quantities in coronal loops. However, because of the small grid sizes needed to resolve the transition region and consequently small timesteps needed to resolve thermal conduction, the use of such models in large parameter sweeps is made impractical by long computational runtimes \citep{bradshaw_influence_2013}. Thus, in our numerical study, we will use a modified form of the popular 0D enthalpy-based thermal evolution of loops (EBTEL) model \citep{klimchuk_highly_2008,cargill_enthalpy-based_2012,cargill_enthalpy-based_2012-1,cargill_modelling_2015} which computes time-dependent spatially-averaged loop quantities and has been successfully benchmarked against the 1D hydrodynamic HYDRAD code \citep{bradshaw_influence_2013}.
+	\par 1D hydrodynamic models are excellent tools for computing field-aligned quantities in coronal loops. However, because of the small cell sizes needed to resolve the transition region and consequently small timesteps demanded by thermal conduction, the use of such models in large parameter sweeps is made impractical by long computational runtimes \citep{bradshaw_influence_2013}. Thus, in our numerical study, we use a modified form of the popular 0D enthalpy-based thermal evolution of loops (EBTEL) model \citep{klimchuk_highly_2008,cargill_enthalpy-based_2012,cargill_enthalpy-based_2012-1,cargill_modelling_2015}. This model, which has been successfully benchmarked against the 1D hydrodynamic HYDRAD code of \citet{bradshaw_influence_2013}, computes time-dependent spatially-averaged loop quantities with very low computational overhead and as such is ideal for large parameter space investigations.
 	%
 	\par We have modified the usual EBTEL equations \citep[see][]{cargill_enthalpy-based_2012} to treat the evolution of the electron and ion populations separately while maintaining the assumption of quasi-neutrality, $n_e=n_i=n$. This amounts to computing spatial averages of the two-fluid hydrodynamic equations over both the transition region and corona. We will reserve a full discussion of this modified EBTEL model for a future paper. The relevant equations can be found in \autoref{appendix}.  
 	%%
 	\subsection{Parameter Space}
 	\label{subsec:params}
 	%
-	\par We define our heating function in terms of a series of discrete heating events plus a static background heating rate to ensure that the loop does not drop to unphysically low temperatures and densities between events. All events are modeled as triangular pulses of fixed duration $\tau_H=100$ s. Thus, for loop length $L$ and cross-sectional area $A$, the total energy per event is $Q_i=LAH_i\tau_H/2$, where $H_i$ is the heating rate amplitude for the $i$th event. Each run will consist of $N$ heating events, with peak amplitude $H_i$ and a steady background value of $H_b=3.4\times10^{-6}$ erg cm$^{-3}$ s$^{-1}$.
+	\par We define our heating function in terms of a series of discrete heating events plus a static background heating rate to ensure that the loop does not drop to unphysically low temperatures and densities between events. All events are modeled as triangular pulses of fixed duration $\tau_H=100$ s. Thus, for loop half-length $L$ and cross-sectional area $A$, the total energy per event is $Q_i=LAH_i\tau_H/2$, where $H_i$ is the heating rate amplitude of event $i$. Each run will consist of $N$ heating events, each with peak amplitude $H_i$, and a steady background value of $H_b=3.4\times10^{-6}$ erg cm$^{-3}$ s$^{-1}$.
 	%
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.6\columnwidth]{figures/parameter_space.pdf}
+		\include{parameter_space_graphic}
 		\caption{Total Parameter space covered. $\Sigma$ indicates the species that is heated, where ``single'' indicates a single-fluid model. $\alpha$ is the power-law index and $b$ indicates the scaling in the relationship $Q\propto T_N^b$, where $b=0$ corresponds to the case where $T_N$ and the event energy are independent. Note that $(3~\alpha~\mathrm{values})\times(3~b~\mathrm{values})+\mathrm{uniform~heating}=$ 10 different types of heating functions.}
 		\label{fig:parameter_space}
 	\end{figure}
@@ -84,7 +89,7 @@
 		\label{eq:heating_rate_est}
 		E_{H,eq} \approx \frac{\kappa_0T_{peak}^{7/2}}{L^2},
 	\end{equation}
-	where $\kappa_0\approx10^{-6}$. $E_{H,eq}$ can be interpreted as a time-averaged volumetric heating rate. Thus, to maintain an emission measure peaked about $T_{peak}$, for triangular pulses, the individual heating rates are constrained by 
+	where $\kappa_0\approx10^{-6}~\mathrm{erg}~\mathrm{K}^{-7/2}~\mathrm{cm}^{-1}~\mathrm{s}^{-1}$. $E_{H,eq}$ can be interpreted as a time-averaged volumetric heating rate. Thus, to maintain an emission measure peaked about $T_{peak}$, for triangular pulses, the individual heating rates are constrained by 
 	\begin{equation}
 		\label{eq:heating_rate_constraint}
 		E_{H,eq} = \frac{1}{T}\sum_{i=1}^N\int_{t_i}^{t_i+\tau_H}\mathrm{d}t~h_i(t) = \frac{\tau_H}{2T}\sum_{i=1}^NH_i.
