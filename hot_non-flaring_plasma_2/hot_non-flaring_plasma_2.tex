@@ -55,7 +55,7 @@
 	%
 	\par One strategy for constraining the nanoflare model is analysis of modelled and observed emission measure distributions for signatures of impulsive heating in active region cores. As with cool emission, hot emission is also often characterized by a power-law relation of the form $\mathrm{EM}\propto T^{-b}$. Typically, this power-law fit to the emission measure is done ``hotward'' of the peak, usually in the range $6.6\lesssim\log{T}\lesssim7.2$. However, measured values of these hotward slopes are poorly constrained due to both the magnitude of emission and the lack of available spectroscopic data in this temperature range. \citet{warren_systematic_2012}, using spectral measurements from EIS, provided hotward fits for $\mathrm{EM}$ reconstructions for a large number of active regions. All measured slopes fell in the range $6.1<b<10.3$, with large uncertainties on each hotward fit.
 	%
-	\par An often overlooked consequence of impulsive heating in the corona is electron-ion non-equilibrium. In a fully-ionized hydrogen plasma like the solar corona, interactions between electrons and ions are governed by binary Coulomb collisions. For $n\sim10^8~\mathrm{cm}^{-3}$ and $T\sim10^7~\mathrm{K}$, parameters typical of nanoflare heating, the collisional timescale, $\tau_{ei}=1/\nu_{ei}$, where $\nu_{ei}$ is the Coulomb collision frequency (see \autoref{eq:col_freq}) can be estimated as $\tau_{ei}\approx8000$ s. Thus, any heating that occurs on a timescale less than 8000 s, such as a nanoflare with a durration of $\tau_H\le100$ s, will result in electron-ion non-equilibrium. Chromospheric evaporation, the response from the transition region to the strong coronal heat flux, does lead to an increase in $n$ and thus a decrease in $\tau_{ei}$. However, we maintain that during this initial phase of impulsive heating, $\tau_{ei}\gg\tau_H$ still holds, with 8000 s being an approximate upper bound on $\tau_{ei}$. 
+	\par An often overlooked consequence of impulsive heating in the corona is electron-ion non-equilibrium. In a fully-ionized hydrogen plasma like the solar corona, interactions between electrons and ions are governed by binary Coulomb collisions. For $n\sim10^8~\mathrm{cm}^{-3}$ and $T\sim10^7~\mathrm{K}$, parameters typical of nanoflare heating, the collisional timescale, $\tau_{ei}=1/\nu_{ei}$, where $\nu_{ei}$ is the Coulomb collision frequency (see \autoref{eq:col_freq}) can be estimated as $\tau_{ei}\approx8000$ s. Thus, any heating that occurs on a timescale less than 8000 s, such as a nanoflare with a duration of $\tau_H\le100$ s, will result in electron-ion non-equilibrium. Chromospheric evaporation, the response from the transition region to the strong coronal heat flux, does lead to an increase in $n$ and thus a decrease in $\tau_{ei}$. However, we maintain that during this initial phase of impulsive heating, $\tau_{ei}\gg\tau_H$ still holds, with 8000 s being an approximate upper bound on $\tau_{ei}$. 
 	%
 	\par Additionally, while it is often assumed that the electrons are the direct recipients of the prescribed heating function, the degree to which the ions or electrons are preferentially heated in the solar corona is unknown. Thus, it is possible that the ions are preferentially heated, for instance, through ion-cyclotron wave resonances \citep{markovskii_intermittent_2004}. Ion cyclotron waves are excited by plasma instabilities in the lower corona. These waves then propagate upwards through the coronal plasma and wave particle interactions can occur for those ions whose gyrofrequencies have a resonance with the ion-cyclotron wave. Additionally, there is also evidence for ion heating via reconnection, both in laboratory plasmas and in particle-in-cell simulations \citep{ono_ion_1996,yoo_bulk_2014,drake_onset_2014}. Thus, ion heating in the solar corona should not be discounted as a possibility.
 	%
@@ -206,6 +206,39 @@
 		\caption{Same as \autoref{fig:el_em}, but for the single-fluid case in which electron-ion equilibrium is assumed.}
 		\label{fig:single_em}
 	\end{figure*}
+	%
+	\subsection{Non-equilibrium Ionization Effects}
+	\label{subsec:non-eq_ion}
+	%
+	\begin{figure*}
+		\centering
+		\begin{minipage}[c]{0.49\textwidth}
+			\subfigure{%
+			\includegraphics[width=\columnwidth]{figures/{teff_electron_em}.pdf}
+			\label{fig:teff_el_em}}
+			\subfigure{%
+			\includegraphics[width=\columnwidth]{figures/{teff_ion_em}.pdf}
+			\label{fig:teff_ion_em}}
+			\subfigure{%
+			\includegraphics[width=\columnwidth]{figures/{teff_single_em}.pdf}
+			\label{fig:teff_single_em}}
+		\end{minipage}
+		\begin{minipage}[c]{0.49\textwidth}
+			\subfigure{%
+			\includegraphics[width=\columnwidth]{figures/{teff_electron_derivs}.pdf}
+			\label{fig:teff_el_derivs}}
+			\subfigure{%
+			\includegraphics[width=\columnwidth]{figures/{teff_ion_derivs}.pdf}
+			\label{fig:teff_ion_derivs}}
+			\subfigure{%
+			\includegraphics[width=\columnwidth]{figures/{teff_single_derivs}.pdf}
+			\label{fig:teff_single_derivs}}
+		\end{minipage}
+			\caption{Non-equilibrium ionization $\mathrm{EM}$ (\textbf{left column}) and  $d\log{\mathrm{EM}}/d\log{T}$ (\textbf{right column}) comparisons for electron heating (\textbf{top row}), ion heating (\textbf{middle row}), and the single-fluid case (\textbf{bottom row}). In all cases, $L=40$ Mm, $\alpha=-2.5$, $\beta=1$, and $T_N=5000$ s. The fits and derivatives are all calculated in the same manner as \autoref{fig:el_em}, \autoref{fig:ion_em}, and \autoref{fig:single_em}.}
+			\label{fig:teff_test_case}
+	\end{figure*}
+	%
+	\par\hl{Discussion of non-eq. ionization test cases.}
 	%
 	\subsection{Full Parameter Space Comparison}
 	\label{subsec:all_params}
