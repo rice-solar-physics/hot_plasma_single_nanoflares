@@ -288,7 +288,7 @@
 		\item Cool emission measure slopes resulting from electron and ion heating are very similar and are well described by $\mathrm{EM}\propto T^a$. As noted in \citet{cargill_active_2014}, using the relation $Q\propto T_N^{\beta}$ yields $2\lesssim a\lesssim5$, consistent with observations.\label{itm:cool}
 		\item Hot emission from electron heating results in an enhanced hot shoulder while the equivalent ion heating cases show a relatively flat peak and a steep dropoff near $10^7$ K. This effect is exacerbated as $T_N$ increases.\label{itm:hot}
 		\item Hot emission due to both electron and ion heating is poorly described by the scaling $\mathrm{EM}\propto T^{-b}$. In the former, this is due to the flat hot shoulder between $10^7$ and $10^{7.5}$ K. In the latter case, the relatively flat peak and steep drop off near $10^7$ K do not allow for a power-law description of the hot emission.\label{itm:deriv}
-		\item Single-fluid models predict less hot-emission than two-fluid models in which only the electrons are heated. In particular, for $T_N\ge4000$ s, our modified two-fluid EBTEL model predicts $3\le b\le3.5$ while the original single-fluid EBTEL model predicts $b\sim4.5$.\label{itm:histos}
+		\item Using a linear fit to characterize the hot side of the $\mathrm{EM}$ distribution, Single-fluid models predict less hot-emission than two-fluid models in which only the electrons are heated. In particular, for $T_N\ge4000$ s, our modified two-fluid EBTEL model predicts $3\le b\le3.5$ while the original single-fluid EBTEL model predicts $b\sim4.5$.\label{itm:histos}
 		\item Including NEI does not impact the cool emission measure slope. In the case of electron heating and the single-fluid case, NEI enhances the mid-range hot $\mathrm{EM}$, but leads to a lower temperature cutoff. The emission measure distribution in the case of ion heating is unaffected. \label{itm:nei}
 	\end{enumerate}
 	%
@@ -306,6 +306,18 @@
 	\par However, in the case of ion heating, in order for the emission measure to see the full range of temperatures resulting from the heating and conductive cooling by the ions, $\bar{T}_e=\bar{T}_i$ would have to hold for this entire phase. Instead, as the ions are impulsively heated, the electrons remain at a relatively low temperature, coupled only weakly to the ions because the loop has only just begun to fill. As the coronal density increases, the electrons come into equilibrium with the ions, but because thermal conduction is such an efficient cooling mechanism in the corona, the ions have now cooled far below the temperature to which they were initially heated. 
 	\par This scenario is clearly illustrated by \autoref{fig:ion_ts}. In this test case, we have impulsively heated the ions with a triangular pulse lasting 100 s with total energy $10^{24}$ erg. In the top panel, we see that by the time the electrons come into equilibrium with the ions, the ions have cooled well below 10 MK and the loop has just begun to fill. Additionally, the bottom panel shows that during the period in which the ions are at their hottest temperatures, $\tau_{C,i}\ll\tau_{ei}$, where $\tau_{C,i}$ is the ion thermal conduction timescale. Thus, while they are being heated, the ions are giving up nearly all of their energy to thermal conduction before they reach equilibrium with the electrons.
 	\par The result is a severely truncated hot emission measure distribution as seen in \autoref{fig:ion_em}. Additionally, this effect is exacerbated at long $T_N$. For short $T_N$, the heating is essentially steady, meaning that the loop has little to no time to drain or cool between heating events. This keeps the density at a roughly constant, near-equilibrium value which inhibits rapid heating to high temperatures and keeps the electrons and ions in equilibrium. However, for longer $T_N$, the loop is allowed to drain significantly between each pulse. Thus, at the start of each heating event, the density is low, allowing the species to very quickly evolve out of equilibrium. 
+	%
+	\begin{figure}
+		\centering
+		\subfigure{%
+		\includegraphics[width=\columnwidth]{figures/{electron_ts_compare}.pdf}
+		\label{fig:electron_ts}}
+		\subfigure{%
+		\includegraphics[width=\columnwidth]{figures/{electron_single_nt_compare}.pdf}
+		\label{fig:electron_single_nt}}
+		\caption{\textbf{Top:} Comparison between Coulomb coupling timescale $\tau_{ei}$ and electron thermal conduction timescale $\tau_{C,e}$ for the single-pulse example shown in the top row of \autoref{fig:teff_test_case}. The vertical dotted line marks the end of the heating period. \textbf{Bottom:} $n-T$ state space diagram for the single-pulse examples in the first (electron heating) and third (single-fluid) rows of \autoref{fig:teff_test_case}.}
+		\label{fig:hp_em}
+	\end{figure}
 	%
 	\par\hl{Begin corrections:} To address \autoref{itm:deriv} and \autoref{itm:histos}, we refer to our discussion in the introduction of \citetalias{cargill_hot_2016}. Using $\mathrm{EM}\sim n^2\tau_{cool}$ and assuming constant pressure (such that $n\propto T^{-1}$), in the free-streaming regime, $\mathrm{EM}\propto T^{-5/2}$; in the regime described by classical Spitzer conduction, $\mathrm{EM}\propto T^{-11/2}$. Thus, at high temperatures where the free-streaming limit is imposed to prevent runaway cooling by thermal conduction, we expect a much more shallow emission measure slope than at slightly lower temperatures where Spitzer conduction dominates.
 	%
