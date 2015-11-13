@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\newcommand{\drawLoop}[4]{%
+%x-center,y-center, radius, thickness
+	\pgfmathsetmacro{\spx}{#1}
+	\pgfmathsetmacro{\spy}{#2}
+	\pgfmathsetmacro{\loopRadius}{#3}
+	\pgfmathsetmacro{\loopThickness}{#4}
+	
+	\draw[thick,black] (\spx,\spy) arc (180:90:\loopRadius); %outer loop arc
+	\draw[thick,black] (\spx + \loopThickness,\spy) arc (180:90:{\loopRadius - \loopThickness}); %inner loop arc
+	\draw[thick,black] (\spx + \loopThickness/2,\spy) ellipse (\loopThickness/2 and \loopThickness/10); %lower cap
+	\draw[thick,black] (\spx+\loopRadius,\spy + \loopRadius - \loopThickness/2) ellipse (\loopThickness/10 and \loopThickness/2); %upper cap
+	%draw transition region
+	\pgfmathsetmacro{\phiTR}{10}
+	\pgfmathsetmacro{\xTR}{\spx + \loopRadius - cos(\phiTR)*(\loopRadius - \loopThickness/2)}
+	\pgfmathsetmacro{\yTR}{\spy + sin(\phiTR)*(\loopRadius - \loopThickness/2)}
+	\draw[thick,black,rotate around={-\phiTR:(\xTR,\yTR)}] (\xTR,\yTR) ellipse (\loopThickness/2 and \loopThickness/10);
+} 
+
+\begin{document}
+\begin{tikzpicture}
+
+	\def \n {5}
+	\def \radius {6}
+	\def \margin {17} % margin in angles, depends on the radius
+	\def \dx {-2}
+	\def \dy {-2}
+
+	\foreach \s in {1,...,\n}
+	{	
+		%get x and y
+		\pgfmathsetmacro{\phi}{360/\n * (\s - 1)}
+		\pgfmathsetmacro{\getx}{cos(\phi)*\radius + \dx}%{360/\n * (\s - 1)})}
+		\pgfmathsetmacro{\gety}{sin(\phi)*\radius + \dy}%{360/\n * (\s - 1)})}
+		
+		%\node[draw, circle] at ({360/\n * (\s - 1)}:\radius) {$\s$};
+		\drawLoop{\getx}{\gety}{3}{0.75};
+		\draw[<-, >=latex,gray,very thick] ({360/\n * (\s - 1)+\margin}:\radius) arc ({360/\n * (\s - 1)+\margin}:{360/\n * (\s)-\margin}:\radius);
+	}
+\end{tikzpicture}
+%\begin{tikzpicture}
+	
+%	\drawLoop{0}{0}{5}{0.5}
+	
+%\end{tikzpicture}
+\end{document}
