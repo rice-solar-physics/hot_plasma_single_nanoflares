@@ -23,6 +23,11 @@ Bradshaw, S.~J., \& Cargill, P.~J. 2006, Astronomy and Astrophysics, 458, 987
 \bibitem[{Bradshaw \& Cargill(2010{\natexlab{b}})}]{bradshaw_new_2010}
 ---. 2010{\natexlab{b}}, The Astrophysical Journal Letters, 710, L39
 
+\bibitem[{Bradshaw {et~al.}(2012)Bradshaw, Klimchuk, \&
+  Reep}]{bradshaw_diagnosing_2012}
+Bradshaw, S.~J., Klimchuk, J.~A., \& Reep, J.~W. 2012, The Astrophysical
+  Journal, 758, 53
+
 \bibitem[{Brosius {et~al.}(2014)Brosius, Daw, \&
   Rabin}]{brosius_pervasive_2014}
 Brosius, J.~W., Daw, A.~N., \& Rabin, D.~M. 2014, The Astrophysical Journal,
@@ -97,8 +102,26 @@ Parker, E.~N. 1988, The Astrophysical Journal, 330, 474
 \bibitem[{Reale \& Orlando(2008)}]{reale_nonequilibrium_2008}
 Reale, F., \& Orlando, S. 2008, The Astrophysical Journal, 684, 715
 
+\bibitem[{Reep {et~al.}(2013)Reep, Bradshaw, \&
+  Klimchuk}]{reep_diagnosing_2013}
+Reep, J.~W., Bradshaw, S.~J., \& Klimchuk, J.~A. 2013, The Astrophysical
+  Journal, 764, 193
+
+\bibitem[{Schmelz \& Pathak(2012)}]{schmelz_cold_2012}
+Schmelz, J.~T., \& Pathak, S. 2012, The Astrophysical Journal, 756, 126
+
 \bibitem[{Spitzer \& Härm(1953)}]{spitzer_transport_1953}
 Spitzer, L., \& Härm, R. 1953, Physical Review, 89, 977
+
+\bibitem[{Tripathi {et~al.}(2011)Tripathi, Klimchuk, \&
+  Mason}]{tripathi_emission_2011}
+Tripathi, D., Klimchuk, J.~A., \& Mason, H.~E. 2011, The Astrophysical Journal,
+  740, 111
+
+\bibitem[{Warren {et~al.}(2011)Warren, Brooks, \&
+  Winebarger}]{warren_constraints_2011}
+Warren, H.~P., Brooks, D.~H., \& Winebarger, A.~R. 2011, The Astrophysical
+  Journal, 734, 90
 
 \bibitem[{Warren {et~al.}(2012)Warren, Winebarger, \&
   Brooks}]{warren_systematic_2012}
@@ -107,6 +130,11 @@ Warren, H.~P., Winebarger, A.~R., \& Brooks, D.~H. 2012, The Astrophysical
 
 \bibitem[{West {et~al.}(2008)West, Bradshaw, \& Cargill}]{west_lifetime_2008}
 West, M.~J., Bradshaw, S.~J., \& Cargill, P.~J. 2008, Solar Physics, 252, 89
+
+\bibitem[{Winebarger {et~al.}(2011)Winebarger, Schmelz, Warren, Saar, \&
+  Kashyap}]{winebarger_using_2011}
+Winebarger, A.~R., Schmelz, J.~T., Warren, H.~P., Saar, S.~H., \& Kashyap,
+  V.~L. 2011, The Astrophysical Journal, 740, 2
 
 \bibitem[{Winebarger {et~al.}(2012)Winebarger, Warren, Schmelz, Cirtain,
   Mulu-Moore, Golub, \& Kobayashi}]{winebarger_defining_2012}
