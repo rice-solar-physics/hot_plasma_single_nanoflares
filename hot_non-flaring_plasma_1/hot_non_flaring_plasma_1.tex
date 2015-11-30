@@ -99,7 +99,8 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 	%
 	\begin{figure}
 		\centering
-		\caption{The temperature (solid line) and effective temperature ($T_{eff}$: see text: dashed line) for two nanoflares. Both have a total energy input of 10 ergs cm$^{-3}$ s$^{-1}$. In the left (right) panel the nanoflare duration is 200 (40) s. The loop half-length is 40 Mm and only the first 600 s of the evolution are shown.}
+		\includegraphics[width=\columnwidth]{figures/tt_eff_compare.pdf}
+		\caption{The temperature (solid line) and effective temperature ($T_{eff}$: see text: dashed line) for two nanoflares. Both have a total energy input of 10 ergs cm$^{-3}$ s$^{-1}$. In the top (bottom) panel the nanoflare duration is 200 (40) s. The loop half-length is 40 Mm and only the first 600 s of the evolution are shown.}
 		\label{fig:nei_ex}
 	\end{figure}
 	%
@@ -112,7 +113,7 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 	\end{equation}
 	where $T_e$ is the electron temperature, $m_e,m_i$ are the electron and ion masses respectively and $\ln{\Lambda}$ is the Coulomb logarithm \citep[see Eq. 2.5e and Section 3 of][]{braginskii_transport_1965}. For $n\sim10^9$ cm$^{-3}$ and $T\sim10^{7}$ K, parameters typical of nanoflare heating, $\tau_{ei}\approx800$ s. Thus, any heating that occurs on a timescale less than 800 s, such as a nanoflare with a duration of $\tau_H\le100$ s, will result in electron-ion non-equilibrium. While it is true that chromospheric evaporation will act to increase $n$ and thus decrease $\nu_{ei}$, we maintain that during this initial of heating phase, $\tau_{ei}\gg\tau_H$, with 800 s being an upper bound on $\tau_{ei}$. 
 	%
-	\par While it is often assumed that the electrons are the recipients of the prescribed heating function, ion heating in the solar corona should not be discounted as the exact mechanism behind coronal heating is still unknown. For example, ions may be heated via ion-cyclotron wave resonances \citep{markovskii_intermittent_2004} or reconnection \citep{ono_ion_1996,drake_onset_2014}. To address this possibility and include effects due to electron-ion non-equilibrium, we have applied the treatment outlined in \citet{klimchuk_highly_2008} to the set of two-fluid of hydrodynamic equations as given in the appendix of \citet{bradshaw_influence_2013}. Such an approach allows us to efficiently model a two-component impulsively-heated plasma.
+	\par While it is often assumed that the electrons are the recipients of the prescribed heating function, ion heating in the solar corona should not be discounted as the exact mechanism behind coronal heating is still unknown. For example, ions may be heated via ion-cyclotron wave resonances \citep{markovskii_intermittent_2004} or reconnection \citep{ono_ion_1996,drake_onset_2014}. To address this possibility and include effects due to electron-ion non-equilibrium, we have applied the treatment outlined in \citet{klimchuk_highly_2008} to the two-fluid of hydrodynamic equations as given in the appendix of \citet{bradshaw_influence_2013}. Such an approach allows us to efficiently model a two-component impulsively-heated coronal plasma.
 	%
 	\par These expressions, which we will refer to as the two-fluid EBTEL equations, are
 	\begin{align}
@@ -128,7 +129,7 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 	\begin{equation}
 		\psi_{TR} = \frac{1}{1+\xi}(F_{ce,0} + \mathcal{R}_{TR} - \xi F_{ci,0}),
 	\end{equation}
-	where $\xi\equiv T_{e,0}/T_{i,0}$. A full derivation of these expressions is given in \autoref{appendix}. 
+	with $\xi\equiv T_{e,0}/T_{i,0}$. A full derivation of these expressions is given in \autoref{appendix}. 
 	%
 	\section{Results}
 	\label{sec:results}
