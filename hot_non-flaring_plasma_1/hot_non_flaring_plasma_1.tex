@@ -46,7 +46,7 @@
 	\section{Introduction}
 	\label{sec:intro}
 	%
-	\par Observations of the magnetically closed solar corona from the Hinode and Solar Dynamics Observatory (SDO) spacecraft have led, for the first time, to quantitative studies of the distribution of coronal plasma as a function of temperature, and preliminary deductions about the heating process \citep[see papers in][]{de_moortel_recent_2015}. The key to this has been the ability to make measurements of the corona over a wide range of temperatures from the EUV Imaging Spectrometer (EIS) and X-Ray Telescope (XRT) instruments on Hinode, and the Atmospheric Imaging Assembly (AIA) on SDO. Underpinning this work is the concept of nanoflare heating of the corona. Nanoflares \citep[e.g.][]{parker_nanoflares_1988} are small bursts of energy release, though, despite the implication in their name, the magnitude and duration are unknown. While commonly attributed to small-scale magnetic reconnection, nanoflares can occur in other heating scenarios \citep[e.g.][]{ofman_self-consistent_1998}.
+	\par Observations of the magnetically closed solar corona from the \textit{Hinode} \citep{kosugi_hinode_2007} and Solar Dynamics Observatory (SDO) \citep{pesnell_solar_2012} spacecraft have led, for the first time, to quantitative studies of the distribution of coronal plasma as a function of temperature, and preliminary deductions about the heating process \citep[see papers in][]{de_moortel_recent_2015}. The key to this has been the ability to make measurements of the corona over a wide range of temperatures from the EUV Imaging Spectrometer (EIS) \citep{culhane_euv_2007} and X-Ray Telescope (XRT) \citep{golub_x-ray_2007} instruments on \textit{Hinode}, and the Atmospheric Imaging Assembly (AIA) \citep{lemen_atmospheric_2012} on SDO. Underpinning this work is the concept of nanoflare heating of the corona. Nanoflares \citep[e.g.][]{parker_nanoflares_1988} are small bursts of energy release, though, despite the implication in their name, the magnitude and duration are unknown. While commonly attributed to small-scale magnetic reconnection, nanoflares can occur in other heating scenarios \citep[e.g.][]{ofman_self-consistent_1998}.
 %
 	\par One example of this approach has been studies of active region core loops \citep{warren_constraints_2011,warren_systematic_2012,winebarger_using_2011,tripathi_emission_2011,schmelz_cold_2012,bradshaw_diagnosing_2012,reep_diagnosing_2013,del_zanna_elemental_2014}. These are the brightest structures in ARs, spanning the magnetic polarity line, and are observed over a wide range of temperatures. An important result has been the determination of the emission measure distribution as a function of temperature ($\mathrm{EM}(T)\sim n^2dh$) along a line of sight. These workers showed that the emission measure peaked at $T = T_m = 10^{6.5}$ – $10^{6.6}$ K with $\mathrm{EM}(T_m)$ of order $10^{27}$ – $10^{28}$ cm$^{-5}$.  Below $T_m$ a relation of the form $\mathrm{EM} \sim T_a$ was found, with $2 < a < 5$. This distribution can be understood by a combination of radiative cooling of the corona to space and an enthalpy flux to the TR \citep[e.g.][]{bradshaw_new_2010,bradshaw_cooling_2010} and is a significant result for nanoflare heating. Defining low and high frequency (LF and HF) nanoflares by the ratio of the average time between nanoflares on a magnetic strand or sub-loop ($\langle T_N \rangle$) to the plasma cooling time from the peak emission measure ($\tau_{cool}$), LF (HF) nanoflares have $\langle T_N \rangle > (<) \tau_{cool}$ respectively. LF nanoflares have $a \sim$ 2 - 3 so do not account for many of the observations. In fact, \citet{cargill_active_2014} argued that these results implied a heating mechanism with $\langle T_N \rangle$ of order 1000 - 2000 s between nanoflares, with the value of $T_N$ associated with each nanoflare being proportional to its energy. Such intermediate frequency (IF) nanoflares have different energy build-up requirements from the commonly assumed LF scenario \citep{cargill_active_2014}.  
 %
@@ -88,21 +88,6 @@ Here overbar denotes a coronal average, $F_{c,0} = -(2/7)\kappa_0 T_a^{7/2}/L$ i
 	\end{equation}
 where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the heat flux to a greater degree. The main aspect of inclusion of a free-streaming limit is to slow down conductive cooling. We do not consider here other conduction models \citep[e.g. the non-local model discussed in the coronal context by][]{karpen_nonlocal_1987,west_lifetime_2008} since they lead to similar generic results. 
 	%
-	\subsection{Ionization Non-equilibrium}
-	\label{subsec:nei_theory}
-	%
-	\par Ionization non-equilibrium has long been known to be an issue in the interpretation of data from the impulsive phase of flares, and more recently it has been discussed in the context of nanoflares \citep{bradshaw_explosive_2006,reale_nonequilibrium_2008}. The main issue is that when a tenuous plasma is heated rapidly, it takes a certain time to reach ionization equilibrium so that the ionization states present do not reflect the actual (electron) temperature, assuming that the heating occurs mainly to electrons (see \autoref{subsec:two_fluid_theory} and \autoref{subsec:two_fluid_res}) rather than the heavier ions such as Fe that contribute to the observed radiation. If the heating is sustained, then eventually ionization equilibrium will be reached, and this may occur in moderate to large flares. However, for nanoflares that may last for anywhere between a few seconds and a few minutes, a different scenario arises in which on termination of heating, rapid conductive cooling arises, so that the high ionisation states may never be attained.
-	%
-	\par \citet{reale_nonequilibrium_2008} and \citet{bradshaw_numerical_2009} have both addressed this point using slightly different approaches, but with similar conclusions, namely that short nanoflares in a low-density plasma are unlikely to be detectable. We now develop this work further to assess how the results in \autoref{sec:results} are changed. We follows these authors and calculate an ``effective temperature'' ($T_{eff}$) as a proxy for the deviation from ionization equilibrium. This involves taking a time-series of $T$ and $n$ from EBTEL and using the numerical scheme outlined in \citet{bradshaw_numerical_2009} to calculate the fractional ionization of as many states of various elements as needed, and in turn this calculates $T_{eff}$, a temperature that would be measured based on the actual ionization states. We primarily consider Fe between Fe IX and Fe XXV, though Ca has also been calculated as a check on these results. \autoref{fig:nei_ex} shows two examples for long (200 s) and short (40 s) nanoflares.
-	%
-	\par The feature that will prove of great relevance in our results is that despite the different nanoflare durations, $T_{eff}$ does not exceed 10 MK. There is also an ``overshot'' of $T_{eff}$ when it reaches its maximum value: this is saying that collisions are still not strong enough for the adjustment of the ionization state to be instantaneous which occurs around 400 s in both cases.
-	%
-	\begin{figure}
-		\centering
-		\caption{The temperature (solid line) and effective temperature ($T_{eff}$: see text: dashed line) for two nanoflares. Both have a total energy input of 10 ergs cm$^{-3}$ s$^{-1}$. In the left (right) panel the nanoflare duration is 200 (40) s. The loop half-length is 40 Mm and only the first 600 s of the evolution are shown.}
-		\label{fig:nei_ex}
-	\end{figure}
-	%
 	\subsection{Two-fluid Modeling}
 	\label{subsec:two_fluid_theory}
 	%
@@ -112,7 +97,7 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 	\end{equation}
 	where $T_e$ is the electron temperature, $m_e,m_i$ are the electron and ion masses respectively and $\ln{\Lambda}$ is the Coulomb logarithm \citep[see Eq. 2.5e and Section 3 of][]{braginskii_transport_1965}. For $n\sim10^9$ cm$^{-3}$ and $T\sim10^{7}$ K, parameters typical of nanoflare heating, $\tau_{ei}\approx800$ s. Thus, any heating that occurs on a timescale less than 800 s, such as a nanoflare with a duration of $\tau_H\le100$ s, will result in electron-ion non-equilibrium. While it is true that chromospheric evaporation will act to increase $n$ and thus decrease $\nu_{ei}$, we maintain that during this initial of heating phase, $\tau_{ei}\gg\tau_H$, with 800 s being an upper bound on $\tau_{ei}$. 
 	%
-	\par While it is often assumed that the electrons are the recipients of the prescribed heating function, ion heating in the solar corona should not be discounted as the exact mechanism behind coronal heating is still unknown. For example, ions may be heated via ion-cyclotron wave resonances \citep{markovskii_intermittent_2004} or reconnection \citep{ono_ion_1996,drake_onset_2014}. To address this possibility and include effects due to electron-ion non-equilibrium, we have applied the treatment outlined in \citet{klimchuk_highly_2008} to the set of two-fluid of hydrodynamic equations as given in the appendix of \citet{bradshaw_influence_2013}. Such an approach allows us to efficiently model a two-component impulsively-heated plasma.
+	\par While it is often assumed that the electrons are the recipients of the prescribed heating function, ion heating in the solar corona should not be discounted as the exact mechanism behind coronal heating is still unknown. For example, ions may be heated via ion-cyclotron wave resonances \citep{markovskii_intermittent_2004} or reconnection \citep{ono_ion_1996,drake_onset_2014}. To address this possibility and include effects due to electron-ion non-equilibrium, we have applied the treatment outlined in \citet{klimchuk_highly_2008} to the two-fluid of hydrodynamic equations as given in the appendix of \citet{bradshaw_influence_2013}. Such an approach allows us to efficiently model a two-component impulsively-heated coronal plasma.
 	%
 	\par These expressions, which we will refer to as the two-fluid EBTEL equations, are
 	\begin{align}
@@ -128,7 +113,22 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 	\begin{equation}
 		\psi_{TR} = \frac{1}{1+\xi}(F_{ce,0} + \mathcal{R}_{TR} - \xi F_{ci,0}),
 	\end{equation}
-	where $\xi\equiv T_{e,0}/T_{i,0}$. A full derivation of these expressions is given in \autoref{appendix}. 
+	with $\xi\equiv T_{e,0}/T_{i,0}$. A full derivation of these expressions is given in \autoref{appendix}.
+	\subsection{Ionization Non-equilibrium}
+	\label{subsec:nei_theory}
+	%
+	\par Ionization non-equilibrium has long been known to be an issue in the interpretation of data from the impulsive phase of flares, and more recently it has been discussed in the context of nanoflares \citep{bradshaw_explosive_2006,reale_nonequilibrium_2008}. The main issue is that when a tenuous plasma is heated rapidly, it takes a certain time to reach ionization equilibrium so that the ionization states present do not reflect the actual (electron) temperature, assuming that the heating occurs mainly to electrons (see \autoref{subsec:two_fluid_theory} and \autoref{subsec:two_fluid_res}) rather than the heavier ions such as Fe that contribute to the observed radiation. If the heating is sustained, then eventually ionization equilibrium will be reached, and this may occur in moderate to large flares. However, for nanoflares that may last for anywhere between a few seconds and a few minutes, a different scenario arises in which on termination of heating, rapid conductive cooling arises, so that the high ionisation states may never be attained.
+	%
+	\par \citet{reale_nonequilibrium_2008} and \citet{bradshaw_numerical_2009} have both addressed this point using slightly different approaches, but with similar conclusions, namely that short nanoflares in a low-density plasma are unlikely to be detectable. We now develop this work further to assess how the results in \autoref{sec:results} are changed. We follows these authors and calculate an ``effective temperature'' ($T_{eff}$) as a proxy for the deviation from ionization equilibrium. This involves taking a time-series of $T$ and $n$ from EBTEL and using the numerical scheme outlined in \citet{bradshaw_numerical_2009} to calculate the fractional ionization of as many states of various elements as needed, and in turn this calculates $T_{eff}$, a temperature that would be measured based on the actual ionization states. We primarily consider Fe between Fe IX and Fe XXV, though Ca has also been calculated as a check on these results. \autoref{fig:nei_ex} shows two examples for long (200 s) and short (40 s) nanoflares.
+	%
+	\par The feature that will prove of great relevance in our results is that despite the different nanoflare durations, $T_{eff}$ does not exceed 10 MK. There is also an ``overshot'' of $T_{eff}$ when it reaches its maximum value: this is saying that collisions are still not strong enough for the adjustment of the ionization state to be instantaneous which occurs around 400 s in both cases.
+	%
+	\begin{figure}
+		\centering
+		\includegraphics[width=\columnwidth]{figures/tt_eff_compare.pdf}
+		\caption{The temperature (solid line) and effective temperature ($T_{eff}$: see text: dashed line) for two nanoflares. Both have a total energy input of 10 ergs cm$^{-3}$ s$^{-1}$. In the top (bottom) panel the nanoflare duration is 200 (40) s. The loop half-length is 40 Mm and only the first 600 s of the evolution are shown.}
+		\label{fig:nei_ex}
+	\end{figure}
 	%
 	\section{Results}
 	\label{sec:results}
@@ -169,17 +169,17 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 	%
 	\par As expected, inclusion of a limiter extends $\mathrm{EM}(T)$ to higher temperatures, however this is only notable above 10 MK. As the temperature falls to this value, evaporative upflows have increased the coronal density so that the Spitzer description is recovered. Above 10 MK flux limiting gradually becomes important, albeit with a small emission measure. For this case $\tau_{cool} \sim LT^{-1/2}$ so that the parameter $b$ lies between 1/2 and 5/2, depending on the assumption about $n$. For $f = 1/30$, $b = 5/2$ is found in \autoref{fig:vary_fl} \hl{Should we show this explicitly?}. Since the free streaming limit slows conduction cooling relative to that given by Spitzer, the plasma will spend more time at any given temperature, leading to smaller values of $b$. Similar conclusions hold for other conduction models \citep[e.g. the non-local model discussed in the coronal context by][]{karpen_nonlocal_1987,west_lifetime_2008} since they all inhibit conduction. While limiting of conduction is often regarded as an important process in coronal cooling, these results suggest that for nanoflare heating it may not be that important.
 	%
+	\subsection{Multi-fluid Modeling}
+	\label{subsec:two_fluid_res}
+	%
+	\hl{Two-fluid results go here.}
+	%
 	\subsection{Ionization Non-equilibrium}
 	\label{subsec:nei_res}
 	%
 	\par Results for ionization non-equilibrium are shown in red on \autoref{fig:vary_tau},\autoref{fig:vary_hdl},\autoref{fig:vary_fl}. With the exception of the case of the extreme flux limiter value of $f = 1/30$, the effect is to truncate the $\mathrm{EM}(T)$ profile to around or below 10 MK. The bump on the distribution characteristic of the heating phase is also relocated to lower temperatures. In \autoref{fig:vary_tau} it is also shown that any pulse length $< 200$ s leads to very similar $\mathrm{EM}-T_{eff}$ profiles.
 	%
 	\par There are two effects that lead to temperatures below 10 MK. The first is that for long pulses $> 200$ s, the heating is in direct competition with thermal conduction, which thus limits the temperature to these values. Secondly, the short pulses reach the higher temperatures too quickly for the ionization state of the plasma to keep up, and this only happens at or below 10 MK. Thus it seems as if the temperature range $T_m$ up to 10 MK is the optimal one for searching for this hot component as well as direct signatures of the heating. It is though difficult to ``map'' what would be seen in such a state of ionization non-equilibrium back to the real system.
-	%
-	\subsection{Multi-fluid Modeling}
-	\label{subsec:two_fluid_res}
-	%
-	\hl{Two-fluid results go here.}
 	%
 	\section{Discussion}
 	\label{sec:discussion}
