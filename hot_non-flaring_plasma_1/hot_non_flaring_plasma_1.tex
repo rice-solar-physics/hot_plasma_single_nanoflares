@@ -7,6 +7,7 @@
 \usepackage[all]{hypcap}
 \usepackage[utf8]{inputenc} %force unicode in bibtex
 \usepackage{enumitem}
+\usepackage{graphicx}
 %use for editing/highlighting
 \usepackage{color,soul}
 \usepackage{lipsum}
@@ -72,7 +73,7 @@ where $v$ is the velocity, $E=p/(\gamma -1) + \rho v^2/2$, $F_c=-\kappa_0 T^{5/2
 	%
 	\begin{align}
 		\frac{1}{\gamma - 1}\frac{d\bar{p}}{dt} =& \,\bar{Q} - \frac{1}{L}(\mathcal{R}_C + \mathcal{R}_{TR}), \label{eq:energy_0d} \\
-		\frac{\gamma}{\gamma - 1}(pv& + F_c)_0 + \mathcal{R}_{TR} = 0, \label{eq:tr_energy_0d} \\
+		\frac{\gamma}{\gamma - 1}(pv&) + F_{c,0} + \mathcal{R}_{TR} = 0, \label{eq:tr_energy_0d} \\
 		\frac{d\bar{n}}{dt} = \frac{(nv)_0}{L} =& -\frac{\gamma - 1}{2k_BT_0L\gamma}(F_{c,0} + \mathcal{R}_{TR}).\label{eq:mass_0d}
 	\end{align}
 	%
@@ -105,81 +106,96 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 		%
 		\frac{d}{dt}\bar{p}_i &=\,-\frac{\gamma - 1}{L}\psi_{TR} + k_B\bar{n}\nu_{ei}(\bar{T}_e-\bar{T}_i) + \nonumber \\ &(\gamma-1)\bar{Q}_{i},\label{eq:press_i_0d_2fl} \\[0.5em]
 		%
-		\frac{d}{dt}\bar{n} &=\,\frac{c_2(\gamma-1)}{c_3\gamma Lk_B\bar{T}_e}(\psi_{TR} - F_{ce,0}-\mathcal{R}_{TR}), 	\label{eq:mass_0d_2fl} \\[0.5em]
-		p_e &=\,k_BnT_e, \label{eq:close_e_0d_2fl} \\[0.5em]
-		p_i &=\,k_BnT_i, \label{eq:close_i_0d_2fl}
+		\frac{d}{dt}\bar{n} &=\,\frac{c_2(\gamma-1)}{c_3\gamma Lk_B\bar{T}_e}(\psi_{TR} - F_{ce,0}-\mathcal{R}_{TR}),	\label{eq:mass_0d_2fl}
 	\end{align}
-	where
-	\begin{equation}
-		\psi_{TR} = \frac{1}{1+\xi}(F_{ce,0} + \mathcal{R}_{TR} - \xi F_{ci,0}),
-	\end{equation}
-	with $\xi\equiv T_{e,0}/T_{i,0}$. A full derivation of these expressions is given in \autoref{appendix}.
+	subject to closure by the equations of state $p_e=k_BnT_e$ and $p_i=k_BnT_i$. A full derivation of these expressions is given in \autoref{appendix}.
 	\subsection{Ionization Non-equilibrium}
 	\label{subsec:nei_theory}
 	%
 	\par Ionization non-equilibrium has long been known to be an issue in the interpretation of data from the impulsive phase of flares, and more recently it has been discussed in the context of nanoflares \citep{bradshaw_explosive_2006,reale_nonequilibrium_2008}. The main issue is that when a tenuous plasma is heated rapidly, it takes a certain time to reach ionization equilibrium so that the ionization states present do not reflect the actual (electron) temperature, assuming that the heating occurs mainly to electrons (see \autoref{subsec:two_fluid_theory} and \autoref{subsec:two_fluid_res}) rather than the heavier ions such as Fe that contribute to the observed radiation. If the heating is sustained, then eventually ionization equilibrium will be reached, and this may occur in moderate to large flares. However, for nanoflares that may last for anywhere between a few seconds and a few minutes, a different scenario arises in which on termination of heating, rapid conductive cooling arises, so that the high ionisation states may never be attained.
 	%
-	\par \citet{reale_nonequilibrium_2008} and \citet{bradshaw_numerical_2009} have both addressed this point using slightly different approaches, but with similar conclusions, namely that short nanoflares in a low-density plasma are unlikely to be detectable. We now develop this work further to assess how the results in \autoref{sec:results} are changed. We follows these authors and calculate an ``effective temperature'' ($T_{eff}$) as a proxy for the deviation from ionization equilibrium. This involves taking a time-series of $T$ and $n$ from EBTEL and using the numerical scheme outlined in \citet{bradshaw_numerical_2009} to calculate the fractional ionization of as many states of various elements as needed, and in turn this calculates $T_{eff}$, a temperature that would be measured based on the actual ionization states. We primarily consider Fe between Fe IX and Fe XXV, though Ca has also been calculated as a check on these results. \autoref{fig:nei_ex} shows two examples for long (200 s) and short (40 s) nanoflares.
+	\par \citet{reale_nonequilibrium_2008} and \citet{bradshaw_numerical_2009} have both addressed this point using slightly different approaches, but with similar conclusions, namely that short nanoflares in a low-density plasma are unlikely to be detectable. We now develop this work further to assess how the results in \autoref{sec:results} are changed. We follows these authors and calculate an ``effective temperature'' ($T_{eff}$) as a proxy for the deviation from ionization equilibrium. This involves taking a time-series of $T$ and $n$ from EBTEL and using the numerical scheme outlined in \citet{bradshaw_numerical_2009} to calculate the fractional ionization of as many states of various elements as needed, and in turn this calculates $T_{eff}$, a temperature that would be measured based on the actual ionization states. We primarily consider Fe between Fe IX and Fe XXVII, though Ca has also been calculated as a check on these results.
 	%
 	\par The feature that will prove of great relevance in our results is that despite the different nanoflare durations, $T_{eff}$ does not exceed 10 MK. There is also an ``overshot'' of $T_{eff}$ when it reaches its maximum value: this is saying that collisions are still not strong enough for the adjustment of the ionization state to be instantaneous which occurs around 400 s in both cases.
-	%
-	\begin{figure}
-		\centering
-		\includegraphics[width=\columnwidth]{figures/tt_eff_compare.pdf}
-		\caption{The temperature (solid line) and effective temperature ($T_{eff}$: see text: dashed line) for two nanoflares. Both have a total energy input of 10 ergs cm$^{-3}$ s$^{-1}$. In the top (bottom) panel the nanoflare duration is 200 (40) s. The loop half-length is 40 Mm and only the first 600 s of the evolution are shown.}
-		\label{fig:nei_ex}
-	\end{figure}
 	%
 	\section{Results}
 	\label{sec:results}
 	%
-	\par We now show a series of nanoflare simulations with our zero-dimensional hydrodynamic EBTEL model \citep{klimchuk_highly_2008, cargill_enthalpy-based_2012, cargill_enthalpy-based_2012-1, cargill_modelling_2015} and our modified two-fluid EBTEL model, first for single nanoflares and then in \citetalias{barnes_inference_2016-1} for distributions of nanoflares. 
+	\par We now show a series of nanoflare simulations with our zero-dimensional hydrodynamic EBTEL model \citep{klimchuk_highly_2008, cargill_enthalpy-based_2012, cargill_enthalpy-based_2012-1, cargill_modelling_2015} and our modified two-fluid EBTEL model, first for single nanoflares and then in \citetalias{barnes_inference_2016-1} for distributions of nanoflares.
 	%
-	\subsection{Single-fluid, Spitzer Conduction, Ionization Equilibrium}
+	\par In our 0D model, the emission measure is calculated using the familiar expression $\mathrm{EM}=n^2(2L)$, where $L$ is the loop half-length. We consider a temperature range of $4.0\le\log{T}\le8.5$ with bin sizes of $\Delta\log{T}=0.01$. At each iteration $i$, the coronal temperature range $[T_0,T_a]$ is calculated from $\bar{T}_e$. For each bin that falls within $[T_0,T_a]$, $\bar{n}_i^2(2L)$ is added to that bin, where $\bar{n}_i$ is the spatially-averaged number density at iteration $i$. The emission measure in each bin is then averaged over the entire simulation period. When measured observationally, $\mathrm{EM}(T)$ is a line-of-sight quantity. Assuming an aspect ratio (i.e. ratio of loop length to loop width) of 10, we apply a correction factor 1/10 to all calculated $\mathrm{EM}$ curves. We do not attempt to apply an advanced forward modeling treatment here and instead reserve such an approach for a future paper.
+	%
+	\subsection{Single-fluid Parameter Variations}
 	\label{subsec:sf_sc_ie_res}
 	%
-	\par In the first set of results we assume the plasma behaves as a single fluid, and ignore heat flux limiting and ionization non-equilibrium. \autoref{fig:vary_tau} shows $\mathrm{EM}(T)$ for a single nanoflare in a loop with $2L = 80$ Mm, and a heating function that takes the form of a triangular pulse and injects a total of 10 ergs cm$^{-3}$. These parameters correspond roughly to the bright AR core loops. We first vary the peak heating rate and pulse duration such that the total energy input is the same. Four cases are shown: pulses of 500, 200, 50 and 20 s duration which are the black dashed, solid, dashed-dotted and dotted lines respectively. The temperature and value of the peak emission measure are the same in all cases. (The red lines are discussed in \autoref{subsec:nei_res}).
+	\par In the first set of results we assume the plasma behaves as a single fluid, and ignore heat flux limiting and ionization non-equilibrium. \autoref{fig:nT_tau_compare} shows temperature (upper panel) and density (lower panel) as a function of time for a single nanoflare in a loop with $2L = 80$ Mm for three different pulse duraations, $\tau$: 500, 200, 50 and 20 s. The heating function that takes the form of a triangular pulse and injects a total of 10 ergs cm$^{-3}$. The the peak heating rate is varied such that the total energy input is the same. The top left panel of \autoref{fig:em_vary_all} shows the corresponding emission measure distribution $\mathrm{EM}(T)$ curves. These parameters correspond roughly to the bright AR core loops. The temperature and value of the peak emission measure are the same in all cases.
 	\begin{figure}
 		\centering
-		\caption{$\mathrm{EM}(T)$ for a nanoflare in an AR loop with $2L = 80$ Mm. The four curves correspond to different pulse durations: 500 s (dash-dot), 200 s (dash), 50 s (solid) and 20 s (dotted). The flux limiter is not applied. The red lines are calculated by binning $\mathrm{EM}$ using $T_{eff}$ (see \autoref{subsec:nei_res}).}
-		\label{fig:vary_tau}
+		\includegraphics[width=\columnwidth]{figures/{nT_tau_compare}.pdf}
+		\caption{$T$ and $n$ profiles for $\tau=20,40,200,500$ s. The total energy injected into the loop is fixed.}
+		\label{fig:nT_tau_compare}
 	\end{figure}
+	%%
 	%
 	\par The values of $T_m$ and $\mathrm{EM}(T_m)$ are consistent with those found in the studies of core loops. Shorter pulses lead to higher initial temperatures, but the shape of the emission measure below $T_m$ is independent of the properties of the heating pulse, indicating that this part of the emission measure distribution cannot provide information about the actual nanoflare duration.  All cases show evidence of the heating phase, namely the bump on $\mathrm{EM}(T)$ at $\log{(T)} =$ 6.85, 7, 7.2 and 7.3, and is most obvious for the longer pulses. 
 	\par Below these bumps the emission measure scales as $T^{-5}$  $T^{-5.5}$ to close to $T_m$ for all cases, again indicating that information of the heating process is lost. However, detection of such emission above $T_m$ would be evidence for nanoflare heating, though of undetermined duration.  For integration over the lifetime of unresolved structures lying transverse to the line of sight, one can write down an expression $\mathrm{EM}(T) \sim n^2\tau_{cool}(n, T)$ which simply states that what matters for determining $\mathrm{EM}(T)$ is how long the plasma spends at any given temperature \citep[e.g.][]{cargill_implications_1994,cargill_nanoflare_2004}. For an analytic solution for the cooling, one can formally define $\tau_{cool}(n, T) = (T/(dT/dt))$. In the absence of a formal solution, order of magnitude scalings can be used: the difference with analytic solutions being a numerical factor. To obtain an expression $\mathrm{EM}(T) ~ T^{-b}$, one needs to provide a relation between $T$ and $n$. For conductive cooling of the corona, one can write $\tau_{cool} \sim nL^2T^{-5/2}$, giving $\mathrm{EM} \sim n^3L^2T^{-5/2}$. In determining the relationship between $T$ and $n$, two limits are those of constant density and constant pressure. The former gives static conductive cooling \citep[e.g.][]{antiochos_influence_1976} and the latter evaporative cooling with constant thermal energy \citep[e.g.][]{antiochos_evaporative_1978}, which then lead to $b = 5/2$ and $11/2$ respectively. Our results are consistent with the latter.
-	The three panels of \autoref{fig:vary_hdl} show the effect of varying the total nanoflare heating, the background density and the loop length. In all cases the pulse length is 200 s.
+	The top right and bottom left panels of \autoref{fig:em_vary_all} show the effect of varying the peak heating rate $H_0$ (with fixed $\tau$ such that the total energy injected increases) and loop length $L$. In all cases the pulse length is 200 s.
 	%
-	\begin{figure}
+	\begin{figure*}
 		\centering
-		\caption{The effect of varying the magnitude of the heating (upper), the background density (middle) and the loop half-length (lower). The changes in each parameter are shown on each panel.}
-		\label{fig:vary_hdl}
-	\end{figure}
+		\includegraphics[width=2\columnwidth]{figures/{em_all_compare}.pdf}
+		\caption{$\mathrm{EM}(T)$ for a nanoflare in an AR loop with $2L = 80$ Mm. The four panels show the variations in $\tau$, $H_0$, $L$, and the heat flux model.}
+		\label{fig:em_vary_all}
+	\end{figure*}
 	%
 	\par In all cases, the signature of nanoflare heating around and above 10 MK persists. When the heating amplitude increases, the value of $T_m$ increases above the values seen in AR cores, suggesting an upper limit on the nanoflare energy \citep[and hence on the time between nanoflares; see][]{cargill_active_2014}. It is important to note that changing the background density by an order of magnitude retains the hot component. This suggests that even in the intermediate frequency nanoflare regime there should be signatures above $T_m$.
 	%
 	\subsection{Heat Flux Limiter}
 	\label{subsec:hf_res}
 	%
-	\autoref{fig:vary_fl} shows equivalent results to \autoref{fig:vary_tau}, but with a heat flux limiter included. Two values of $f$, $1/6$ (dashed line) and $1/30$ (dotted) are shown.
-	\begin{figure}
-		\centering
-		\caption{$\mathrm{EM}(T)$ for a nanoflare in an AR loop with $2L = 80$ Mm with a flux limiter applied to the thermal conduction. The heating pulse lasts 200 s. The solid curve is as in \autoref{fig:vary_tau}, the dashed and dotted have the parameter $f = 1/6$ and $1/30$ respectively. The red curves are described in \autoref{subsec:nei_res}. The lower part of $\mathrm{EM}(T)$ is omitted: the profiles there for all cases are as in \autoref{fig:vary_tau}.}
-		\label{fig:vary_fl}
-	\end{figure}
+	The bottom right panel of \autoref{fig:em_vary_all} shows the effect of using a flux limiter versus Spitzer conduction on the emission measure distribution. Two values of $f$, $1/6$ (blue line) and $1/30$ (green line)  are shown.
+	\par As expected, inclusion of a limiter extends $\mathrm{EM}(T)$ to higher temperatures, however this is only notable above 10 MK. As the temperature falls to this value, evaporative upflows have increased the coronal density so that the Spitzer description is recovered. Above 10 MK flux limiting gradually becomes important, albeit with a small emission measure. For this case $\tau_{cool} \sim LT^{-1/2}$ so that the parameter $b$ lies between 1/2 and 5/2, depending on the assumption about $n$. For $f = 1/30$, $b = 5/2$ is found in the bottom right panel of \autoref{fig:em_vary_all}. Since the free streaming limit slows conduction cooling relative to that given by Spitzer, the plasma will spend more time at any given temperature, leading to smaller values of $b$. Similar conclusions hold for other conduction models \citep[e.g. the non-local model discussed in the coronal context by][]{karpen_nonlocal_1987,west_lifetime_2008} since they all inhibit conduction. While limiting of conduction is often regarded as an important process in coronal cooling, these results suggest that for nanoflare heating it may not be that important.
 	%
-	\par As expected, inclusion of a limiter extends $\mathrm{EM}(T)$ to higher temperatures, however this is only notable above 10 MK. As the temperature falls to this value, evaporative upflows have increased the coronal density so that the Spitzer description is recovered. Above 10 MK flux limiting gradually becomes important, albeit with a small emission measure. For this case $\tau_{cool} \sim LT^{-1/2}$ so that the parameter $b$ lies between 1/2 and 5/2, depending on the assumption about $n$. For $f = 1/30$, $b = 5/2$ is found in \autoref{fig:vary_fl} \hl{Should we show this explicitly?}. Since the free streaming limit slows conduction cooling relative to that given by Spitzer, the plasma will spend more time at any given temperature, leading to smaller values of $b$. Similar conclusions hold for other conduction models \citep[e.g. the non-local model discussed in the coronal context by][]{karpen_nonlocal_1987,west_lifetime_2008} since they all inhibit conduction. While limiting of conduction is often regarded as an important process in coronal cooling, these results suggest that for nanoflare heating it may not be that important.
-	%
-	\subsection{Multi-fluid Modeling}
+	\subsection{Two-fluid Effects}
 	\label{subsec:two_fluid_res}
 	%
-	\hl{Two-fluid results go here.}
+	\par \autoref{fig:nT_tau_2fl_compare} shows temperature and density profiles equivalent to the $\tau=20,500$ s cases shown in \autoref{fig:nT_tau_compare} except that here only the electrons (left column) or ions (right column) are heated. The solid (dashed) lines show the electron (ion) temperature. Note that in the ion heating case, the electrons do not see temperatures in excess of 10 MK while the ions are heated to temperatures exceeding 50 MK. This effect is exacerbated for short heating durations. Because the loop has less time to fill and thus consequently is less dense, the collisional timescale becomes much longer than the heating timescale, allowing the electron and ion populations to deviate farther from equilibrium.
+	%
+	\par The black curves in \autoref{fig:nT_teff_compare} show the resulting $\mathrm{EM}(T)$ for $\tau=20$ s (left panel) and $\tau=500$ s (right panel). In the case of electron heating and $\tau=20$ s, in $6.6<\log{T}<6.8$, $\mathrm{EM}(T)$ is considerably steeper compared to the single-fluid case. This steepening comes from accelerating cooling due to the Coulomb coupling introduced in our two-fluid model. We can express the emission measure as $\mathrm{EM}\sim n^2\tau_{cool}$ (i.e. more emission at a particular $T$ the longer the plasma is held at that $T$). As the plasma cools through this temperature range, the density has increased sufficiently such that Coulomb coupling and thermal conduction are comparable in efficiency. Since the ions are cooler than the electrons, the ions act as a sink and enhance the rate of cooling, leading to a steeper $\mathrm{EM}(T)$ slope in this region. Note that in the case of ion heating and the single-fluid case, where Coulomb coupling is a source or not included, the $\mathrm{EM}$ is not steepened. 
+	%
+	\par In the case where the heating pulse duration is long, $\tau=500$ s, this steepening is much less exacerbated. Because the electrons are heated slowly, they do not have much time to evolve out of equilibrium. This in turn heavily dampens the Coulomb exchange term because the electrons and ions are at more similar temperatures than in the more impulsive $\tau=20$ s case. Additionally, in the case where only the ions are heated, for both $\tau=20$ s and $\tau=500$ s, $\mathrm{EM}(T)$ is truncated sharply near $\log{T}\sim6.9$. Becuase $\mathrm{EM}(T)$ is constructed from the electron temperature, the emission measure never sees $\log{T}\ge7$ because the Coulomb coupling timescale, during the early heating phase where $T_i\gg T_e$ and the density is low, is much larger than the ion thermal conduction timescale. Thus, by the time the electrons can see the ions, they have cooled far below their peak temperature.
+	%%
+	\begin{figure*}[b]
+		\centering
+		\includegraphics[width=2\columnwidth]{figures/{nT_tau_2fl_compare}.pdf}
+		\caption{Temperature (top row) and density (bottom row) for the cases of electron heating (left column) and ion heating (right column). In each panel, two different heating durations, $\tau=20$ s and $\tau=500$ s, are shown.}
+		\label{fig:nT_tau_2fl_compare}
+	\end{figure*}
+	%%
 	%
 	\subsection{Ionization Non-equilibrium}
 	\label{subsec:nei_res}
 	%
-	\par Results for ionization non-equilibrium are shown in red on \autoref{fig:vary_tau},\autoref{fig:vary_hdl},\autoref{fig:vary_fl}. With the exception of the case of the extreme flux limiter value of $f = 1/30$, the effect is to truncate the $\mathrm{EM}(T)$ profile to around or below 10 MK. The bump on the distribution characteristic of the heating phase is also relocated to lower temperatures. In \autoref{fig:vary_tau} it is also shown that any pulse length $< 200$ s leads to very similar $\mathrm{EM}-T_{eff}$ profiles.
+	\par The red curves in the upper (lower) panel of \autoref{fig:nT_teff_compare} show $T_{eff}$ for $\tau=20\,(500)$ s for the single-fluid, electron heating, and ion heating cases. \autoref{fig:em_teff_compare} shows the corresponding $EM(T_{eff})$. The effect of NEI is to truncate  $\mathrm{EM}(T)$ to around or below 10 MK. The bump on the distribution characteristic of the heating phase is also relocated to lower temperatures.
+	%
+	\begin{figure}
+		\centering
+		\includegraphics[width=\columnwidth]{figures/{nT_teff_compare}.pdf}
+		\caption{$T$ (black) and $T_{eff}$ (red) for pulse durations of 20 s (top panel) and 500 s (bottom panel). $T$ and $T_{eff}$ are shown for the single-fluid case (solid) as well as the cases where only the electrons (dashed) or only the ions (dot-dashed) are heated.}
+		\label{fig:nT_teff_compare}
+	\end{figure}
+	%%
 	%
 	\par There are two effects that lead to temperatures below 10 MK. The first is that for long pulses $> 200$ s, the heating is in direct competition with thermal conduction, which thus limits the temperature to these values. Secondly, the short pulses reach the higher temperatures too quickly for the ionization state of the plasma to keep up, and this only happens at or below 10 MK. Thus it seems as if the temperature range $T_m$ up to 10 MK is the optimal one for searching for this hot component as well as direct signatures of the heating. It is though difficult to ``map'' what would be seen in such a state of ionization non-equilibrium back to the real system.
+	%%
+	\begin{figure*}
+		\centering
+		\includegraphics[width=2\columnwidth]{figures/{em_teff_compare}.pdf}
+		\caption{$\mathrm{EM}(T)$ (black) and $\mathrm{EM}(T_{eff})$ (red) for pulse durations of 20 s (top panel) and 500 s (bottom panel) for the single-fluid (solid), electron heating (dashed), and ion heating (dot-dashed) cases. }
+		\label{fig:em_teff_compare}
+	\end{figure*}
+	%%
+	%%
 	%
 	\section{Discussion}
 	\label{sec:discussion}
@@ -194,7 +210,83 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 	\section{}
 	\label{appendix}
 	%
-	\par\hl{Derivation of two-fluid equations goes here.}
+	\par The two-fluid field-aligned hydrodynamic mass and energy equations, as given by \citet{bradshaw_influence_2013}, are
+	\begin{align}
+		\frac{\partial\rho}{\partial t} &= -\frac{\partial(\rho v)}{\partial s} \label{eq:1dmass} \\[0.5em]
+		\frac{\partial E_e}{\partial t} + \frac{\partial}{\partial s} \lbrack(E_e+p_e)v\rbrack &= v\frac{\partial p_e}{\partial s} - \frac{\partial F_{ce}}{\partial s} + \frac{1}{\gamma - 1}k_Bn\nu_{ei}(T_i-T_e) -E_R+E_{H,e} , \label{eq:1denergy_e} \\[0.5em]
+		\frac{\partial E_i}{\partial t} + \frac{\partial }{\partial s}\lbrack(E_i+p_i)v\rbrack &= -v\frac{\partial p_e}{\partial s} - \frac{\partial F_{ci}}{\partial s} + \frac{1}{\gamma - 1}k_Bn\nu_{ei}(T_e-T_i) + \frac{\partial}{\partial s}\left(\frac{4}{3}\mu_iv\frac{\partial v}{\partial s}\right) +\rho v g_{\parallel} + E_{H,i},\label{eq:1denergy_i}
+	\end{align}
+	where
+	\begin{align}
+		E_e =& \frac{p_e}{\gamma - 1} \label{eq:ee_closure}, \\[0.5em]
+		E_i =& \frac{p_i}{\gamma - 1} + \frac{\rho v^2}{2}, \label{eq:ei_closure},
+	\end{align}
+	and we assume closure through the ideal gas law, $p_e=k_BnT_e,\,p_i=k_BnT_i$. Note that we have assumed quasi-neutrality such that $n_e=n_i=n$ and $v_e=v_i=v$. It then follows that $\rho=m_en_e+m_in_i\approx m_in$. 
+	\par Plugging in these expressions for $E_e$ and $E_i$ and using the assumptions of sub-sonic flows ($v<C_s$) and loops shorter than a gravitational scale height ($L<150$ Mm) as outlined in \citet{klimchuk_highly_2008}, the two-fluid field-aligned hydrodynamic energy equations can be written,
+	\begin{align}
+		\frac{1}{\gamma - 1}\frac{\partial p_e}{\partial t} + \frac{\gamma}{\gamma - 1}\frac{\partial}{\partial s}(p_ev) &= v\frac{\partial p_e}{\partial s} - \frac{\partial F_{ce}}{\partial s} + \frac{1}{\gamma - 1}k_Bn\nu_{ei}(T_i-T_e) -E_R+E_{H,e}, \label{eq:1denergy_e_simp} \\[0.5em]
+		\frac{1}{\gamma - 1}\frac{\partial p_i}{\partial t} + \frac{\gamma}{\gamma - 1}\frac{\partial }{\partial s}(p_iv)&= -v\frac{\partial p_e}{\partial s} - \frac{\partial F_{ci}}{\partial s} + \frac{1}{\gamma - 1}k_Bn\nu_{ei}(T_e-T_i) + E_{H,i}. \label{eq:1denergy_i_simp}
+	\end{align}
+	Notice that we have dropped the ion viscous and gravitational terms from  \autoref{eq:1denergy_i} as well as the kinetic energy term from \autoref{eq:ei_closure}. $E_{H,e}$ and $E_{H,i}$ represent the electron and ion heating terms, respectively. $F_{ce}$ and $F_{ci}$ are the electron and ion heat flux terms, respectively. In the case of Spitzer conduction, $\kappa_{0,e}=7.8\times10^{-7}$ and $\kappa_{0,i}=3.2\times10^{-8}$.
+	\par Next, we integrate \autoref{eq:1denergy_e_simp} and \autoref{eq:1denergy_i_simp} over the coronal portion of the loop,
+	\begin{align}
+		\frac{L}{\gamma - 1}\frac{d \bar{p}_e}{dt} &= \frac{\gamma}{\gamma - 1}(p_ev)_0 + F_{ce,0} + \psi_C - \mathcal{R}_C + L\bar{E}_{H,e},\label{eq:1denergy_e_C} \\[0.5em]
+		\frac{L}{\gamma - 1}\frac{d \bar{p}_i}{dt} &= \frac{\gamma}{\gamma - 1}(p_iv)_0 + F_{ci,0} - \psi_C + L\bar{E}_{H,i},\label{eq:1denergy_i_C}
+	\end{align}
+	where we have assumed the enthalpy flux and heat flux go to zero at the loop apex, $R_C=\int_C\mathrm{d}s\,n^2\Lambda(T)$ and,
+	\begin{equation} 
+		\psi_C=\int_C\mathrm{d}s\,v\frac{\partial p_e}{\partial s} + \int_C\mathrm{d}s\,\frac{k_B}{\gamma - 1}n\nu_{ei}(T_i - T_e).
+	\end{equation}
+	%
+	\par Similarly, integrating over the TR portion of the loop,
+	\begin{align}
+		\frac{\gamma}{\gamma - 1}(p_ev)_0 &= - F_{ce,0} + \psi_{TR} - \mathcal{R}_{TR}, \label{eq:1denergy_e_TR} \\[0.5em]
+		\frac{\gamma}{\gamma - 1}(p_iv)_0 &=  - F_{ci,0} - \psi_{TR}. \label{eq:1denergy_i_TR}
+	\end{align}
+	Letting the TR have length $\ell$ and the corona length $L$, following \citet{klimchuk_highly_2008}, because $\ell\ll L$, we have neglected terms involving $\ell$. Additionally, we have assumed that the enthalpy flux and heat flux go to zero at the top of the chromosphere, $R_{TR}=\int_{TR}\mathrm{d}s\,n^2\Lambda(T)$ and
+	\begin{equation}
+		\psi_{TR}=\int_{TR}\mathrm{d}s\,v\frac{\partial p_e}{\partial s} + \int_{TR}\mathrm{d}s\,\frac{k_B}{\gamma - 1}n\nu_{ei}(T_i - T_e).
+	\end{equation}
+	%
+	Plugging \autoref{eq:1denergy_e_TR} (\autoref{eq:1denergy_i_TR}) into \autoref{eq:1denergy_e_C} (\autoref{eq:1denergy_i_C}),
+	\begin{align}
+		\frac{L}{\gamma - 1}\frac{d\bar{p}_e}{dt} =& \psi_{TR} + \psi_C -(\mathcal{R}_C + \mathcal{R}_{TR}) + L\bar{E}_{H,e},\label{eq:0d_press_e_sub} \\[0.5em]
+		\frac{L}{\gamma - 1}\frac{d\bar{p}_i}{dt} =& -(\psi_{C} + \psi_{TR}) +  L\bar{E}_{H,i}.\label{eq:0d_press_i_sub}
+	\end{align}
+	%
+	\par Just as in the single-fluid case, we find that the spatially-integrated coronal density evolution is described by,
+	\begin{equation}
+		L\frac{d\bar{n}}{dt} = (nv)_0.
+	\end{equation}
+	Using \autoref{eq:1denergy_e_TR} and the equation of state for $p_e$, the above equation can be written as
+	\begin{align}
+		(nv)_0 =& \frac{(p_ev)_0}{k_BT_{e,0}} = \frac{c_2(\gamma - 1)}{c_3\gamma k_B\bar{T}_e}(-F_{ce,0} - \mathcal{R}_{TR} + \psi_{TR}),\\
+		L\frac{d\bar{n}}{dt} =& \frac{c_2(\gamma - 1)}{c_3\gamma k_B\bar{T}_e}(-F_{ce,0} - \mathcal{R}_{TR} + \psi_{TR}).\label{eq:0d_mass_sub}
+	\end{align}
+	%
+	\par To recover \autoref{eq:press_e_0d_2fl}, \autoref{eq:press_i_0d_2fl}, and \autoref{eq:mass_0d_2fl}, we need to find expressions for $\psi_C$ and $\psi_{TR}$. Consider the first integral in the definition of $\psi_C$. Using integration by parts,
+	\begin{equation}
+		\int_C\mathrm{d}s\,v\frac{\partial p_e}{\partial s} = (p_ev)\Big|^{``a"}_{``0"} - \int_C\mathrm{d}v\,p_e = -(p_ev)_0 - \int_C\mathrm{d}v\,p_e\approx -(p_ev)_0 -\bar{p}_e\int_C\mathrm{d}v = -(p_ev)_0 + \bar{p}_ev_0 \approx 0.
+	\end{equation}
+	Thus, we can express $\psi_C$ as 
+	\begin{equation}
+		\psi_C\approx\frac{k_BL}{\gamma -1}\bar{n}\nu_{ei}(\bar{T}_i - \bar{T}_e),
+		\label{eq:psi_C}
+	\end{equation}
+	where $\nu_{ei}=\nu_{ei}(\bar{T}_e,\bar{n})$. To find an expression for $\psi_{TR}$, we first note that, using the equation of state for both the electrons and the ions and the quasi-neutrality condition ($n_e=n_i$), 
+	\begin{equation}
+		\frac{p_ev}{p_iv} = \frac{T_e}{T_i}.
+	\end{equation}
+	Evaluating this expression at the TR-corona interface (denoted by ``0''), plugging in \autoref{eq:1denergy_e_TR} and \autoref{eq:1denergy_i_TR}, and defining $\xi\equiv T_{e,0}/T_{i,0}$,
+	\begin{equation}
+		\frac{- F_{ce,0} + \psi_{TR} - \mathcal{R}_{TR}}{- F_{ci,0} - \psi_{TR}} = \xi.
+	\end{equation}
+	Solving for $\psi_{TR}$, we find,
+	\begin{equation}
+		\psi_{TR} = \frac{1}{1+\xi}(F_{ce,0} + \mathcal{R}_{TR} - \xi F_{ci,0}).
+		\label{eq:psi_TR}
+	\end{equation}
+	Plugging \autoref{eq:psi_C} and \autoref{eq:psi_TR} into \autoref{eq:0d_press_e_sub}, \autoref{eq:0d_press_i_sub}, and \autoref{eq:0d_mass_sub} gives us our set of EBTEL two-fluid equations as given in \autoref{eq:press_e_0d_2fl}, \autoref{eq:press_i_0d_2fl}, and \autoref{eq:mass_0d_2fl}.
 	%
 	%
 	%Bibliography
