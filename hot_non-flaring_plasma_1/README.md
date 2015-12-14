@@ -3,6 +3,15 @@
 Text and figures for first paper on hot non-flaring plasma in ARs studied using 0D 
 hydrodynamics.
 
+##Table
+Table summarizing hot plasma results similar to that shown in Bradshaw et al. (2012) for cool emission measure slopes. This may be a bit of a challenge as few authors actually report hot emission measure slopes. 
+
+Format: (Author) (Slope) (Observation or Model) (Temperature range) (Comments)
+
++ Caspi et al. (2015)--fit DEM model with b~6, temperature range unclear
+
++ Warren et al. (2012)--survey of many AR cores, fitting both hot and cool sides; _b_ ranged from 6-10 with large uncertainties. 
+
 ##Figures
 
 + __Fig 1__ Single fluid, T, n (1 panel each) for 4 heating durations.
