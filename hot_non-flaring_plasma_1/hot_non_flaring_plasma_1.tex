@@ -285,7 +285,16 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 		\psi_{TR} = \frac{1}{1+\xi}(F_{ce,0} + \mathcal{R}_{TR} - \xi F_{ci,0}).
 		\label{eq:psi_TR}
 	\end{equation}
-	Plugging \autoref{eq:psi_C} and \autoref{eq:psi_TR} into \autoref{eq:0d_press_e_sub}, \autoref{eq:0d_press_i_sub}, and \autoref{eq:0d_mass_sub} gives us our set of two-fluid EBTEL equations as given in \autoref{eq:press_e_0d_2fl}, \autoref{eq:press_i_0d_2fl}, and \autoref{eq:mass_0d_2fl}.
+	\autoref{fig:psi_tr_compare} shows the relative contributions of the different terms in \autoref{eq:press_e_0d_2fl} for the $\tau=200$ s case (red curve) in \autoref{fig:nT_tau_compare}. It is clear that $\psi_{TR}$ makes a non-negligible contribution to the evolution of $p_e$, particularly during the heating and conductive cooling phase. 
+	\par Plugging \autoref{eq:psi_C} and \autoref{eq:psi_TR} into \autoref{eq:0d_press_e_sub}, \autoref{eq:0d_press_i_sub}, and \autoref{eq:0d_mass_sub} gives us our set of two-fluid EBTEL equations as given in \autoref{eq:press_e_0d_2fl}, \autoref{eq:press_i_0d_2fl}, and \autoref{eq:mass_0d_2fl}.
+	%
+	\begin{figure}[t]
+		\centering
+		\includegraphics[width=0.75\columnwidth]{figures/{psi_TR_compare}.pdf}
+		\caption{Relative contributions by terms in \autoref{eq:press_e_0d_2fl} scaled by $(\gamma - 1)/L$. The y-axis has been scaled such that the loss terms can be shown on a $\log_{10}$ scale. The simulation shown is equivalent to that of the $\tau=200$ s case (red curve) in \autoref{fig:nT_tau_compare}.}
+		\label{fig:psi_tr_compare}
+	\end{figure}
+	%
 	%
 	%
 	%Bibliography
