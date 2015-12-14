@@ -10,7 +10,7 @@ Format: (Author) (Slope) (Observation or Model) (Temperature range) (Comments)
 
 + Caspi et al. (2015)--fit DEM model with b~6, temperature range unclear
 
-+ 
++ Warren et al. (2012)--survey of many AR cores, fitting both hot and cool sides; _b_ ranged from 6-10 with large uncertainties. 
 
 ##Figures
 
