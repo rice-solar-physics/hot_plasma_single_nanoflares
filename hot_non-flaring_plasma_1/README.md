@@ -12,6 +12,12 @@ Format: (Author) (Slope) (Observation or Model) (Temperature range) (Comments)
 
 + Warren et al. (2012)--survey of many AR cores, fitting both hot and cool sides; _b_ ranged from 6-10 with large uncertainties. 
 
+| Author | Type | Comments |
+|:------:|:----:|:---------|
+| Warren et al. (2011) | Observation | |
+| Caspi et al. (2015) | Observation | fit DEM model with b~6 |
+
+
 ##Figures
 
 + __Fig 1__ Single fluid, T, n (1 panel each) for 4 heating durations.
