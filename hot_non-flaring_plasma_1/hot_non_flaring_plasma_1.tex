@@ -158,16 +158,24 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 	\label{subsec:two_fluid_res}
 	%
 	\par \autoref{fig:nT_tau_2fl_compare} shows temperature and density profiles equivalent to the $\tau=20,500$ s cases shown in \autoref{fig:nT_tau_compare} except that here only the electrons (left column) or ions (right column) are heated. The solid (dashed) lines show the electron (ion) temperature. Note that in the ion heating case, the electrons do not see temperatures in excess of 10 MK while the ions are heated to temperatures exceeding 50 MK. This effect is exacerbated for short heating durations. Because the loop has less time to fill, the collisional timescale becomes much longer than the heating timescale, allowing the electron and ion populations to deviate farther from equilibrium.
-	%
-	\par The black curves in \autoref{fig:nT_teff_compare} show the resulting $\mathrm{EM}(T)$ for $\tau=20$ s (left panel) and $\tau=500$ s (right panel). In the case of electron heating and $\tau=20$ s, in $6.6<\log{T}<6.8$, $\mathrm{EM}(T)$ is considerably steeper compared to the single-fluid case. This steepening comes from accelerated cooling due to the Coulomb coupling introduced in our two-fluid model. As the plasma cools through this temperature range, the density has increased sufficiently such that Coulomb coupling and thermal conduction are comparable in efficiency. Because $T_i<T_e$, the ions act as a sink and enhance the rate of cooling, leading to a steeper $\mathrm{EM}(T)$ slope in this region. Note that in the case of ion heating and the single-fluid case, where Coulomb coupling is a source or not included, this steepening does not occur. 
-	%
-	\par In the case where the heating pulse duration is long, $\tau=500$ s, this steepening is much less exacerbated. Because the electrons are heated slowly, they do not have much time to evolve out of equilibrium with the ions. This in turn heavily dampens the Coulomb exchange term. Additionally, in the case where only the ions are heated, for both $\tau=20$ s and $\tau=500$ s, $\mathrm{EM}(T)$ is truncated sharply near $\log{T}\sim6.9$. Becuase $\mathrm{EM}(T)$ is constructed from the electron temperature, the emission measure never sees $\log{T}\ge7$ because the Coulomb coupling timescale, during the early heating phase where $T_i\gg T_e$ and the density is low, is much larger than the ion thermal conduction timescale. Thus, by the time the electrons can ``see'' the ions, they have cooled far below their peak temperature.
 	%%
 	\begin{figure*}[b]
 		\centering
 		\includegraphics[width=2\columnwidth]{figures/{nT_tau_2fl_compare}.pdf}
 		\caption{Temperature (top row) and density (bottom row) for the cases of electron heating (left column) and ion heating (right column). In each panel, two different heating durations, $\tau=20$ s and $\tau=500$ s, are shown.}
 		\label{fig:nT_tau_2fl_compare}
+	\end{figure*}
+	%%
+	%
+	\par The black curves in \autoref{fig:em_teff_compare} show the resulting $\mathrm{EM}(T)$ for $\tau=20$ s (left panel) and $\tau=500$ s (right panel). In the case of electron heating and $\tau=20$ s, in $6.6<\log{T}<6.8$, $\mathrm{EM}(T)$ is considerably steeper compared to the single-fluid case. This steepening comes from accelerated cooling due to the Coulomb coupling introduced in our two-fluid model. As the plasma cools through this temperature range, the density has increased sufficiently such that Coulomb coupling and thermal conduction are comparable in efficiency. Because $T_i<T_e$, the ions act as a sink and enhance the rate of cooling, leading to a steeper $\mathrm{EM}(T)$ slope in this region. Note that in the case of ion heating and the single-fluid case, where Coulomb coupling is a source or not included, this steepening does not occur. 
+	%
+	\par In the case where the heating pulse duration is long, $\tau=500$ s, this steepening is much less exacerbated. Because the electrons are heated slowly, they do not have much time to evolve out of equilibrium with the ions. This in turn heavily dampens the Coulomb exchange term. Additionally, in the case where only the ions are heated, for both $\tau=20$ s and $\tau=500$ s, $\mathrm{EM}(T)$ is truncated sharply near $\log{T}\sim6.9$. Becuase $\mathrm{EM}(T)$ is constructed from the electron temperature, the emission measure never sees $\log{T}\ge7$ because the Coulomb coupling timescale, during the early heating phase where $T_i\gg T_e$ and the density is low, is much larger than the ion thermal conduction timescale. Thus, by the time the electrons can ``see'' the ions, they have cooled far below their peak temperature.
+	%%
+	\begin{figure*}
+		\centering
+		\includegraphics[width=2\columnwidth]{figures/{em_teff_compare}.pdf}
+		\caption{$\mathrm{EM}(T)$ (black) and $\mathrm{EM}(T_{eff})$ (red) for pulse durations of 20 s (top panel) and 500 s (bottom panel) for the single-fluid (solid), electron heating (dashed), and ion heating (dot-dashed) cases. }
+		\label{fig:em_teff_compare}
 	\end{figure*}
 	%%
 	%
@@ -185,14 +193,6 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 	%%
 	%
 	\par There are two effects that lead to temperatures below 10 MK. The first is that for long pulses $> 200$ s, the heating is in direct competition with thermal conduction, which thus limits the temperature to these values. Secondly, the short pulses reach the higher temperatures too quickly for the ionization state of the plasma to keep up, and this only happens at or below 10 MK. Thus it seems as if the temperature range $T_m$ up to 10 MK is the optimal one for searching for this hot component as well as direct signatures of the heating. However, it is difficult to ``map'' what would be seen in such a state of ionization non-equilibrium back to the real system.
-	%%
-	\begin{figure*}
-		\centering
-		\includegraphics[width=2\columnwidth]{figures/{em_teff_compare}.pdf}
-		\caption{$\mathrm{EM}(T)$ (black) and $\mathrm{EM}(T_{eff})$ (red) for pulse durations of 20 s (top panel) and 500 s (bottom panel) for the single-fluid (solid), electron heating (dashed), and ion heating (dot-dashed) cases. }
-		\label{fig:em_teff_compare}
-	\end{figure*}
-	%%
 	%%
 	%
 	\section{Discussion}
