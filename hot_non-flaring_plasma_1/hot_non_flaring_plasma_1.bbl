@@ -2,43 +2,45 @@
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Antiochos \& Sturrock(1976)}]{antiochos_influence_1976}
-Antiochos, S.~K., \& Sturrock, P.~A. 1976, Sol. Phys., 49, 359
+Antiochos, S.~K., \& Sturrock, P.~A. 1976, Solar Physics, 49, 359
 
 \bibitem[{Antiochos \& Sturrock(1978)}]{antiochos_evaporative_1978}
----. 1978, ApJ, 220, 1137
+---. 1978, The Astrophysical Journal, 220, 1137
 
 \bibitem[{Barnes {et~al.}(2016)Barnes, Cargill, \&
   Bradshaw}]{barnes_inference_2016-1}
 Barnes, W.~T., Cargill, P.~J., \& Bradshaw, S.~J. 2016, in preparation
 
 \bibitem[{Bradshaw(2009)}]{bradshaw_numerical_2009}
-Bradshaw, S.~J. 2009, A\&A, 502, 409
+Bradshaw, S.~J. 2009, Astronomy and Astrophysics, 502, 409
 
 \bibitem[{Bradshaw \& Cargill(2006)}]{bradshaw_explosive_2006}
-Bradshaw, S.~J., \& Cargill, P.~J. 2006, A\&A, 458, 987
+Bradshaw, S.~J., \& Cargill, P.~J. 2006, Astronomy and Astrophysics, 458, 987
 
 \bibitem[{Bradshaw \& Cargill(2010{\natexlab{a}})}]{bradshaw_cooling_2010}
----. 2010{\natexlab{a}}, ApJ, 717, 163
+---. 2010{\natexlab{a}}, The Astrophysical Journal, 717, 163
 
 \bibitem[{Bradshaw \& Cargill(2010{\natexlab{b}})}]{bradshaw_new_2010}
----. 2010{\natexlab{b}}, ApJ, 710, L39
+---. 2010{\natexlab{b}}, The Astrophysical Journal Letters, 710, L39
 
 \bibitem[{Bradshaw \& Cargill(2013)}]{bradshaw_influence_2013}
----. 2013, ApJ, 770, 12
+---. 2013, The Astrophysical Journal, 770, 12
 
 \bibitem[{Bradshaw {et~al.}(2012)Bradshaw, Klimchuk, \&
   Reep}]{bradshaw_diagnosing_2012}
-Bradshaw, S.~J., Klimchuk, J.~A., \& Reep, J.~W. 2012, ApJ, 758, 53
+Bradshaw, S.~J., Klimchuk, J.~A., \& Reep, J.~W. 2012, The Astrophysical
+  Journal, 758, 53
 
 \bibitem[{Braginskii(1965)}]{braginskii_transport_1965}
 Braginskii, S.~I. 1965, Reviews of Plasma Physics, 1, 205
 
 \bibitem[{Brosius {et~al.}(2014)Brosius, Daw, \&
   Rabin}]{brosius_pervasive_2014}
-Brosius, J.~W., Daw, A.~N., \& Rabin, D.~M. 2014, ApJ, 790, 112
+Brosius, J.~W., Daw, A.~N., \& Rabin, D.~M. 2014, The Astrophysical Journal,
+  790, 112
 
 \bibitem[{Cargill(1994)}]{cargill_implications_1994}
-Cargill, P.~J. 1994, ApJ, 422, 381
+Cargill, P.~J. 1994, The Astrophysical Journal, 422, 381
 
 \bibitem[{Cargill(1995)}]{cargill_diagnostics_1995}
 Cargill, P.~J. 1995, in Proceedings of the 15th {National} {Solar}
@@ -46,19 +48,19 @@ Cargill, P.~J. 1995, in Proceedings of the 15th {National} {Solar}
   USA: World Scientific), 17
 
 \bibitem[{Cargill(2014)}]{cargill_active_2014}
----. 2014, ApJ, 784, 49
+---. 2014, The Astrophysical Journal, 784, 49
 
 \bibitem[{Cargill {et~al.}(2012{\natexlab{a}})Cargill, Bradshaw, \&
   Klimchuk}]{cargill_enthalpy-based_2012}
-Cargill, P.~J., Bradshaw, S.~J., \& Klimchuk, J.~A. 2012{\natexlab{a}}, ApJ,
-  752, 161
+Cargill, P.~J., Bradshaw, S.~J., \& Klimchuk, J.~A. 2012{\natexlab{a}}, The
+  Astrophysical Journal, 752, 161
 
 \bibitem[{Cargill {et~al.}(2012{\natexlab{b}})Cargill, Bradshaw, \&
   Klimchuk}]{cargill_enthalpy-based_2012-1}
----. 2012{\natexlab{b}}, ApJ, 758, 5
+---. 2012{\natexlab{b}}, The Astrophysical Journal, 758, 5
 
 \bibitem[{Cargill \& Klimchuk(2004)}]{cargill_nanoflare_2004}
-Cargill, P.~J., \& Klimchuk, J.~A. 2004, ApJ, 605, 911
+Cargill, P.~J., \& Klimchuk, J.~A. 2004, The Astrophysical Journal, 605, 911
 
 \bibitem[{Cargill {et~al.}(2015)Cargill, Warren, \&
   Bradshaw}]{cargill_modelling_2015}
@@ -66,7 +68,12 @@ Cargill, P.~J., Warren, H.~P., \& Bradshaw, S.~J. 2015, Phil. Trans. R. Soc. A,
   373, 20140260
 
 \bibitem[{Caspi {et~al.}(2015)Caspi, Woods, \& Warren}]{caspi_new_2015}
-Caspi, A., Woods, T.~N., \& Warren, H.~P. 2015, ApJ, 802, L2
+Caspi, A., Woods, T.~N., \& Warren, H.~P. 2015, The Astrophysical Journal
+  Letters, 802, L2
+
+\bibitem[{Ciaravella {et~al.}(1991)Ciaravella, Peres, \&
+  Serio}]{ciaravella_non-local_1991}
+Ciaravella, A., Peres, G., \& Serio, S. 1991, Solar Physics, 132, 279
 
 \bibitem[{Culhane {et~al.}(2007)Culhane, Harra, James, Al-Janabi, Bradley,
   Chaudry, Rees, Tandy, Thomas, Whillock, Winter, Doschek, Korendyke, Brown,
@@ -74,24 +81,36 @@ Caspi, A., Woods, T.~N., \& Warren, H.~P. 2015, ApJ, 802, L2
   Mahmoud, Mapson-Menard, Probyn, Thomas, Davila, Dere, Windt, Shea, Hagood,
   Moye, Hara, Watanabe, Matsuzaki, Kosugi, Hansteen, \&
   Wikstol}]{culhane_euv_2007}
-Culhane, J.~L., Harra, L.~K., James, A.~M., {et~al.} 2007, Sol. Phys., 243, 19
+Culhane, J.~L., Harra, L.~K., James, A.~M., {et~al.} 2007, Solar Physics, 243,
+  19
 
 \bibitem[{De~Moortel \& Browning(2015)}]{de_moortel_recent_2015}
 De~Moortel, I., \& Browning, P. 2015, Philosophical Transactions of the Royal
   Society of London Series A, 373, 40269
 
 \bibitem[{Del~Zanna \& Mason(2014)}]{del_zanna_elemental_2014}
-Del~Zanna, G., \& Mason, H.~E. 2014, A\&A, 565, A14
+Del~Zanna, G., \& Mason, H.~E. 2014, Astronomy and Astrophysics, 565, A14
+
+\bibitem[{Del~Zanna {et~al.}(2015)Del~Zanna, Tripathi, Mason, Subramanian, \&
+  O'Dwyer}]{del_zanna_evolution_2015}
+Del~Zanna, G., Tripathi, D., Mason, H., Subramanian, S., \& O'Dwyer, B. 2015,
+  Astronomy and Astrophysics, 573, A104
 
 \bibitem[{Drake \& Swisdak(2014)}]{drake_onset_2014}
 Drake, J.~F., \& Swisdak, M. 2014, Physics of Plasmas (1994-present), 21,
   072903
 
+\bibitem[{Gburek {et~al.}(2011)Gburek, Sylwester, Kowalinski, Bakala,
+  Kordylewski, Podgorski, Plocieniak, Siarkowski, Sylwester, Trzebinski, Kuzin,
+  Pertsov, Kotov, Farnik, Reale, \& Phillips}]{gburek_sphinx_2011}
+Gburek, S., Sylwester, J., Kowalinski, M., {et~al.} 2011, Solar System
+  Research, 45, 189
+
 \bibitem[{Golub {et~al.}(2007)Golub, Deluca, Austin, Bookbinder, Caldwell,
   Cheimets, Cirtain, Cosmo, Reid, Sette, Weber, Sakao, Kano, Shibasaki, Hara,
   Tsuneta, Kumagai, Tamura, Shimojo, McCracken, Carpenter, Haight, Siler,
   Wright, Tucker, Rutledge, Barbera, Peres, \& Varisco}]{golub_x-ray_2007}
-Golub, L., Deluca, E., Austin, G., {et~al.} 2007, Sol. Phys., 243, 63
+Golub, L., Deluca, E., Austin, G., {et~al.} 2007, Solar Physics, 243, 63
 
 \bibitem[{Ishikawa {et~al.}(2014)Ishikawa, Glesener, Christe, Ishibashi,
   Brooks, Williams, Shimojo, Sako, \& Krucker}]{ishikawa_constraining_2014}
@@ -99,17 +118,18 @@ Ishikawa, S.-n., Glesener, L., Christe, S., {et~al.} 2014, Publications of the
   Astronomical Society of Japan, 66, S15
 
 \bibitem[{Karpen \& DeVore(1987)}]{karpen_nonlocal_1987}
-Karpen, J.~T., \& DeVore, C.~R. 1987, ApJ, 320, 904
+Karpen, J.~T., \& DeVore, C.~R. 1987, The Astrophysical Journal, 320, 904
 
 \bibitem[{Klimchuk {et~al.}(2008)Klimchuk, Patsourakos, \&
   Cargill}]{klimchuk_highly_2008}
-Klimchuk, J.~A., Patsourakos, S., \& Cargill, P.~J. 2008, ApJ, 682, 1351
+Klimchuk, J.~A., Patsourakos, S., \& Cargill, P.~J. 2008, The Astrophysical
+  Journal, 682, 1351
 
 \bibitem[{Kosugi {et~al.}(2007)Kosugi, Matsuzaki, Sakao, Shimizu, Sone,
   Tachikawa, Hashimoto, Minesugi, Ohnishi, Yamada, Tsuneta, Hara, Ichimoto,
   Suematsu, Shimojo, Watanabe, Shimada, Davis, Hill, Owens, Title, Culhane,
   Harra, Doschek, \& Golub}]{kosugi_hinode_2007}
-Kosugi, T., Matsuzaki, K., Sakao, T., {et~al.} 2007, Sol. Phys., 243, 3
+Kosugi, T., Matsuzaki, K., Sakao, T., {et~al.} 2007, Solar Physics, 243, 3
 
 \bibitem[{Krucker {et~al.}(2011)Krucker, Christe, Glesener, Ishikawa, McBride,
   Glaser, Turin, Lin, Gubarev, Ramsey, Saito, Tanaka, Takahashi, Watanabe,
@@ -124,72 +144,115 @@ Krucker, S., Christe, S., Glesener, L., {et~al.} 2011, in Society of
   Wuelser, Wolfson, Yanari, Bookbinder, Cheimets, Caldwell, Deluca, Gates,
   Golub, Park, Podgorski, Bush, Scherrer, Gummin, Smith, Auker, Jerram, Pool,
   Soufli, Windt, Beardsley, Clapp, Lang, \& Waltham}]{lemen_atmospheric_2012}
-Lemen, J.~R., Title, A.~M., Akin, D.~J., {et~al.} 2012, Sol. Phys., 275, 17
+Lemen, J.~R., Title, A.~M., Akin, D.~J., {et~al.} 2012, Solar Physics, 275, 17
 
 \bibitem[{Ljepojevic \& MacNeice(1989)}]{ljepojevic_heat_1989}
 Ljepojevic, N.~N., \& MacNeice, P. 1989, Physical Review A, 40, 981
 
 \bibitem[{Markovskii \& Hollweg(2004)}]{markovskii_intermittent_2004}
-Markovskii, S.~A., \& Hollweg, J.~V. 2004, ApJ, 609, 1112
+Markovskii, S.~A., \& Hollweg, J.~V. 2004, The Astrophysical Journal, 609, 1112
+
+\bibitem[{Miceli {et~al.}(2012)Miceli, Reale, Gburek, Terzo, Barbera, Collura,
+  Sylwester, Kowalinski, Podgorski, \& Gryciuk}]{miceli_x-ray_2012}
+Miceli, M., Reale, F., Gburek, S., {et~al.} 2012, Astronomy and Astrophysics,
+  544, A139
 
 \bibitem[{Ofman {et~al.}(1998)Ofman, Klimchuk, \&
   Davila}]{ofman_self-consistent_1998}
-Ofman, L., Klimchuk, J.~A., \& Davila, J.~M. 1998, ApJ, 493, 474
+Ofman, L., Klimchuk, J.~A., \& Davila, J.~M. 1998, The Astrophysical Journal,
+  493, 474
 
 \bibitem[{Ono {et~al.}(1996)Ono, Yamada, Akao, Tajima, \&
   Matsumoto}]{ono_ion_1996}
-Ono, Y., Yamada, M., Akao, T., Tajima, T., \& Matsumoto, R. 1996, Phys. Rev.
-  Lett., 76, 3328
+Ono, Y., Yamada, M., Akao, T., Tajima, T., \& Matsumoto, R. 1996, Physical
+  Review Letters, 76, 3328
 
 \bibitem[{Parker(1988)}]{parker_nanoflares_1988}
-Parker, E.~N. 1988, ApJ, 330, 474
+Parker, E.~N. 1988, The Astrophysical Journal, 330, 474
 
 \bibitem[{Pesnell {et~al.}(2012)Pesnell, Thompson, \&
   Chamberlin}]{pesnell_solar_2012}
-Pesnell, W.~D., Thompson, B.~J., \& Chamberlin, P.~C. 2012, Sol. Phys., 275, 3
+Pesnell, W.~D., Thompson, B.~J., \& Chamberlin, P.~C. 2012, Solar Physics, 275,
+  3
+
+\bibitem[{Petralia {et~al.}(2014)Petralia, Reale, Testa, \&
+  Del~Zanna}]{petralia_thermal_2014}
+Petralia, A., Reale, F., Testa, P., \& Del~Zanna, G. 2014, Astronomy and
+  Astrophysics, 564, A3
+
+\bibitem[{Reale {et~al.}(2011)Reale, Guarrasi, Testa, DeLuca, Peres, \&
+  Golub}]{reale_solar_2011}
+Reale, F., Guarrasi, M., Testa, P., {et~al.} 2011, The Astrophysical Journal
+  Letters, 736, L16
 
 \bibitem[{Reale \& Orlando(2008)}]{reale_nonequilibrium_2008}
-Reale, F., \& Orlando, S. 2008, ApJ, 684, 715
+Reale, F., \& Orlando, S. 2008, The Astrophysical Journal, 684, 715
 
 \bibitem[{Reale {et~al.}(2009)Reale, Testa, Klimchuk, \&
   Parenti}]{reale_evidence_2009}
-Reale, F., Testa, P., Klimchuk, J.~A., \& Parenti, S. 2009, ApJ, 698, 756
+Reale, F., Testa, P., Klimchuk, J.~A., \& Parenti, S. 2009, The Astrophysical
+  Journal, 698, 756
 
 \bibitem[{Reep {et~al.}(2013)Reep, Bradshaw, \&
   Klimchuk}]{reep_diagnosing_2013}
-Reep, J.~W., Bradshaw, S.~J., \& Klimchuk, J.~A. 2013, ApJ, 764, 193
+Reep, J.~W., Bradshaw, S.~J., \& Klimchuk, J.~A. 2013, The Astrophysical
+  Journal, 764, 193
 
 \bibitem[{Schmelz \& Pathak(2012)}]{schmelz_cold_2012}
-Schmelz, J.~T., \& Pathak, S. 2012, ApJ, 756, 126
+Schmelz, J.~T., \& Pathak, S. 2012, The Astrophysical Journal, 756, 126
+
+\bibitem[{Schmelz {et~al.}(2009)Schmelz, Saar, DeLuca, Golub, Kashyap, Weber,
+  \& Klimchuk}]{schmelz_hinode_2009}
+Schmelz, J.~T., Saar, S.~H., DeLuca, E.~E., {et~al.} 2009, The Astrophysical
+  Journal Letters, 693, L131
 
 \bibitem[{Spitzer \& Härm(1953)}]{spitzer_transport_1953}
 Spitzer, L., \& Härm, R. 1953, Physical Review, 89, 977
 
+\bibitem[{Sylwester {et~al.}(2008)Sylwester, Kuzin, Kotov, Farnik, \&
+  Reale}]{sylwester_sphinx:_2008}
+Sylwester, J., Kuzin, S., Kotov, Y.~D., Farnik, F., \& Reale, F. 2008, Journal
+  of Astrophysics and Astronomy, 29, 339
+
+\bibitem[{Tajfirouze {et~al.}(2016)Tajfirouze, Reale, Petralia, \&
+  Testa}]{tajfirouze_time-resolved_2016}
+Tajfirouze, E., Reale, F., Petralia, A., \& Testa, P. 2016, The Astrophysical
+  Journal, 816, 12
+
 \bibitem[{Testa \& Reale(2012)}]{testa_hinode/eis_2012}
-Testa, P., \& Reale, F. 2012, ApJ, 750, L10
+Testa, P., \& Reale, F. 2012, The Astrophysical Journal Letters, 750, L10
+
+\bibitem[{Testa {et~al.}(2011)Testa, Reale, Landi, DeLuca, \&
+  Kashyap}]{testa_temperature_2011}
+Testa, P., Reale, F., Landi, E., DeLuca, E.~E., \& Kashyap, V. 2011, The
+  Astrophysical Journal, 728, 30
 
 \bibitem[{Tripathi {et~al.}(2011)Tripathi, Klimchuk, \&
   Mason}]{tripathi_emission_2011}
-Tripathi, D., Klimchuk, J.~A., \& Mason, H.~E. 2011, ApJ, 740, 111
+Tripathi, D., Klimchuk, J.~A., \& Mason, H.~E. 2011, The Astrophysical Journal,
+  740, 111
 
 \bibitem[{Warren {et~al.}(2011)Warren, Brooks, \&
   Winebarger}]{warren_constraints_2011}
-Warren, H.~P., Brooks, D.~H., \& Winebarger, A.~R. 2011, ApJ, 734, 90
+Warren, H.~P., Brooks, D.~H., \& Winebarger, A.~R. 2011, The Astrophysical
+  Journal, 734, 90
 
 \bibitem[{Warren {et~al.}(2012)Warren, Winebarger, \&
   Brooks}]{warren_systematic_2012}
-Warren, H.~P., Winebarger, A.~R., \& Brooks, D.~H. 2012, ApJ, 759, 141
+Warren, H.~P., Winebarger, A.~R., \& Brooks, D.~H. 2012, The Astrophysical
+  Journal, 759, 141
 
 \bibitem[{West {et~al.}(2008)West, Bradshaw, \& Cargill}]{west_lifetime_2008}
-West, M.~J., Bradshaw, S.~J., \& Cargill, P.~J. 2008, Sol. Phys., 252, 89
+West, M.~J., Bradshaw, S.~J., \& Cargill, P.~J. 2008, Solar Physics, 252, 89
 
 \bibitem[{Winebarger {et~al.}(2011)Winebarger, Schmelz, Warren, Saar, \&
   Kashyap}]{winebarger_using_2011}
 Winebarger, A.~R., Schmelz, J.~T., Warren, H.~P., Saar, S.~H., \& Kashyap,
-  V.~L. 2011, ApJ, 740, 2
+  V.~L. 2011, The Astrophysical Journal, 740, 2
 
 \bibitem[{Winebarger {et~al.}(2012)Winebarger, Warren, Schmelz, Cirtain,
   Mulu-Moore, Golub, \& Kobayashi}]{winebarger_defining_2012}
-Winebarger, A.~R., Warren, H.~P., Schmelz, J.~T., {et~al.} 2012, ApJ, 746, L17
+Winebarger, A.~R., Warren, H.~P., Schmelz, J.~T., {et~al.} 2012, The
+  Astrophysical Journal Letters, 746, L17
 
 \end{thebibliography}
