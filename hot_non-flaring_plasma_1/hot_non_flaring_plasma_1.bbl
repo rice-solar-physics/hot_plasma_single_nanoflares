@@ -207,9 +207,15 @@ Spitzer, L., \& Härm, R. 1953, Physical Review, 89, 977
 Sylwester, J., Kuzin, S., Kotov, Y.~D., Farnik, F., \& Reale, F. 2008, Journal
   of Astrophysics and Astronomy, 29, 339
 
-\bibitem[{Tajfirouze {et~al.}(2016)Tajfirouze, Reale, Petralia, \&
-  Testa}]{tajfirouze_time-resolved_2016}
-Tajfirouze, E., Reale, F., Petralia, A., \& Testa, P. 2016, ApJ, 816, 12
+\bibitem[{Tajfirouze {et~al.}(2016{\natexlab{a}})Tajfirouze, Reale, Peres, \&
+  Testa}]{tajfirouze_euv_2016}
+Tajfirouze, E., Reale, F., Peres, G., \& Testa, P. 2016{\natexlab{a}}, ApJ,
+  817, L11
+
+\bibitem[{Tajfirouze {et~al.}(2016{\natexlab{b}})Tajfirouze, Reale, Petralia,
+  \& Testa}]{tajfirouze_time-resolved_2016}
+Tajfirouze, E., Reale, F., Petralia, A., \& Testa, P. 2016{\natexlab{b}}, ApJ,
+  816, 12
 
 \bibitem[{Testa \& Reale(2012)}]{testa_hinode/eis_2012}
 Testa, P., \& Reale, F. 2012, ApJ, 750, L10
