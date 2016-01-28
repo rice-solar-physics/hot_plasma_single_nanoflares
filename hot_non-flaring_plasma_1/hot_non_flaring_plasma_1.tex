@@ -4,14 +4,8 @@
 \usepackage{amsmath}
 \usepackage[tight]{subfigure}
 \usepackage[breaklinks,colorlinks,citecolor=blue]{hyperref}
-\usepackage[all]{hypcap}
 \usepackage[utf8]{inputenc} %force unicode in bibtex
-\usepackage{enumitem}
 \usepackage{graphicx}
-%use for editing/highlighting
-\usepackage{color,soul}
-\usepackage{lipsum}
-%\usepackage{lineno}
 
 %Define new commands as needed
 \newcommand{\ang}{\AA~}
@@ -19,9 +13,6 @@
 \renewcommand{\sectionautorefname}{Section}
 \renewcommand{\subsectionautorefname}{Section}
 \renewcommand{\subsubsectionautorefname}{Section}
-%\linenumbers
-%Set options for list spacing
-\setenumerate{noitemsep}
 
 \begin{document}
 	%Frontmatter
@@ -39,7 +30,6 @@
 	%
 	\author{S. J. Bradshaw}
 	\affil{Department of Physics \& Astronomy, Rice University, Houston, TX 77251-1892}
-	%Affiliations
 	%Abstract
 	\begin{abstract}
 		The properties expected of ``hot'' non-flaring plasmas due to nanoflare heating in active regions are investigated using hydrodynamic modeling tools, including a two-fluid development of the EBTEL code. Here we study a single nanoflare and show that while simple models predict an emission measure distribution extending well above 10 MK that is consistent with cooling by thermal conduction, many other effects are likely to limit the existence and detectability of such plasmas. These include: differential heating between electrons and ions, ionisation non-equilibrium and, for short nanoflares, the time taken for the coronal density to increase. The most useful temperature range to look for this plasma, often called the ``smoking gun'' of nanoflare heating, lies between $10^{6.6}$ and $10^7$ K. Signatures of the actual heating may be detectable in some instances.
@@ -165,12 +155,6 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 		\par The solid lines in the right panel of \autoref{fig:sf_tnem} show the corresponding EBTEL emission measure distributions, $\mathrm{EM}(T)$. The temperature of maximum emission ($T_m$) and the peak emission measure ($\mathrm{EM}(T_m)$)are the same in all cases and are consistent with those found in the studies of the core loops \citep{warren_systematic_2012}. While shorter pulses lead to higher initial temperatures, the shape of the emission measure below $T_m$ is independent of the properties of the heating pulse, indicating that this part of the emission measure distribution cannot provide information about the actual nanoflare duration or intensity. All cases show evidence of the heating phase, namely the bump on $\mathrm{EM}(T)$ at $\log{(T)} =$ 6.85, 7, 7.2 and 7.3. Below these bumps to just above $T = T_m$, $\mathrm{EM}(T)$ scales as $T^{-5}-T^{-5.5}$ for all cases, again indicating that information about the heating process is lost at these temperatures. However, detection of emission above $T_m$ would still be evidence for nanoflare heating, though of undetermined duration.  
 
 		\par For integration over the lifetime of unresolved structures lying transverse to the line of sight, one can write down an expression $\mathrm{EM}(T) \sim n^2\tau_{cool}(n, T)$ which simply states that what matters for determining $\mathrm{EM}(T)$ is how long the plasma spends at any given temperature \citep[e.g.][]{cargill_implications_1994,cargill_nanoflare_2004}. For an analytic solution for the cooling, one can formally define $\tau_{cool}(n, T) = (T/(dT/dt))$. In the absence of a formal solution, order of magnitude scalings can be used: the difference with analytic solutions being a numerical factor. To obtain an expression $\mathrm{EM}(T)\propto T^{-b}$, one needs to provide a relation between $T$ and $n$. For conductive cooling of the corona, one can write $\tau_{cool} \sim nL^2T^{-5/2}$, giving $\mathrm{EM} \sim n^3L^2T^{-5/2}$. In determining the relationship between $T$ and $n$, two limits are those of constant density and constant pressure. The former gives static conductive cooling \citep[e.g.][]{antiochos_influence_1976} and the latter evaporative cooling with constant thermal energy \citep[e.g.][]{antiochos_evaporative_1978}, which then lead to $b = 5/2$ and $11/2$ respectively. Our results in the right panel of \autoref{fig:sf_tnem} are consistent with the latter.
-	%
-	%% Discussion in this paragraph will be saved for Paper II.
-	%% H0 and L variations will fit well with energy budget discussion
-	%% Will need to remake EM(T) plots showing varying L, H0
-	%
-		%\par The top right and bottom left panels of \autoref{fig:em_vary_all} show the effect of varying the peak heating rate $H_0$ (with fixed $\tau$ such that the total energy injected increases) and loop length $L$. In all cases the pulse length is 200 s. The signature of nanoflare heating around and above 10 MK persists. When the heating amplitude increases, the value of $T_m$ increases above the values seen in AR cores, suggesting an upper limit on the nanoflare energy \citep[and hence on the time between nanoflares; see][]{cargill_active_2014}. Increasing the length also retains the signatures of the hot component, while the gravitational coronal stratification plays no role at these temperatures. Since the aspect ratio remains fixed, the emission measure will increase with length. It is also important to note that changing the background density by an order of magnitude (not shown) retains the hot component. This suggests that even in the intermediate frequency nanoflare regime there should be signatures above $T_m$ and will be discussed further in \citetalias{barnes_inference_2016-1}.
 		%
 	\subsubsection{HYDRAD Comparison}
 	\label{subsubsec:hydrad_compare}
@@ -182,9 +166,6 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 \par As a result of this modified density behaviour, while the emission measure calculated from the EBTEL model ``sees'' temperatures well in excess of 10 MK for short pulses, in the HYDRAD model this will not be the case. This is evident from the short pulses in the right hand panel of \autoref{fig:sf_tnem}: the emission above 10 MK predicted by EBTEL is not present in the HYDRAD runs, the emission cutting off below $10^{6.9}$ K. For the longer pulses, EBTEL still shows higher temperatures, but the difference with HYDRAD is evident now over a smaller temperature range. Also, the characteristic bumps on the emission measure seen with EBTEL are largely eliminated in the HYDRAD runs.
 
 \par This regime of short heating pulses was not considered in our earlier work using EBTEL, and the associated comparisons with field-aligned hydrodynamic codes \citep{klimchuk_highly_2008,cargill_enthalpy-based_2012}, where pulses of order 200 s or greater were considered. Other workers have used short pulses with EBTEL, albeit much less intense \citep{tajfirouze_euv_2016,tajfirouze_time-resolved_2016}. Clearly the more gentle the heating profile used, the slower the rise in the EBTEL density, leading to results closer to those found using HYDRAD. Thus it appears that caution is warranted in the use of approximate models for short, intense heating pulses. This restriction only applies to the high temperature regime: as can be seen from \autoref{fig:sf_tnem}, the emission measure profiles below $10^{6.8}$ are not affected. Nonetheless, the absence of emission near 10 MK for short pulses constitutes one of (as we shall see) many obstacles to quantifying any hot plasma component due to nanoflares.
-	%%
-	%\par An important caveat to this result is that this shallower slope is unlikely to be observed because of non-equilibrium ionization (see \autoref{subsec:nei_res}). Additionally, it may be an artifact of the 0D nature of the EBTEL model as more advanced loop models (see \autoref{fig:hydrad_compare} and the accompanying discussion) show a much lower and constant density during this early heating and cooling phase as some finite amount of time is required to get the material moving up the loop. For constant density, $\delta\to0$ and $b\to5/2$, suggesting that more realistic emission measure models of impulsive heating would yield flatter, but significantly weaker emission for  $\log{T}>6.8$. \hl{NOTE: Have not addressed the steepened EM slope between 6.6 and 6.8. Is this significant? Appendix figure showing delta\_pe terms seems to suggest that equilibration plays a role in this temperature range.}
-	%%
 	%
 	\subsubsection{Heat Flux Limiter}
 	\label{subsec:hf_res}
@@ -304,8 +285,7 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 \par These results suggest that while showing that such a ``hot'' plasma should exist in principle may not be difficult, characterising the heating process from its observed properties may be a lot harder. Of course we have limited ourselves to the LF nanoflares here, and we showed \citep{cargill_active_2014} that the intermediate frequency nanoflare regime does have significant differences, in large part due to the range of densities that the nanoflares occure in. This will be addressed fully, along with other parameter variations, in \citetalias{barnes_inference_2016-1}, though it is difficult to see how a component hotter than 10 MK can be resurrected. Note though that the results of \citet{caspi_new_2015} pose a challenge for our scenario unless an undetected microflare or small flare occurred during the observations.
 	
 	\par The observational aspects of this work will be addressed more fully in \citetalias{barnes_inference_2016-1}. However, one can conclude (i) present day observations do not seem capable of making quantitative statements about the ``hot'' component, though they are highly suggestive of its existence and (ii) future measurements should be concentrated in the temperature regime $10^{6.6}$ – $10^7$ K rather than at higher temperatures. The MaGIXS instrument, due to fly in 2017, is well positioned to do this.
-%%	Current instrumentation does not allow for a determination of the partition of energy between electron and ion populations by the as yet undetermined coronal heating mechanism based on $\mathrm{EM}(T)$ alone. For $T<T_M$, the density is sufficiently high such that $\tau_{ei}\to0$ and the two populations are always in equilibrium; any information about which species was preferentially heated has been lost. In order to discriminate between the heating of one species over another, greater constraints must be placed on $\mathrm{EM}(T)$ for $T>T_M$. Here, for example, a steep drop after $T_M$ and an extended tail near $10^7$ K is a possible signature of electron heating while a sharp cutoff before $10^7$ K could be a signature of ion heating. As seen in \autoref{fig:stf_emeff_compare}, these signatures are exaggerated the more impulsive the heating and ionization non-equilibrium does not preclude a determination of the energy partition.%%
-	%
+%
 \section*{Acknowledgment}
 %%
 WTB was provided travel support to the Coronal Loops Workshop
