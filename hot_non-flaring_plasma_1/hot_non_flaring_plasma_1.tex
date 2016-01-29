@@ -1,9 +1,10 @@
-\documentclass[apj]{emulateapj}
+\documentclass[]{aastex}
 
 %Specify packages
 \usepackage{amsmath}
 \usepackage[tight]{subfigure}
-\usepackage[breaklinks,colorlinks,citecolor=blue]{hyperref}
+\usepackage[breaklinks,colorlinks,
+  urlcolor=blue,citecolor=blue,linkcolor=blue]{hyperref}
 \usepackage[utf8]{inputenc} %force unicode in bibtex
 \usepackage{graphicx}
 
@@ -17,14 +18,16 @@
 \begin{document}
 	%Frontmatter
 	\title{Inference of Heating Properties from ``Hot'' Non-flaring Plasmas in Active Region Cores I. Single Nanoflares}
+	\shorttitle{Heating of ``Hot'' Plasmas I. Single Nanoflares}
+	\shortauthors{Barnes, Cargill, and Bradshaw}
 	%Authors
 	\author{W. T. Barnes}
 	\affil{Department of Physics \& Astronomy, Rice University, Houston, TX 77251-1892}
 	\email{will.t.barnes@rice.edu}
 	%
 	\author{P. J. Cargill}
-	\affil{Space and Atmospheric Physics, The Blackett Laboratory, Imperial College, London SW7 2BW}
-	\affil{School of Mathematics and Statistics, University of St. Andrews, St. Andrews, Scotland KY16 9SS}
+	\affil{Space \& Atmospheric Physics, The Blackett Laboratory, Imperial College, London SW7 2BW}
+	\affil{School of Mathematics \& Statistics, University of St. Andrews, St. Andrews, Scotland KY16 9SS}
 	%
 	\and
 	%
@@ -34,6 +37,8 @@
 	\begin{abstract}
 		The properties expected of ``hot'' non-flaring plasmas due to nanoflare heating in active regions are investigated using hydrodynamic modeling tools, including a two-fluid development of the EBTEL code. Here we study a single nanoflare and show that while simple models predict an emission measure distribution extending well above 10 MK that is consistent with cooling by thermal conduction, many other effects are likely to limit the existence and detectability of such plasmas. These include: differential heating between electrons and ions, ionisation non-equilibrium and, for short nanoflares, the time taken for the coronal density to increase. The most useful temperature range to look for this plasma, often called the ``smoking gun'' of nanoflare heating, lies between $10^{6.6}$ and $10^7$ K. Signatures of the actual heating may be detectable in some instances.
 	\end{abstract}
+	%Keywords
+	\keywords{Sun:corona, plasmas, hydrodynamics}
 	%Body
 	\section{Introduction}
 	\label{sec:intro}
@@ -46,7 +51,7 @@
 	%
 	\par In an effort to diminish uncertainty in this high temperature ``blind spot'' in $\mathrm{EM}(T)$, \citet{petralia_thermal_2014} analyzed an active region core by supplementing \textit{Hinode}/EIS spectral observations with broadband SDO/AIA and \textit{Hinode}/XRT measurements. By using concurrent observations from the 94 \ang channel of AIA and the Ti\_poly filter of XRT, the authors showed that the $\mathrm{EM}(T)$ peaked near $T_m = 10^{6.6}$ and had a weak, hot component. Additionally, \citet{miceli_x-ray_2012}, using the SphinX instrument \citep{sylwester_sphinx:_2008,gburek_sphinx_2011}, analyzed full-disk X-ray spectra integrated over 17 days, during which time two prominent active regions were present. These authors found that a two-temperature model was needed to fit the resulting spectrum, a strong 3 MK component and a much weaker 7 MK component.
 %
-	\par More recent data has come from rocket flights. The Focusing Optics X-ray Solar Imager (FOXSI) \citep{krucker_focusing_2011} first flew in November 2012 and observed an AR. A joint study with the \textit{Hinode} EIS and XRT instruments by \citet{ishikawa_constraining_2014} suggested that while hot plasma existed up to 10 MK, the \textit{Hinode} instruments over-estimated the amount of plasma there. A rocket flight reported by \citet{brosius_pervasive_2014} identified emission in an Fe XIX line with peak formation temperature of $10^{6.95}$ K and reported an emission measure that was 0.59 times the emission formed at $10^{6.2}$ K. More recently, a pair of rocket flights gave observations from the Amptek X123-SDD soft X-ray spectrometer \citep{caspi_new_2015}. This provided comprehensive coverage of the 3 - 60 \ang wavelength range. \citeauthor{caspi_new_2015} demonstrated that the emission in this range could be fit by an emission measure with a power-law distribution slope of roughly $b = 6$. 
+	\par More recent data has come from rocket flights. The Focusing Optics X-ray Solar Imager (FOXSI) \citep{krucker_focusing_2013} first flew in November 2012 and observed an AR. A joint study with the \textit{Hinode} EIS and XRT instruments by \citet{ishikawa_constraining_2014} suggested that while hot plasma existed up to 10 MK, the \textit{Hinode} instruments over-estimated the amount of plasma there. A rocket flight reported by \citet{brosius_pervasive_2014} identified emission in an Fe XIX line with peak formation temperature of $10^{6.95}$ K and reported an emission measure that was 0.59 times the emission formed at $10^{6.2}$ K. More recently, a pair of rocket flights gave observations from the Amptek X123-SDD soft X-ray spectrometer \citep{caspi_new_2015}. This provided comprehensive coverage of the 3 - 60 \ang wavelength range. \citeauthor{caspi_new_2015} demonstrated that the emission in this range could be fit by an emission measure with a power-law distribution slope of roughly $b = 6$. 
 %
 	\par Several other workers have combined model results with observations in an effort to better elucidate nanoflare signatures. Using a hydrodynamic loop model, \citet{reale_solar_2011} showed that emission from impulsively heated subarcsecond strands is finely structured and that this predicted structure can also be found in AR core emission as observed by the 94 \ang channel of AIA. Most recently, \citet{tajfirouze_time-resolved_2016}, using a 0D hydrodynamic model, explored a large parameter space in event energy distribution, pulse duration, and number of loops. Using a probabilistic neural network, the authors compared their many forward-modeled light curves to 94 \ang AIA observations of a ``hot'' AR core; they found that the observed light curves were most consistent with a pulse duration of 50 s and a shallow event energy distribution, suggestive of nanoflare heating.
 %
@@ -110,7 +115,7 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 	%
 	\par Ionization non-equilibrium has long been known to be an issue in the interpretation of data from the impulsive phase of flares, and more recently it has been discussed in the context of nanoflares \citep{bradshaw_explosive_2006,reale_nonequilibrium_2008}. The main issue is that when a tenuous plasma is heated rapidly, it takes a certain time to reach ionization equilibrium so that the ionization states present do not reflect the actual (electron) temperature, assuming that the heating occurs mainly to electrons (see \autoref{subsec:two_fluid_theory} and \autoref{subsec:two_fluid_res}) rather than the heavier ions such as Fe that contribute to the observed radiation. If the heating is sustained, then eventually ionization equilibrium will be reached, and this may occur in moderate to large flares. However, for nanoflares that may last for anywhere between a few seconds and a few minutes, a different scenario arises in which on termination of heating, rapid conductive cooling arises, so that the high ionisation states may never be attained.
 	%
-	\par \citet{bradshaw_explosive_2006}, \citet{reale_nonequilibrium_2008} and \citet{bradshaw_numerical_2009} have all addressed this point using slightly different approaches, but with similar conclusions, namely that short nanoflares in a low-density plasma are unlikely to be detectable. We now develop this work further to assess how the results in the first parts of \autoref{sec:results} are altered. We follow these authors and calculate an ``effective temperature'' ($T_{eff}$) as a proxy for the deviation from ionization equilibrium. This involves taking a time-series of $T$ and $n$ (e.g. from EBTEL) and using the numerical code\footnote{The numerical code used here has been made freely available by the author. Contact \href{mailto:stephen.bradshaw@rice.edu}{stephen.bradshaw@rice.edu} for a copy of the source code.} described in \citet{bradshaw_numerical_2009} to calculate the fractional ionization of as many states of various elements as needed, and in turn this calculates $T_{eff}$, a temperature that would be measured based on the actual ionization states. We primarily consider Fe between Fe IX and Fe XXVII, though Ca has also been calculated as a check on these results.
+	\par \citet{bradshaw_explosive_2006}, \citet{reale_nonequilibrium_2008} and \citet{bradshaw_numerical_2009} have all addressed this point using slightly different approaches, but with similar conclusions, namely that short nanoflares in a low-density plasma are unlikely to be detectable. We now develop this work further to assess how the results in the first parts of \autoref{sec:results} are altered. We follow these authors and calculate an ``effective temperature'' ($T_{eff}$) as a proxy for the deviation from ionization equilibrium. This involves taking a time-series of $T$ and $n$ (e.g. from EBTEL) and using the numerical code\footnote{The numerical code used here has been made freely available by the author. Contact \email{stephen.bradshaw@rice.edu} for a copy of the source code.} described in \citet{bradshaw_numerical_2009} to calculate the fractional ionization of as many states of various elements as needed, and in turn this calculates $T_{eff}$, a temperature that would be measured based on the actual ionization states. We primarily consider Fe between Fe IX and Fe XXVII, though Ca has also been calculated as a check on these results.
 	%
 	\par The feature that will prove of great relevance in our results is that despite the different nanoflare durations, $T_{eff}$ does not exceed 10 MK. There is also an ``overshoot'' of $T_{eff}$ when it reaches its maximum value: this is saying that collisions are still not strong enough for the adjustment of the ionization state to be instantaneous.
 	%
@@ -257,14 +262,14 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 	%%
 	\begin{figure*}
 		\centering
-		\includegraphics[width=2\columnwidth]{figures/{f6}.eps}
+		\includegraphics[width=\columnwidth]{figures/{f6}.eps}
 		\caption{$T_{eff}$ (red) for pulse durations of 20 s (left panel) and 500 s (right panel) for the single-fluid case (solid) as well as the cases where only the electrons (dashed) or only the ions (dot-dashed) are heated. $T(t)$ profiles (i.e. assuming ionization equilibrium) for $\tau=20$ s (blue lines) and $\tau=500$ s (purple lines) for all three heating scenarios are repeated here for comparison purposes.}
 		\label{fig:stf_Teff_compare}
 	\end{figure*}
 	%%
 	\begin{figure*}
 		\centering
-		\includegraphics[width=2\columnwidth]{figures/{f7}.eps}
+		\includegraphics[width=\columnwidth]{figures/{f7}.eps}
 		\caption{$\mathrm{EM}(T_{eff})$ (red) for pulse durations of 20 s (left panel) and 500 s (right panel) for the single-fluid (solid), electron heating (dashed), and ion heating (dot-dashed) cases. $\mathrm{EM}(T)$ (i.e. assuming ionization equilibrium) for $\tau=20$ s (blue lines) and $\tau=500$ s (purple lines) for all three heating scenarios are repeated here for comparison purposes. Note that in both panels we only show $\mathrm{EM}(T)$ for $\log{T}>\log{T_M}$.}
 		\label{fig:stf_emeff_compare}
 	\end{figure*}
@@ -285,9 +290,8 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 \par These results suggest that while showing that such a ``hot'' plasma should exist in principle may not be difficult, characterising the heating process from its observed properties may be a lot harder. Of course we have limited ourselves to the LF nanoflares here, and we showed \citep{cargill_active_2014} that the intermediate frequency nanoflare regime does have significant differences, in large part due to the range of densities that the nanoflares occure in. This will be addressed fully, along with other parameter variations, in \citetalias{barnes_inference_2016-1}, though it is difficult to see how a component hotter than 10 MK can be resurrected. Note though that the results of \citet{caspi_new_2015} pose a challenge for our scenario unless an undetected microflare or small flare occurred during the observations.
 	
 	\par The observational aspects of this work will be addressed more fully in \citetalias{barnes_inference_2016-1}. However, one can conclude (i) present day observations do not seem capable of making quantitative statements about the ``hot'' component, though they are highly suggestive of its existence and (ii) future measurements should be concentrated in the temperature regime $10^{6.6}$ – $10^7$ K rather than at higher temperatures. The MaGIXS instrument, due to fly in 2017, is well positioned to do this.
-%
-\section*{Acknowledgment}
 %%
+\acknowledgments
 WTB was provided travel support to the Coronal Loops Workshop
 VII held in Cambridge, UK, July 21-23, 2016, at which a preiliminary version of this work was presented, by NSF award number 1536094. 
 %%
@@ -392,7 +396,7 @@ VII held in Cambridge, UK, July 21-23, 2016, at which a preiliminary version of 
 	where the first two terms on the right-hand side represent the contributions from electron and ion thermal conduction, the third term represents losses from radiation, and the last two terms are as before. \autoref{fig:psi_tr_compare} shows the contribution of each term, with the exception of the heating term, $\bar{Q}_e$. As expected, (electron) thermal conduction dominates during the early heating and cooling phase and losses from radiation takeover in the late draining and cooling stage. Between these two phases, energy exchange between the two species is important to the evolution of the electron energy. $\psi_{TR}$, indicated by the black dotted line, is included to show its importance in the formation of the two-fluid EBTEL equations.
 	%%
 	%Bibliography
-	\bibliography{astrophys-abbrev.bib,references.bib}
-	\bibliographystyle{apj}
+	\bibliography{references.bib}
+	\bibliographystyle{yahapj}
 	%\bibliography{hot_non_flaring_plasma_1.bbl}
 \end{document}
