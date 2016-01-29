@@ -1,0 +1,2 @@
+# Figure arrangement
+Figs. 1, 3, and 5 all have 3 panels. In all three cases, panels a and b go in the left-hand column and panel c goes in the right-hand column. In the left-hand column, panel a goes on top and panel b on bottom. Preferably height of panel a + height of panel b = height of panel c; width panel a = width panel b = width panel c.
