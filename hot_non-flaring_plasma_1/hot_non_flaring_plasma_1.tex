@@ -1,4 +1,4 @@
-\documentclass[]{aastex}
+\documentclass[apj]{emulateapj}
 
 %Specify packages
 \usepackage{amsmath}
@@ -177,7 +177,7 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 	%
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.5\columnwidth]{figures/{f2}.eps}
+		\includegraphics[width=\columnwidth]{figures/{f2}.eps}
 		\caption{$\mathrm{EM}(T)$ calculated from the single fluid EBTEL model when only pure Spitzer conduction is used (red) and when a flux limiter is imposed according to \autoref{subsec:hf_theory}. In the free-streaming limit, two values of $f$ are considered, $1/6$ (blue line) and $1/30$ (green line). The pulse duration is $\tau=200$ s. All other parameters are the same as those discussed in \autoref{subsubsec:pulse_res}. Note that here we only show $\mathrm{EM}(T)$ for $\log{T}>\log{T_M}$.}
 		\label{fig:sf_hf_em}
 	\end{figure}
@@ -220,7 +220,7 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 	%%
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.5\columnwidth]{figures/{f4}.eps}
+		\includegraphics[width=\columnwidth]{figures/{f4}.eps}
 		\caption{Pressure (left axis, blue lines) and density (right axis, red lines) as a function of temperature for the $\tau=200$ s case. All parameters are the same as those discussed in \autoref{subsubsec:pulse_res}. The single-fluid pressure $p$ and density $n$ are denoted by the solid blue and red lines, respectively. The two-fluid total pressure, $p_e+p_i$, electron pressure, $p_e$, and ion pressure, $p_i$, are denoted by the dotted, dashed, and dot-dashed blue lines respectively. The two-fluid density is represented by the dashed red line. Pressure, density, and temperature are all shown on a log scale.}
 		\label{fig:pnt_state_space}
 	\end{figure}
@@ -262,14 +262,14 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 	%%
 	\begin{figure*}
 		\centering
-		\includegraphics[width=\columnwidth]{figures/{f6}.eps}
+		\includegraphics[width=2\columnwidth]{figures/{f6}.eps}
 		\caption{$T_{eff}$ (red) for pulse durations of 20 s (left panel) and 500 s (right panel) for the single-fluid case (solid) as well as the cases where only the electrons (dashed) or only the ions (dot-dashed) are heated. $T(t)$ profiles (i.e. assuming ionization equilibrium) for $\tau=20$ s (blue lines) and $\tau=500$ s (purple lines) for all three heating scenarios are repeated here for comparison purposes.}
 		\label{fig:stf_Teff_compare}
 	\end{figure*}
 	%%
 	\begin{figure*}
 		\centering
-		\includegraphics[width=\columnwidth]{figures/{f7}.eps}
+		\includegraphics[width=2\columnwidth]{figures/{f7}.eps}
 		\caption{$\mathrm{EM}(T_{eff})$ (red) for pulse durations of 20 s (left panel) and 500 s (right panel) for the single-fluid (solid), electron heating (dashed), and ion heating (dot-dashed) cases. $\mathrm{EM}(T)$ (i.e. assuming ionization equilibrium) for $\tau=20$ s (blue lines) and $\tau=500$ s (purple lines) for all three heating scenarios are repeated here for comparison purposes. Note that in both panels we only show $\mathrm{EM}(T)$ for $\log{T}>\log{T_M}$.}
 		\label{fig:stf_emeff_compare}
 	\end{figure*}
