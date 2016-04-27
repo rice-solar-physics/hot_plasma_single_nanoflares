@@ -73,7 +73,7 @@ Concerns raised by reviewer to address
  - [ ] Change text to include discussions of these comparisons
  - [ ] Provide discussion of discrepancy in density
 - [ ] Discussion of contamination of DEM in multiple structures in introduction, section 3.1.1 (end of second paragraph), last sentence.
-- [ ] Clear up methods for doing power-law fits, discussion of power-laws
+- [x] Clear up methods for doing power-law fits, discussion of power-laws
  - Some brief comments here, should be enough to satisfy them
 - [x] ~~Minor comment 1~~ **This is a matter of preference**
 - [x] Minor comment 2, flux limiter
