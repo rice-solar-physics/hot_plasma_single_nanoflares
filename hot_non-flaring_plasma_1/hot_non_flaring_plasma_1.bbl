@@ -14,8 +14,11 @@ Barnes, W.~T., Cargill, P.~J., \& Bradshaw, S.~J. 2016, in preparation
 \bibitem[{Bradshaw(2009)}]{bradshaw_numerical_2009}
 Bradshaw, S.~J. 2009, Astronomy and Astrophysics, 502, 409
 
+\bibitem[{Bradshaw \& Cargill(2005)}]{bradshaw_cooling_2005}
+Bradshaw, S.~J., \& Cargill, P.~J. 2005, Astronomy and Astrophysics, 437, 311
+
 \bibitem[{Bradshaw \& Cargill(2006)}]{bradshaw_explosive_2006}
-Bradshaw, S.~J., \& Cargill, P.~J. 2006, Astronomy and Astrophysics, 458, 987
+---. 2006, Astronomy and Astrophysics, 458, 987
 
 \bibitem[{Bradshaw \& Cargill(2010{\natexlab{a}})}]{bradshaw_cooling_2010}
 ---. 2010{\natexlab{a}}, The Astrophysical Journal, 717, 163
@@ -158,6 +161,9 @@ Luciani, J.~F., Mora, P., \& Virmont, J. 1983, Physical Review Letters, 51,
 
 \bibitem[{Markovskii \& Hollweg(2004)}]{markovskii_intermittent_2004}
 Markovskii, S.~A., \& Hollweg, J.~V. 2004, The Astrophysical Journal, 609, 1112
+
+\bibitem[{Martens(2010)}]{martens_scaling_2010}
+Martens, P. C.~H. 2010, The Astrophysical Journal, 714, 1290
 
 \bibitem[{Miceli {et~al.}(2012)Miceli, Reale, Gburek, Terzo, Barbera, Collura,
   Sylwester, Kowalinski, Podgorski, \& Gryciuk}]{miceli_x-ray_2012}

@@ -5,3 +5,8 @@
 
 Revision Details
 ------------------
+
++ Added more flux limiter values
++ Added HYDRAD comparisons for electron/ion heating
++ Added appendix to discuss corrections to c_1
++ Moved HYDRAD comparison section

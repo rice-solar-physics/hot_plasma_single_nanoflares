@@ -30,13 +30,29 @@ The first point includes how the increase in density in EBTEL might affect the E
 
 ##Figures
 
-+ __Fig. 1__: T(t) and n(t) for EBTEL and HYDRAD for tau=20,40,200,500 s
-+ __Fig. 2__: EM(T) for EBTEL and HYDRAD for tau=20,40,200,500 s
-+ __Fig. 3__: EM(T) for Spitzer, f=1/6, and f=1/30 conduction (tau=200 s)
-+ __Fig. 4__: T(t) and n(t) for two-fluid EBTEL results for both electron and ion heating; unsure of which pulse durations should be used here
-+ __Fig. 5__: EM(T) for two-fluid EBTEL results, electron and ion heating (include NEI EM here?)
-+ __Fig. 6__: T(t) and n(t) for NEI runs, compare with two-fluid electron and ion heating results
-+ __Fig. A1__: conduction, radiation, and equilibration terms for fixed tau for a single two-fluid EBTEL run
++ __Fig. 1__: EBTEL/HYDRAD comparison, single-fluid, tau=20,40,200,500 s
+ + __a__: T(t)
+ + __b__: n(t)
+ + __c__: EM(T)
++ __Fig. 2__: EM(T) for various flux limiters: 1/30, 1/10, 1/6, 0.53, 1, Spitzer
++ __Fig. 3__: EBTEL/HYDRAD comparison, electron heating, tau=20,40,200,500 s
+ + __a__: T(t)
+ + __b__: n(t)
+ + __c__: EM(T)
++ __Fig. 4__: Phase-space plots for p(T) and n(T) for electron heating and single-fluid cases
++ __Fig. 3__: EBTEL/HYDRAD comparison, ion heating, tau=20,40,200,500 s
+ + __a__: T(t)
+ + __b__: n(t)
+ + __c__: EM(T)
++ __Fig. 6__: T(t) for NEI runs for a short and long pulse, single-fluid, electron heating, ion heating
++ __Fig. 7__: EM(t) for NEI runs for a short and long pulse, single-fluid, electron heating, ion heating
++ __Fig. A1__: comparison of c_1(t) with different corrections
+ + constant values of 2 and 4 (dotted)
+ + uncorrected from 2 to 0.6
+ + uncorrected from 2 to 4 to 0.6
+ + corrected from 2 to 0.6
+ + corrected from 2 to 4 to 0.6
++ __Fig. B1__: conduction, radiation, and equilibration terms for fixed tau for a single two-fluid EBTEL run
 
 ## Reviewer's Comments
 Received 8 April 2016

@@ -103,7 +103,7 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 	%
 	\par While it is often assumed that the electrons are the recipients of the prescribed coronal heating function, ion heating in the solar corona should not be discounted since the exact mechanism behind coronal heating is still unknown. For example, ions may be heated via ion-cyclotron wave resonances \citep{markovskii_intermittent_2004} or magnetic reconnection \citep{ono_ion_1996,drake_onset_2014}. To address this possibility and include effects due to electron-ion non-equilibrium, we have applied the EBTEL analysis outlined in \citet{klimchuk_highly_2008} to the two-fluid hydrodynamic equations in the form given in the appendix of \citet{bradshaw_influence_2013}. Such an approach allows us to efficiently model a two-component impulsively-heated coronal plasma, and will be used extensively in \citetalias{barnes_inference_2016-1}.
 	%
-	\par The two-fluid EBTEL equations are derived fully in \autoref{appendix} and are:
+	\par The two-fluid EBTEL equations are derived fully in \autoref{appendix_two_fluid} and are:
 	\begin{align}
 		\frac{d}{dt}\bar{p}_e &=\,\frac{\gamma - 1}{L}[\psi_{TR} - (\mathcal{R}_{TR} + \mathcal{R}_C)] + \nonumber \\ & k_B\bar{n}\nu_{ei}(\bar{T}_i-\bar{T}_e) + (\gamma-1)\bar{Q}_{e},\label{eq:press_e_0d_2fl} \\[0.5em]
 		%
@@ -289,12 +289,28 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 %%
 \acknowledgments
 WTB was provided travel support to the Coronal Loops Workshop
-VII held in Cambridge, UK, July 21-23, 2016, at which a preiliminary version of this work was presented, by NSF award number 1536094. 
+VII held in Cambridge, UK, July 21-23, 2016, at which a preiliminary version of this work was presented, by NSF award number 1536094. We thank the anonymous referee whose comments helped to improve the final draft of this paper.
 %%
 	
 	\appendix
 	\section{}
-	\label{appendix}
+	\label{appendix_c1_corrections}
+	%
+	\par The constant $c_1=\mathcal{R}_{TR}/\mathcal{R}_C$ controls how efficiently the transition region is able to radiate away the downward heat flux from the corona. From \autoref{eq:mass_0d},
+	\begin{equation}
+		\frac{d\bar{n}}{dt}\propto(|F_{c,0}|-c_1\mathcal{R}_C).
+	\end{equation}
+	During the conductive cooling phase (i.e. $|F_{c,0}|>\mathcal{R}_{TR}$), smaller (larger) values of $c_1$ correspond to stronger (weaker) chromospheric evaporation. 
+	%
+	\par\citet{klimchuk_highly_2008} calculated $c_1$ from equilibrium loop solutions for $0.8\lesssim T_a\lesssim10.4$ MK and found that while $2\lesssim c_1\lesssim20$, a constant value of $c_1=4$ provided the best agreement with their 1D simulations. Subsequently, \citet{cargill_enthalpy-based_2012} calculated corrections to $c_1$ for gravitational stratification and a multiple power-law radiative loss function as well as improved nominal values of $c_{1,eq}\approx2$ \citep[from the equilbrium scaling laws of][]{martens_scaling_2010} and $c_{1,rad}\approx0.6$ \citep[using an analysis similar to that of][]{bradshaw_cooling_2005,bradshaw_cooling_2010,bradshaw_new_2010} for the heating/conductive cooling and radiative phases, respectively. $c_1$ is then formulated such that it is a smooth continuous function, transitioning from $c_{1,eq}$ toward $c_{1,rad}$ as the loop becomes overdense.
+	%
+	\par While these improved parameterizations of $c_1$ have increased the accuracy of EBTEL, we have found that, for the heating paremeters considered here, $|n_{\mathrm{EBTEL}}-n_{\mathrm{HYDRAD}}|/n_{\mathrm{HYDRAD}}\sim30-50\%$ near the peak density. For short pulses (e.g. $\tau=20,40$ s), we expect EBTEL to greatly overestimate the density because of the 0D nature of the model (see \autoref{subsec:hydrad_compare}). However, we expect much better agreement for the longest pulses ($\tau=200,500$ s), even for intense heating cases we have considered here.
+	% 
+	\par To address this issue, we apply the following prescription to $c_1$.
+	%
+	\par\hl{Describe prescription past approaches, corrections; new prescription, maybe show comparison figure?} 
+	\section{}
+	\label{appendix_two_fluid}
 	%
 	\par The two-fluid field-aligned hydrodynamic mass and energy equations, as given by \citet{bradshaw_influence_2013}, are:
 	\begin{align}
