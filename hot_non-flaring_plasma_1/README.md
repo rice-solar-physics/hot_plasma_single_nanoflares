@@ -86,8 +86,9 @@ Received 8 April 2016
 Concerns raised by reviewer to address
 
 - [x] Include HYDRAD comparisons for two-fluid results
- - [ ] Change text to include discussions of these comparisons
- - [ ] Provide discussion of discrepancy in density
+ - [x] Change text to include discussions of these comparisons
+ - [x] Provide discussion of discrepancy in density
+  - Improved prescription of `c_1` parameter
 - [ ] Discussion of contamination of DEM in multiple structures in introduction, section 3.1.1 (end of second paragraph), last sentence.
 - [x] Clear up methods for doing power-law fits, discussion of power-laws
  - Some brief comments here, should be enough to satisfy them
