@@ -291,41 +291,25 @@ VII held in Cambridge, UK, July 21-23, 2016, at which a preiliminary version of 
 %%
 	
 	\appendix
-	\section{Corrections to $c_1$}
+	\section{Modifications to $c_1$ during the Conductive Cooling Phase}
 	\label{appendix_c1_corrections}
 	%
-	\par The constant $c_1=\mathcal{R}_{TR}/\mathcal{R}_C$ controls how efficiently the transition region is able to radiate away the downward heat flux from the corona. From \autoref{eq:mass_0d},
+	\par In Section 3 of \citet{cargill_enthalpy-based_2012} we assumed that the parameter $c_1$ decreased from its equilibrium value at the time of maximum density, to that commensurate with radiative/enthalpy cooling as the loop drained. This was defined in terms of the ratio $n/n_{eq}$, where $n_{eq}$ was the loop density that would exist for the calculated temperature were the loop to be in static equilibrium \citet[Eq. 17 of][]{cargill_enthalpy-based_2012}. In this radiative phase, $n > n_{eq}$. On the other hand, when $n < n_eq$, we assumed $c_1$ took on its equilibrium value, $c_{1,eqm}$. This gave what were seen as being acceptable errors in the EBTEL value of $n$, as shown in the Figures in \citet{cargill_enthalpy-based_2012}, in particular for the mild nanoflares we considered.
+	%
+	\par It is now clear that a modified description of $c_1$ for $n < n_{eq}$ is needed for many of the examples discussed in the present paper. Specifically, for intense heating events, the coronal density calculated by the version of EBTEL in \citet{cargill_enthalpy-based_2012} is unacceptably high when compared to results from the HYDRAD code. Quantitatively, we find the quantity $(n_{\mathrm{EBTEL}} - n_{\mathrm{HYDRAD}})/n_{\mathrm{HYDRAD}}$ can be of order 0.3. While this may seem to be reasonable, for an aproximate model, the high EBTEL density is a systematic feature, and requires further investigation.
+	%
+	\par Examination of the HYDRAD results show that EBTEL significantly under-estimates the TR radiative losses during the heating and conductive cooling phases. At this time, the loop is under-dense (e.g. Cargill and Klimchuk, 2004)\citep[e.g.][]{cargill_nanoflare_2004}, so that an excess of the conducted energy goes into evaporating TR material. We have modified $c_1$ as follows for $n < n_{eq}$,
 	\begin{equation}
-		\frac{d\bar{n}}{dt}\propto(|F_{c,0}|-c_1\mathcal{R}_C).
+		c_1 = \frac{2c_{1,eqm} + c_{1,cond}((n_{eq}/n)^2-1)}{1+(n_eq/n)^2}
+		\label{eq:c1_mod}
 	\end{equation}
-	During the conductive cooling phase (i.e. $|F_{c,0}|>\mathcal{R}_{TR}$), smaller (larger) values of $c_1$ correspond to stronger (weaker) chromospheric evaporation. 
+	as a direct analogy to Eq. 18 of \citet{cargill_enthalpy-based_2012}. In the early phases of an event, $n_{eq} \gg n$, so that $c_1 \approx c_{1,cond}$. When $n = n_{eq}$, $c_1 = c_{1,eqm}$. After some experimentation, we have settled on a choice of $c_{1,cond} = 6$ since that gives reasonable agreement between EBTEL and HYDRAD. There is no impact on the solution for $n > n_{eq}$. 
+	%s
+	\par\autoref{tab:table_c1_compare} shows a set of runs we have carried out to compare the results from HYDRAD and EBTEL with $c_1=c_{1,eqm}=2$ and $c_1$ given by \autoref{eq:c1_mod} when $n<n_{eq}$. We find that using the modification in \autoref{eq:c1_mod} gives, for the more intense heating cases with $\tau\ge200$ s, an improvement of $\sim0.1$ in the difference between HYDRAD and EBTEL (as defined above) at $n_{max}$. For the more gentle heating profiles of \citet{cargill_enthalpy-based_2012} (i.e. rows 5, 6, and 8 of \autoref{tab:table_c1_compare}), we continue to find acceptable agreement with HYDRAD, confirming that the modification proposed here is applicable to a wide range of heating scenarios.
 	%
-	\par\citet{cargill_enthalpy-based_2012} calculated corrections to $c_1$ for gravitational stratification and a multiple power-law radiative loss function as well as improved nominal values of $c_{1,eq}\approx2$ \citep[from the equilbrium scaling laws of][]{martens_scaling_2010} and $c_{1,rad}\approx0.6$ \citep[using an analysis similar to that of][]{bradshaw_cooling_2005,bradshaw_cooling_2010,bradshaw_new_2010} for the heating/conductive cooling and radiative phases, respectively. $c_1$ is then formulated such that it is a smooth continuous function, transitioning from $c_{1,eq}$ toward $c_{1,rad}$ as the loop becomes overdense. While these improved parameterizations of $c_1$ have increased the accuracy of EBTEL, we have found that, for the heating paremeters considered here, $|n_{\mathrm{EBTEL}}-n_{\mathrm{HYDRAD}}|/n_{\mathrm{HYDRAD}}\sim30-50\%$ near the peak density. For short pulses (e.g. $\tau=20,40$ s), we expect EBTEL to greatly overestimate the density because of the 0D nature of the model (see \autoref{subsec:hydrad_compare}). However, we expect much better agreement for the longest pulses ($\tau=200,500$ s), even for intense heating cases.
-	% 
-	\par To address this issue, we apply the following prescription to $c_1$. Consider a TR-crossing timescale,
-	\begin{equation}
-		\tau_{TR} = \frac{\ell}{c_s}
-	\end{equation}
-	where $\ell=\epsilon L$ (with $\epsilon<1$) is the length of the TR and $c_s=\sqrt{\gamma p/\rho}$ is the sound speed. We let $c_{1,eq}$ transition from some initial value $c_{1,eq}^{(a)}$ to some later value $c_{1,eq}^{(b)}$ over a timescale $\tau_{c_1}=n\tau_{TR}$, with $n>0$ being an integral number of crossing times. $c_{1,eq}$ is then defined to transition continuously between these two values through the expression,
-	\begin{equation}
-		c_{1,eq} = 
-	    \begin{cases} 
-	        \hfill \frac{c_{1,eq}^{(a)}(1-(t/\tau_{c_1})^2) + 2c_{1,eq}^{(b)}(t/\tau_{c_1})^2}{1+(t/\tau_{c_1})^2},    \hfill & t_0<t<\tau_{c_1} \\
-	        \hfill c_{1,eq}^{(b)}, \hfill & t>\tau_{c_1} \\
-	    \end{cases}
-	\end{equation}
-	where $t_0$ is the time at which the heating event begins. 
+	\input{tables/table_a1.tex}
 	%
-	\par The physical motivation for this method is as follows. Because of the strong heat flux into the TR after heating, a more efficient TR is needed in order to radiate away the energy supplied by this heat flux. However, because some finite time  ($\approx n\tau_{TR}$) is required for information to reach the TR, the TR efficiency (i.e. $c_{1,eq}$) should not increase until after the TR and corona have ``communicated''. Because information is passed between the TR and corona via acoustic waves, this timescale is set by the sound speed.
-	%
-	\par \autoref{fig:c1_compare} shows the cases of constant $c_{1,eq}=2$ (blue) and variable $c_{1,eq}$ (red), where $c_{1,eq}^{(a)}=2$, $c_{1,eq}^{(b)}=4$, $n=2$ and $\epsilon=0.2$, with (solid) and without (dashed) the graviational and loss function corrections. Looking at $\bar{n}(t)$ in the right panel, a variable $c_{1,eq}$ gives considerably better agreement with the 1D HYDRAD results. This analysis reveals that, while more simple prescriptions of $c_1$ have proved adequate for gentler heating profiles in cooler, more dense loops, care should be taken when applying this model to very intense heating of tenuous loops. We urge current and future users of EBTEL to think carefully about the prescription of $c_1$ when applying EBTEL to a given heating scenario. 
-	%
-	\begin{figure}
-		\centering
-		\includegraphics[width=\columnwidth]{figures/{f8}.eps}
-		\caption{Single-fluid EBTEL results for the $\tau=500$ s case for different prescriptions of $c_1$: $c_{1,eq}=2$ (blue) and $c_{1,eq}^{(a)}=2,\,c_{1,eq}^{(b)}=4$ (red), with (solid) and without (dashed) gravitational and loss function corrections. For the variable $c_{1,eq}$ case, we have used $\epsilon=0.2$ and $n=2$. \textbf{Left:} Resulting values of $c_1$, including the radiative phase values at much later times. The dotted black reference lines are shown at 2 and 4. \textbf{Right:} Resulting time-dependent density evolution, $\bar{n}(t)$, for the various cases. The solid black line shows the corresponding HYDRAD results.}
-		\label{fig:c1_compare}
-	\end{figure}
+	\par\autoref{eq:c1_mod} is motivated by simplicity while including the essential physics. Alternative, more complex determinations of $c_1$ have been considered, but involve limitations on how EBTEL can be used both now and in the future.
 	%
 	\section{Derivation of the Two-fluid EBTEL Equations}
 	\label{appendix_two_fluid}
@@ -426,7 +410,7 @@ VII held in Cambridge, UK, July 21-23, 2016, at which a preiliminary version of 
 	where the first two terms on the right-hand side represent the contributions from electron and ion thermal conduction, the third term represents losses from radiation, and the last two terms are as before. \autoref{fig:psi_tr_compare} shows the contribution of each term, with the exception of the heating term, $\bar{Q}_e$. As expected, (electron) thermal conduction dominates during the early heating and cooling phase and losses from radiation takeover in the late draining and cooling stage. Between these two phases, energy exchange between the two species is important to the evolution of the electron energy. $\psi_{TR}$, indicated by the black dotted line, is included to show its importance in the formation of the two-fluid EBTEL equations.
 	%%
 	%Bibliography
-	%\bibliography{astrophys-abbrev.bib,references.bib}
-	%\bibliographystyle{apj}
-	\bibliography{hot_non_flaring_plasma_1.bbl}
+	\bibliography{astrophys-abbrev.bib,references.bib}
+	\bibliographystyle{apj}
+	%\bibliography{hot_non_flaring_plasma_1.bbl}
 \end{document}
