@@ -1,4 +1,4 @@
-\documentclass[]{aastex}
+\documentclass[apj]{emulateapj}
 
 %Specify packages
 \usepackage{amsmath}
@@ -164,7 +164,7 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 	%
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.5\columnwidth]{figures/{f2}.eps}
+		\includegraphics[width=\columnwidth]{figures/{f2}.eps}
 		\caption{$\mathrm{EM}(T)$ calculated from the single-fluid EBTEL model when only pure Spitzer conduction is used (turquoise, dashed) and when a flux limiter is imposed according to \autoref{subsec:hf_theory}. In the free-streaming limit, \textbf{five different values of $f$ are considered (see legend)}. The pulse duration is $\tau=200$ s. All other parameters are the same as those discussed in \autoref{subsubsec:pulse_res}. Note that here we only show $\mathrm{EM}(T)$ for $T>T_m$ \textbf{as the cool side of $\mathrm{EM}(T)$ is unaffected by our choice of $f$.}}
 		\label{fig:sf_hf_em}
 	\end{figure}
@@ -204,7 +204,7 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 	%%
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.5\columnwidth]{figures/{f4}.eps}
+		\includegraphics[width=\columnwidth]{figures/{f4}.eps}
 		\caption{Pressure (left axis, blue lines) and density (right axis, red lines) as a function of temperature for the $\tau=200$ s case. All parameters are the same as those discussed in \autoref{subsubsec:pulse_res}. The single-fluid pressure $p$ and density $n$ are denoted by the solid blue and red lines, respectively. The two-fluid total pressure, $p_e+p_i$, electron pressure, $p_e$, and ion pressure, $p_i$, are denoted by the dotted, dashed, and dot-dashed blue lines respectively. The two-fluid density is represented by the dashed red line. Pressure, density, and temperature are all shown on a log scale.}
 		\label{fig:pnt_state_space}
 	\end{figure}
@@ -256,14 +256,14 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 	%%
 	\begin{figure*}
 		\centering
-		\includegraphics[width=\columnwidth]{figures/{f6}.eps}
+		\includegraphics[width=2\columnwidth]{figures/{f6}.eps}
 		\caption{$T_{eff}$ (red) for pulse durations of 20 s (left panel) and 500 s (right panel) for the single-fluid case (solid) as well as the cases where only the electrons (dashed) or only the ions (dot-dashed) are heated. $T(t)$ profiles (i.e. assuming ionization equilibrium) for $\tau=20$ s (blue lines) and $\tau=500$ s (purple lines) for all three heating scenarios are repeated here for comparison purposes.}
 		\label{fig:stf_Teff_compare}
 	\end{figure*}
 	%%
 	\begin{figure*}
 		\centering
-		\includegraphics[width=\columnwidth]{figures/{f7}.eps}
+		\includegraphics[width=2\columnwidth]{figures/{f7}.eps}
 		\caption{$\mathrm{EM}(T_{eff})$ (red) for pulse durations of 20 s (left panel) and 500 s (right panel) for the single-fluid (solid), electron heating (dashed), and ion heating (dot-dashed) cases. $\mathrm{EM}(T)$ (i.e. assuming ionization equilibrium) for $\tau=20$ s (blue lines) and $\tau=500$ s (purple lines) for all three heating scenarios are repeated here for comparison purposes. Note that in both panels we only show $\mathrm{EM}(T)$ for $\log{T}>\log{T_M}$.}
 		\label{fig:stf_emeff_compare}
 	\end{figure*}
@@ -287,25 +287,25 @@ where $F_c$ is the Spitzer-H{\"a}rm heat flux. Smaller values of $f$ limit the h
 %%
 \acknowledgments
 WTB was provided travel support to the Coronal Loops Workshop
-VII held in Cambridge, UK, July 21-23, 2016, at which a preiliminary version of this work was presented, by NSF award number 1536094. We thank the anonymous referee whose comments helped to improve the final draft of this paper.
+VII held in Cambridge, UK, July 21-23, 2015, at which a preiliminary version of this work was presented, by NSF award number 1536094. We thank the anonymous referee whose comments helped to improve the final draft of this paper.
 %%
 	
 	\appendix
 	\section{Modifications to $c_1$ during the Conductive Cooling Phase}
 	\label{appendix_c1_corrections}
 	%
-	\par In Section 3 of \citet{cargill_enthalpy-based_2012} we assumed that the parameter $c_1$ decreased from its equilibrium value at the time of maximum density, to that commensurate with radiative/enthalpy cooling as the loop drained. This was defined in terms of the ratio $n/n_{eq}$, where $n_{eq}$ was the loop density that would exist for the calculated temperature were the loop to be in static equilibrium \citet[Eq. 17 of][]{cargill_enthalpy-based_2012}. In this radiative phase, $n > n_{eq}$. On the other hand, when $n < n_eq$, we assumed $c_1$ took on its equilibrium value, $c_{1,eqm}$. This gave what were seen as being acceptable errors in the EBTEL value of $n$, as shown in the Figures in \citet{cargill_enthalpy-based_2012}, in particular for the mild nanoflares we considered.
+	\par In Section 3 of \citet{cargill_enthalpy-based_2012} we assumed that the parameter $c_1$ decreased from its equilibrium value at the time of maximum density, to that commensurate with radiative/enthalpy cooling as the loop drained. This was defined in terms of the ratio $n/n_{eq}$, where $n_{eq}$ was the loop density that would exist for the calculated temperature were the loop to be in static equilibrium \citep[Eq. 17 of][]{cargill_enthalpy-based_2012}. In this radiative phase, $n > n_{eq}$. On the other hand, when $n < n_{eq}$, we assumed $c_1$ took on its equilibrium value, $c_{1,eq}$. This gave what were seen as being acceptable errors in the EBTEL value of $n$, as shown in the Figures in \citet{cargill_enthalpy-based_2012}, in particular for the mild nanoflares we considered.
 	%
-	\par It is now clear that a modified description of $c_1$ for $n < n_{eq}$ is needed for many of the examples discussed in the present paper. Specifically, for intense heating events, the coronal density calculated by the version of EBTEL in \citet{cargill_enthalpy-based_2012} is unacceptably high when compared to results from the HYDRAD code. Quantitatively, we find the quantity $(n_{\mathrm{EBTEL}} - n_{\mathrm{HYDRAD}})/n_{\mathrm{HYDRAD}}$ can be of order 0.3. While this may seem to be reasonable, for an aproximate model, the high EBTEL density is a systematic feature, and requires further investigation.
+	\par It is now clear that a modified description of $c_1$ for $n < n_{eq}$ is needed for many of the examples discussed in the present paper. Specifically, for intense heating events, the coronal density calculated by the version of EBTEL in \citet{cargill_enthalpy-based_2012} is unacceptably high when compared to results from the HYDRAD code. Quantitatively, we find $(n_{\mathrm{EBTEL}} - n_{\mathrm{HYDRAD}})/n_{\mathrm{HYDRAD}}\sim0.3$. While this may seem to be reasonable for an aproximate model, the high EBTEL density is a systematic feature, and requires further investigation.
 	%
-	\par Examination of the HYDRAD results show that EBTEL significantly under-estimates the TR radiative losses during the heating and conductive cooling phases. At this time, the loop is under-dense (e.g. Cargill and Klimchuk, 2004)\citep[e.g.][]{cargill_nanoflare_2004}, so that an excess of the conducted energy goes into evaporating TR material. We have modified $c_1$ as follows for $n < n_{eq}$,
+	\par Examination of the HYDRAD results shows that EBTEL significantly underestimates the TR radiative losses during the heating and conductive cooling phases. At this time, the loop is under-dense \citep[e.g.][]{cargill_nanoflare_2004}, so that an excess of the conducted energy goes into evaporating TR material. We have modified $c_1$ as follows for $n < n_{eq}$,
 	\begin{equation}
-		c_1 = \frac{2c_{1,eqm} + c_{1,cond}((n_{eq}/n)^2-1)}{1+(n_eq/n)^2}
+		c_1 = \frac{2c_{1,eq} + c_{1,cond}((n_{eq}/n)^2-1)}{1+(n_{eq}/n)^2},
 		\label{eq:c1_mod}
 	\end{equation}
-	as a direct analogy to Eq. 18 of \citet{cargill_enthalpy-based_2012}. In the early phases of an event, $n_{eq} \gg n$, so that $c_1 \approx c_{1,cond}$. When $n = n_{eq}$, $c_1 = c_{1,eqm}$. After some experimentation, we have settled on a choice of $c_{1,cond} = 6$ since that gives reasonable agreement between EBTEL and HYDRAD. There is no impact on the solution for $n > n_{eq}$. 
+	as a direct analogy to Eq. 18 of \citet{cargill_enthalpy-based_2012}. In the early phases of an event, $n \ll n_{eq}$, so that $c_1 \approx c_{1,cond}$. When $n = n_{eq}$, $c_1 = c_{1,eq}$. After some experimentation, we have settled on a choice of $c_{1,cond} = 6$ since that gives reasonable agreement between EBTEL and HYDRAD. There is no impact on the solution for $n > n_{eq}$. 
 	%s
-	\par\autoref{tab:table_c1_compare} shows a set of runs we have carried out to compare the results from HYDRAD and EBTEL with $c_1=c_{1,eqm}=2$ and $c_1$ given by \autoref{eq:c1_mod} when $n<n_{eq}$. We find that using the modification in \autoref{eq:c1_mod} gives, for the more intense heating cases with $\tau\ge200$ s, an improvement of $\sim0.1$ in the difference between HYDRAD and EBTEL (as defined above) at $n_{max}$. For the more gentle heating profiles of \citet{cargill_enthalpy-based_2012} (i.e. rows 5, 6, and 8 of \autoref{tab:table_c1_compare}), we continue to find acceptable agreement with HYDRAD, confirming that the modification proposed here is applicable to a wide range of heating scenarios.
+	\par\autoref{tab:table_c1_compare} shows a set of runs we have carried out to compare the results from HYDRAD and EBTEL with $c_1=c_{1,eq}=2$ and with $c_1$ given by \autoref{eq:c1_mod}, when $n<n_{eq}$. We find that using the modification in \autoref{eq:c1_mod} gives, for the more intense heating cases with $\tau\ge200$ s, an improvement of $\sim0.1$ in the difference between HYDRAD and EBTEL (as defined above) at $n_{max}$. For the more gentle heating profiles of \citet{cargill_enthalpy-based_2012} (i.e. rows 5, 6, and 8 of \autoref{tab:table_c1_compare}), we continue to find acceptable agreement with HYDRAD, confirming that the modification proposed here is applicable to a wide range of heating scenarios.
 	%
 	\input{tables/table_a1.tex}
 	%
