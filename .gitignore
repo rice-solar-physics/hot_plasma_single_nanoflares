@@ -128,7 +128,7 @@ ENV/
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *Notes.bib
-*.bbl
+#*.bbl #want to include bbl files so that bibliographies can be reproduced even if we use our own bib files
 *.bcf
 *.blg
 *-blx.aux
