@@ -7,7 +7,7 @@ setup(env,["notebooks"])
 
 #round up all the figures/files that are changing
 results = sorted(glob.glob('results/*.tex'))
-figures = sorted(glob.glob('results/*.pdf'))
+figures = sorted(glob.glob('results/*.eps'))
 
 #build PDF and tell scons about the dependencies
 env.PDF('tex/paper.pdf','tex/paper.tex')
