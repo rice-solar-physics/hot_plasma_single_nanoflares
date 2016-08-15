@@ -1,8 +1,9 @@
 # Inference of Heating Properties from "Hot" Non-flaring Plasmas in Active Region Cores I. Single Nanoflares
+[![Build Status](https://travis-ci.org/rice-solar-physics/hot_plasma_single_nanoflares.svg?branch=master)](https://travis-ci.org/rice-solar-physics/hot_plasma_single_nanoflares)
 
-This repository holds all of the text and analysis and simulation code needed to build and compile the paper. Dependency, install, and build information is included below. The idea behind this repository is to create a way for other researchers to reproduce our experiment from scratch (as much as possible). Feedback is welcome via [issues]() or [pull requests](). At each commit, the entire experiment is rebuilt using [Travis CI](https://travis-ci.org/), a continuous integration service. This ensures that any changes to our simulation or analysis code do not change our results in any unexpected ways. This build process also generates a [simple webpage](#) with the final PDF of our paper.
+This repository holds all of the text and analysis and simulation code needed to build and compile the paper. Dependency, install, and build information is included below. The idea behind this repository is to create a way for other researchers to reproduce our experiment from scratch (as much as possible). Feedback is welcome via [issues](https://github.com/rice-solar-physics/hot_plasma_single_nanoflares/issues) or [pull requests](https://github.com/rice-solar-physics/hot_plasma_single_nanoflares/pulls). At each commit, the entire experiment is rebuilt using [Travis CI](https://travis-ci.org/), a continuous integration service. This ensures that any changes to our simulation or analysis code do not change our results in any unexpected ways. This build process also generates a [simple webpage](#) with the final PDF of our paper.
 
-If you would like to create a similar reproducible workflow for one of your projects, we provide an [easily configurable template](https://github.com/wtbarnes/astro_paper_template). Feel free to clone and modify it as needed. 
+If you would like to create a similar reproducible workflow for one of your projects, we provide an [easily configurable template](https://github.com/wtbarnes/astro_paper_template). Feel free to clone and modify it as needed.
 
 ## Citation
 ```
@@ -46,12 +47,15 @@ export EXP_DIR=/home/wtbarnes/research
 ```
 
 ## Building This Paper
-Building this sample repository and the associated webpage yourself is very easy. Provided you have a working Python (2.7) and LaTeX installation, configure a virtual envrionment or [conda environment](http://conda.pydata.org/docs/using/envs.html), clone this repository in `$HOME/astro_paper_template` and run,
+After installing and correctly configuring all of the above dependencies, run
 ```Shell
-$ pip install -r requirements.txt
-$ git clone https://github.com/jhamrick/nbflow.git ../nbflow && cd ../nbflow
-$ python setup.py install
-$ cd astro_paper_template
 $ scons
-$ cd site && make
 ```
+inside of the repository that you cloned. This will run the EBTEL and IonPopSolver simulations, build all of the necessary plots and tables, and then compile the PDF with LaTeX. The resulting PDF will be in `tex/paper.pdf` and all of the generated results (e.g. data files and plots) will be in `results/`.
+
+To build the resulting webpage, run
+```Shell
+$ cd site
+$ make
+```
+and open `site/output/index.html` in a web browser.
