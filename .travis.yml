@@ -16,9 +16,9 @@ install:
 - git clone https://github.com/wtbarnes/nbflow.git && cd nbflow && python setup.py install && cd ..
 - git clone https://github.com/wtbarnes/EBTEL_analysis.git
 - git clone https://github.com/rice-solar-physics/EBTEL_C.git && cd EBTEL_C/build && ./build && cd ../..
-- git clone https://github.com/wtbarnes/EBTEL-2fluid_repo.git && cd EBTEL-2fluid_repo/build && ./build && cd ../..
+- git clone https://github.com/wtbarnes/EBTEL-2fluid_repo.git && cd EBTEL-2fluid_repo/build && mkdir ../bin && ./build && cd ../..
 - git clone https://github.com/rice-solar-physics/apolloDB
-- git clone --recursive https://github.com/rice-solar-physics/IonPopSolver && scons && cd ..
+- git clone --recursive https://github.com/rice-solar-physics/IonPopSolver && cd IonPopSolver && scons && cd ..
 before_script:
 - scons
 - cd site && make && cd ..
