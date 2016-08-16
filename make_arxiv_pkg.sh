@@ -37,4 +37,7 @@ NEW_PATH='results/'
 sed -i '' "s%${OLD_PATH}%${NEW_PATH}%g" $DEST"paper.tex"
 
 #Tar the file
-tar cvzf $1"arXiv_pkg.tar.gz" $DEST
+CURDIR=`pwd`
+cd $1
+tar cvzf "arXiv_pkg.tar.gz" "arXiv_pkg/"
+cd $CURDIR
