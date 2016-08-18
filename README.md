@@ -1,7 +1,7 @@
 # Inference of Heating Properties from "Hot" Non-flaring Plasmas in Active Region Cores I. Single Nanoflares
 [![Build Status](https://travis-ci.org/rice-solar-physics/hot_plasma_single_nanoflares.svg?branch=master)](https://travis-ci.org/rice-solar-physics/hot_plasma_single_nanoflares)
 
-This repository holds all of the text and analysis and simulation code needed to build and compile the paper Barnes et al. (2016). Check out the [abstract and PDF here](https://rice-solar-physics.github.io/hot_plasma_single_nanoflares/).
+This repository holds all of the text and analysis and simulation code needed to build and compile the paper [Barnes et al. (2016)](http://arxiv.org/abs/1608.04776). Check out the [abstract and PDF here](https://rice-solar-physics.github.io/hot_plasma_single_nanoflares/).
 
 Dependency, install, and build information is included below. The idea behind this repository is to create a way for other researchers to reproduce our experiment from scratch (as much as possible). Feedback is welcome via [issues](https://github.com/rice-solar-physics/hot_plasma_single_nanoflares/issues) or [pull requests](https://github.com/rice-solar-physics/hot_plasma_single_nanoflares/pulls). At each commit, the entire experiment is rebuilt using [Travis CI](https://travis-ci.org/), a continuous integration service. This ensures that any changes to our simulation or analysis code do not change our results in any unexpected ways. This build process also generates a [simple webpage](https://rice-solar-physics.github.io/hot_plasma_single_nanoflares/) with the final PDF of our paper.
 
@@ -9,7 +9,18 @@ If you would like to create a similar reproducible workflow for one of your proj
 
 ## Citation
 ```
-Place BibTeX entry here.
+@article{barnes_inference_2016,
+	title = {Inference of {Heating} {Properties} from "{Hot}" {Non}-flaring {Plasmas} in {Active} {Region} {Cores} {I}. {Single} {Nanoflares}},
+	url = {http://arxiv.org/abs/1608.04776},
+	urldate = {2016-08-18},
+	journal = {arXiv:1608.04776 [astro-ph]},
+	author = {Barnes, W. T. and Cargill, P. J. and Bradshaw, S. J.},
+	month = aug,
+	year = {2016},
+	note = {arXiv: 1608.04776},
+	keywords = {Astrophysics - Solar and Stellar Astrophysics},
+	annote = {Comment: Accepted for publication in ApJ, 16 pages, 8 figures},
+}
 ```
 
 ## Dependencies
