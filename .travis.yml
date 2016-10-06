@@ -1,32 +1,38 @@
-language: c
+language: cpp
 sudo: required
 branches:
   only:
   - master
+addons:
+  sources:
+    - ubuntu-toolchain-r-test
+    - boost-latest
+  packages:
+    - g++-4.8
+    - libboost1.55-all-dev
 before_install:
 - mkdir -p $HOME/texlive && curl -L https://github.com/urdh/texlive-blob/releases/download/20160619/texlive.tar.xz | tar -JxC $HOME/texlive
 - PATH=$HOME/texlive/bin/x86_64-linux:$PATH
-- sudo apt-get update -qq
-- sudo apt-get install -y libboost-program-options-dev
-install:
 - tlmgr update --self
 - tlmgr install epstopdf
+- export CXX="g++-4.8"
 - git clone https://github.com/astropy/ci-helpers.git
 - source ci-helpers/travis/setup_conda_${TRAVIS_OS_NAME}.sh
+install:
 - git clone https://github.com/wtbarnes/nbflow.git && cd nbflow && python setup.py install && cd ..
 - git clone https://github.com/wtbarnes/EBTEL_analysis.git
-- git clone https://github.com/rice-solar-physics/EBTEL_C.git && cd EBTEL_C/build && ./build && cd ../..
-- git clone https://github.com/wtbarnes/EBTEL-2fluid_repo.git && cd EBTEL-2fluid_repo/build && mkdir ../bin && ./build && cd ../..
+- git clone https://github.com/rice-solar-physics/ebtelPlusPlus.git && cd ebtelPlusPlus && scons && cd ..
 - git clone https://github.com/rice-solar-physics/apolloDB
 - git clone --recursive https://github.com/rice-solar-physics/IonPopSolver && cd IonPopSolver && scons && cd ..
-before_script:
-- scons
-- cd site && make && cd ..
 script:
+- scons
+after_script:
+- cd site && make && cd ..
 - ghp-import -m "Building site" -b gh-pages site/output
 - git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG} gh-pages
 env:
   global:
+    - CONDA_PREFIX=/home/travis/miniconda/envs/test
     - EXP_DIR=`pwd`
     - PYTHON_VERSION=2.7
     - NUMPY_VERSION='stable'
