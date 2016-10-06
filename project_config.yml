@@ -1,7 +1,7 @@
 title: Inference of Heating Properties from "Hot" Non-flaring Plasmas in Active Region Cores I. Single Nanoflares
 abstract: "The properties expected of 'hot' non-flaring plasmas due to nanoflare heating in active regions are investigated using hydrodynamic modeling tools, including a two-fluid development of the EBTEL code. Here we study a single nanoflare and show that while simple models predict an emission measure distribution extending well above 10 MK that is consistent with cooling by thermal conduction, many other effects are likely to limit the existence and detectability of such plasmas. These include: differential heating between electrons and ions, ionization non-equilibrium and, for short nanoflares, the time taken for the coronal density to increase. The most useful temperature range to look for this plasma, often called the 'smoking gun' of nanoflare heating, lies between 10<sup>6.6</sup> and 10<sup>7</sup> K. Signatures of the actual heating may be detectable in some instances."
 repo: rice-solar-physics/hot_plasma_single_nanoflares
-pub_url: "http://adsabs.harvard.edu/abs/2016arXiv160804776B"
+pub_url: "http://adsabs.harvard.edu/abs/2016ApJ...829...31B"
 authors:
   - name: W. T. Barnes
     affiliation: Rice University
