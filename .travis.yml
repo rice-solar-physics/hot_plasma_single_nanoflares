@@ -4,12 +4,13 @@ branches:
   only:
   - master
 addons:
-  sources:
-    - ubuntu-toolchain-r-test
-    - boost-latest
-  packages:
-    - g++-4.8
-    - libboost1.55-all-dev
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      - boost-latest
+    packages:
+      - g++-4.8
+      - libboost1.55-all-dev
 before_install:
 - mkdir -p $HOME/texlive && curl -L https://github.com/urdh/texlive-blob/releases/download/20160619/texlive.tar.xz | tar -JxC $HOME/texlive
 - PATH=$HOME/texlive/bin/x86_64-linux:$PATH
