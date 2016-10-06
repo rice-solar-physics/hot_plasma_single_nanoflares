@@ -22,7 +22,7 @@ before_install:
 install:
 - git clone https://github.com/wtbarnes/nbflow.git && cd nbflow && python setup.py install && cd ..
 - git clone https://github.com/wtbarnes/EBTEL_analysis.git
-- git clone https://github.com/rice-solar-physics/ebtelPlusPlus.git && cd ebtelPlusPlus && scons && cd ..
+- git clone --recursive https://github.com/rice-solar-physics/ebtelPlusPlus.git && cd ebtelPlusPlus && scons && cd ..
 - git clone https://github.com/rice-solar-physics/apolloDB
 - git clone --recursive https://github.com/rice-solar-physics/IonPopSolver && cd IonPopSolver && scons && cd ..
 script:
