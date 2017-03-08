@@ -48,6 +48,8 @@ You can also install all of these using PyPI by running `pip install -r requirem
 * [nbflow](https://github.com/jhamrick/nbflow) -- follow the install instructions
 * [EBTEL_analysis](https://github.com/wtbarnes/EBTEL_analysis) -- no install needed, we'll just add the code to our path in the notebook; clone it into the directory `$EXP_DIR`
 
+Alternatively, if you're using conda, you can clone the included conda environment by running `conda env create -f environment.yml` and then switching to it by running `source activate hot_plasma_1_paper`.
+
 ### C++
 There are also a few C/C++ dependencies that are a bit more difficult to obtain. Clone all of these repositories into the same root directory, `$EXP_DIR`.
 
@@ -68,7 +70,7 @@ After installing and correctly configuring all of the above dependencies, run
 ```Shell
 $ scons
 ```
-inside of the repository that you cloned. This will run the EBTEL and IonPopSolver simulations, build all of the necessary plots and tables, and then compile the PDF with LaTeX. The resulting PDF will be in `tex/paper.pdf` and all of the generated results (e.g. data files and plots) will be in `results/`.
+inside of the repository that you cloned. This will run the EBTEL and IonPopSolver simulations, build all of the necessary plots and tables, and then compile the PDF with LaTeX. The resulting PDF will be in `tex/paper.pdf` and all of the generated results (e.g. data files and plots) will be in `results/`. If for some reason an exception is thrown because Jupyter cannot find the needed kernel, you can run `python sanitize_kernels.py` to clean up the notebook kernel names.
 
 To build the resulting webpage, run
 ```Shell
