@@ -25,8 +25,8 @@ install:
 - git clone --recursive https://github.com/rice-solar-physics/ebtelPlusPlus.git && cd ebtelPlusPlus && scons && cd ..
 - git clone https://github.com/rice-solar-physics/apolloDB
 - git clone --recursive https://github.com/rice-solar-physics/IonPopSolver && cd IonPopSolver && scons && cd ..
-script:
 - python sanitize_kernels.py
+script:
 - scons
 after_script:
 - cd site && make && cd ..
@@ -40,5 +40,6 @@ env:
     - NUMPY_VERSION='stable'
     - ASTROPY_VERSION='stable'
     - CONDA_DEPENDENCIES='ipython jupyter matplotlib pyyaml scons seaborn scipy'
+    - MATPLOTLIB_VERSION=1.5.1
     - PIP_DEPENDENCIES='ghp-import'
     - secure: "F5RTTtr4ystjF7KKKm/YOHVNaPkt0swt9JC8kALJba3L0nod5Ed4ARFEgotsyzO3/ztKRl0/8kGAs7stqFUJCwgaqz0O2600sSNa0NXLov63szAverJ2IXiYdbBMxZNc1jGkFbQ63v3VwRZvuv9Kv3vrZ1dbBcK0ZRB/JUrdHEb2f2ZYOuAl05pep0P+tlCMV6LZS8fYh2y7+nVsx4W/yy3QsX9E+yZhzhNNF/dTMc7AijJhD2tUnXYOzNUhKcEfijYiAewsRoMat+mxJxcI9IuYeJhe8cfP3Ar2ijm5Uz6hrxznFyDczhl3sAklCTJV5+zKGG80cSD8MuvRMFhWHUfmBJafNazXiG2oV6blkVMJi79P36iNuxRA/LCSENOQAdjvHQcJ2QLn1+wn35HGgjDsA0Z+++LSBFfPtp11+LnVDUO1WyLZryksLa11AVMQf1HZ0yekaZD83ONbEmQg8RktW5qFnTtgQ+wTBHDmUMeRRbr0s3xg/rUwKeVBxtdHlOkMV+HnU7Wp5xtbBNTHQ2ZqkI5et52Rq92+g/dCeyDwYAL1jbxQfesAq+Ij4DbZBPt1ul7LhzVH+Tt/PREOSvDHIp+xk/39jqIZ3AgGkcGKGW5wQCP3WHzFXeYzw8jVIKyVlbh2t+x7479i1MUNRi6RcNGXdbFRR9FLpE5/ha8="
