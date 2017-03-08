@@ -1,0 +1,14 @@
+name: hot_plasma_1_paper
+channels:
+- defaults
+dependencies:
+- python=2.7.12
+- astropy=1.2.1
+- ipython=5.0.0
+- jupyter=1.0.0
+- matplotlib=1.5.1
+- scons=2.3.0
+- seaborn=0.7.0
+- scipy=0.17.1
+- pip:
+  - git+git://github.com/wtbarnes/nbflow.git
