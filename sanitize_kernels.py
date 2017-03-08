@@ -9,9 +9,3 @@ for nb in notebooks:
     old_envs[nb] = tmp['metadata']['kernelspec']['name']
     tmp['metadata']['kernelspec']['name'] = 'python2'
     nbformat.write(tmp,nb)
-
-#revert kernelspec
-#for k in old_envs:
-#    tmp = nbformat.read(k,4)
-#    tmp['metadata']['kernelspec']['name'] = old_envs[k]
-#    nbformat.write(tmp,k)
