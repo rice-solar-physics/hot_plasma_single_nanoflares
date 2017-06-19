@@ -1,0 +1,23 @@
+
+p{
+	padding-top: 10px;
+}
+
+.footer {
+	text-align:center;
+	padding-top: 15px;
+	/*position: relative;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	/*height: 50px;
+	background-color: #f5f5f5;*/
+}
+
+/*div.footer ~ div.row {
+	margin-bottom: 55px;
+}*/
+
+/*.row {
+	margin-bottom: 55px;
+}*/
